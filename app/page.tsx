@@ -13,12 +13,12 @@ type Lesson = {
 const lessons: Lesson[] = [
   {
     week: 1, module: 1, kicker: "お金の土台", title: "お金の価値は、なぜ変わる？", time: "18分",
-    summary: "金額ではなく「何を買えるか」でお金を見る。物価・インフレ・金利の関係から、投資を学ぶ理由を理解します。",
+    summary: "お金の本当の価値は、金額ではなく「何を買えるか」で決まります。まず、なぜ投資を学ぶ必要があるのかを理解します。",
     goals: ["お金の3つの役割を説明できる", "名目金額と実質的な価値を区別できる", "インフレ率と金利から購買力を考えられる"],
     sections: [
-      { heading: "01｜お金は、価値を測り、交換し、保存する道具", body: "お金には、商品の価値を共通の単位で示す「価値尺度」、商品と交換する「交換手段」、将来のために価値を残す「価値保存」という役割があります。ただし、保存されるのは1万円という数字であり、その1万円で買える量まで保証されるわけではありません。投資を考える前に、金額と購買力を分けて考える必要があります。" },
+      { heading: "01｜1万円は残っても、1万円の価値は変わる", body: "お金には、値段を示す、商品と交換する、将来のために残す、という3つの役割があります。財布に入れた1万円は、来年も1万円です。しかし、その1万円で買える量は変わります。投資を考える第一歩は、「いくら持っているか」と「何を買えるか」を分けることです。" },
       { heading: "02｜物価が上がると、同じ1万円で買える量が減る", body: "モノやサービスの価格が全体として継続的に上がる状態をインフレといいます。原因は一つではありません。需要の増加、原材料やエネルギー価格の上昇、人手不足による賃金上昇、円安による輸入価格の上昇などが重なります。特定商品の値上がりだけでなく、幅広い品目の変化を見る代表的な指標が消費者物価指数（CPI）です。" },
-      { heading: "03｜大切なのは「金利 − 物価上昇率」", body: "預金が年0.5%増えても、物価が年2%上がれば、購買力はおよそ年1.5%低下します。この差を考える考え方が実質金利です。現金や預金は、価格変動が小さく近い将来に使うお金を守るのに適しています。一方、長期のお金はインフレもリスクになるため、成長資産を持つ意味が生まれます。ただし投資には元本割れがあり、現金が不要になるわけではありません。" },
+      { heading: "03｜預金が増えても、豊かになるとは限らない", body: "預金が年0.5%増えても、物価が年2%上がれば、買える量はおよそ1.5%減ります。この差を見る目安が実質金利です。近いうちに使うお金は、現金や預金で守る。長く使わないお金は、インフレに負けない方法を考える。現金か投資かの二択ではなく、使う時期で役割を分けます。" },
     ],
     example: { title: "100万円の10年後の購買力", body: "物価が毎年2%上がると、現在100万円で買えるものを10年後に買うには約122万円必要です。逆に、10年後の100万円の購買力は現在の約82万円相当です。計算は 100万円 ÷ 1.02¹⁰。小さな差でも、時間が長くなると影響が大きくなります。" },
     mistake: "「インフレだからすぐ株を買う」が結論ではありません。使う時期、値下がりへの耐性、生活防衛資金を確認して初めて投資額を決められます。",
@@ -33,12 +33,12 @@ const lessons: Lesson[] = [
   },
   {
     week: 2, module: 1, kicker: "家計と生活設計", title: "投資の前に、守るお金をつくる", time: "17分",
-    summary: "貯金か投資かではなく、お金を使う時期で置き場所を決めます。家計と生活防衛資金が投資の土台です。",
+    summary: "投資してよいのは、当分使わないお金だけです。使う時期ごとに、お金の置き場所を分けます。",
     goals: ["収支と資産・負債を区別できる", "生活防衛資金の意味を説明できる", "目的別にお金の置き場所を考えられる"],
     sections: [
-      { heading: "01｜収入が多くても、残らなければ投資は続かない", body: "家計は、毎月入るお金と出るお金を示す収支、今持っている資産と返す必要がある負債に分けます。まず固定費と変動費を把握し、赤字を解消することが先です。投資は余ったお金を一度入れて終わりではなく、相場が悪い時にも継続できる仕組みが重要です。" },
+      { heading: "01｜投資額は、収入ではなく残るお金で決まる", body: "まず、毎月いくら入り、いくら出ていくかを確認します。次に、預金などの資産と、奨学金やローンなどの負債を分けます。毎月赤字なら、投資より先に支出を直します。大切なのは一度だけ投資することではなく、相場が悪い時も無理なく続けられることです。" },
       { heading: "02｜生活防衛資金は、安値で売らないための装置", body: "病気、失業、引っ越しなど急な支出が発生したとき、現金がなければ値下がり中の資産を売らざるを得ません。生活防衛資金はリターンを生まない無駄なお金ではなく、投資を長期で続けるための保険です。必要額は生活費、収入の安定性、家族構成によって異なります。学生なら、近い学費や生活費、緊急帰省費などを先に確保します。" },
-      { heading: "03｜時間軸で3つの箱に分ける", body: "日常生活と数年以内に使うお金は預貯金、10年以上使わない成長資金は投資候補、その中間は定期預金や個人向け国債など値動きの小さい選択肢も検討します。正解の比率は人によって違います。大切なのは、値上がり期待ではなく使用時期から逆算することです。" },
+      { heading: "03｜お金を、使う時期で3つに分ける", body: "生活費と数年以内に使うお金は、預貯金で確保します。10年以上使わないお金は、投資の候補になります。その中間のお金は、定期預金や個人向け国債など、値動きの小さい方法も考えます。「増えそうか」ではなく、「いつ使うか」から置き場所を決めます。" },
     ],
     example: { title: "大学生の3つの箱", body: "①今月の生活費8万円、②半年以内の学費・緊急費30万円、③10年以上使わない資金。①②まで投資すると、相場下落時に売却が必要になります。まず①②を守り、その後に③の範囲で少額から始めます。" },
     mistake: "「若いから全額投資でよい」は誤りです。若さは運用期間を長くできますが、短期の支払い義務を消してはくれません。",
@@ -53,14 +53,14 @@ const lessons: Lesson[] = [
   },
   {
     week: 3, module: 2, kicker: "資産の仕組み", title: "株・債券・投資信託は何が違う？", time: "20分",
-    summary: "商品名を覚えるのではなく、誰にお金を渡し、何の対価として利益を得るのかを理解します。",
+    summary: "株・債券・投資信託の違いは、お金を誰に渡し、どうやって利益が生まれるかを見ると理解できます。",
     goals: ["株式と債券の権利の違いを説明できる", "投資信託の仕組みと費用を理解する", "リターンの源泉を考えられる"],
     sections: [
       { heading: "01｜株式は会社の一部を持つ権利", body: "株式を買うと、その会社の一部を所有する株主になります。会社が利益を増やせば、配当や将来への期待を通じて株価に反映される可能性があります。一方、事業が失敗すれば株価は下がり、倒産時には価値を失うこともあります。株式のリターンは、企業が長期で価値を生み出せるかに支えられます。" },
       { heading: "02｜債券は国や会社にお金を貸す契約", body: "債券は、発行者に資金を貸し、原則として利息と満期時の元本返済を受ける仕組みです。株主より受け取る内容が契約で定められていますが、発行者の信用悪化や金利上昇で価格が下がります。安全か危険かの二択ではなく、誰に何年貸すかでリスクが変わります。" },
       { heading: "03｜投資信託は、多くの資産をまとめて持つ器", body: "投資信託は、多くの投資家から集めた資金を、運用会社が株式や債券などへ投資する仕組みです。少額で分散しやすい一方、購入時手数料、信託報酬、売却時の費用などを確認する必要があります。同じ市場に投資する商品なら、長期では費用差が結果に影響します。" },
     ],
-    example: { title: "利益はどこから来る？", body: "株式は企業利益と成長、債券は借り手が支払う利息、投資信託は中に入っている資産の収益からリターンが生まれます。「なぜ増える可能性があるのか」を説明できない商品には投資しないことが基本です。" },
+    example: { title: "その利益は、誰が生み出す？", body: "株式の利益は会社の成長、債券の利益は借り手が払う利息から生まれます。投資信託の利益は、中に入っている株式や債券から生まれます。「なぜ増える可能性があるのか」を自分で説明できない商品は、まだ買わない。それが基本です。" },
     mistake: "投資信託なら必ず分散されて安全、ではありません。一つの国・業種だけに集中する商品や、大きな値動きをする商品もあります。中身を確認します。",
     task: "身近な上場企業を1社選び、何で売上と利益を得ているかをIRサイトで調べる。",
     talk: "会社の一部を持つことと、会社へお金を貸すことでは、何が違う？",
@@ -73,10 +73,10 @@ const lessons: Lesson[] = [
   },
   {
     week: 4, module: 2, kicker: "リスクの正体", title: "リスクとリターンを数字で読む", time: "20分",
-    summary: "リスクは「危険」の一語ではありません。価格の振れ、損失の大きさ、必要な時に売れない可能性を分解します。",
+    summary: "投資のリスクとは、結果が予想どおりにならないことです。何が原因で、どれほど損をする可能性があるかを数字で考えます。",
     goals: ["主な投資リスクを分類できる", "平均リターンと毎年の結果を混同しない", "損失からの回復に必要な上昇率を計算できる"],
     sections: [
-      { heading: "01｜リターンは結果、リスクは結果の不確実性", body: "投資でいうリスクは、損失だけでなく期待した結果から上下にぶれる可能性を指します。価格変動、発行者の信用、金利、為替、流動性、制度変更など、原因を分けると対策も変わります。値動きが大きい商品ほど、大きな利益と損失の両方が起こり得ます。" },
+      { heading: "01｜リターンは結果。リスクは結果の読めなさ", body: "投資のリスクは「損をすること」だけではありません。予想より上がることも、下がることも含めて、結果が読めないことを指します。価格、会社の信用、金利、為替、売りやすさなど、原因によって対策は変わります。値動きが大きい商品は、大きく増える可能性と大きく減る可能性の両方を持っています。" },
       { heading: "02｜平均5%でも、毎年5%増えるわけではない", body: "長期の平均リターンが5%という説明は、毎年5%を約束するものではありません。ある年に20%上がり、次の年に15%下がることもあります。過去の平均は将来の保証ではなく、観測期間や通貨によっても変わります。単一の数字ではなく、最悪期や回復期間も確認します。" },
       { heading: "03｜損失は非対称。50%下落には100%上昇が必要", body: "100万円が50%下がると50万円です。元の100万円へ戻るには、残った50万円が100%上がる必要があります。大きな損失を避けることが重要なのはこのためです。借入やレバレッジで投資すると、損失が元手を超える場合もあります。初心者はまず現物・分散・余裕資金を基本にします。" },
     ],
@@ -93,12 +93,12 @@ const lessons: Lesson[] = [
   },
   {
     week: 5, module: 3, kicker: "時間を味方に", title: "複利・長期・積立の本当の意味", time: "19分",
-    summary: "複利を魔法にせず、時間と継続、積立の効果と限界を数字で理解します。",
+    summary: "複利も積立も、必ず儲かる魔法ではありません。何に効き、何には効かないのかを数字で確かめます。",
     goals: ["単利と複利を区別する", "積立投資の効果と限界を説明できる", "継続可能な投資額を考える"],
     sections: [
       { heading: "01｜複利は利益を再投資する仕組み", body: "元本だけに利益が付く単利に対し、複利は得た利益も次の利益を生みます。100万円を年5%で運用できたと仮定すると、10年後は約163万円、20年後は約265万円です。ただし5%は保証ではなく、途中で大きく下落する可能性があります。" },
       { heading: "02｜積立は価格変動を消すのではなく、購入時期を分ける", body: "一定額を定期的に投資すると、高い時には少なく、安い時には多く買います。購入時期を分散でき、始めるタイミングの迷いを減らせます。ただし下落し続ける資産を買えば損失になります。積立は優良商品を選ぶ代わりにはなりません。" },
-      { heading: "03｜最強なのは、高い利回りより継続できる設計", body: "短期間で大きく増やそうとすると、大きな損失リスクを取ることになります。若い投資家の強みは元手の大きさではなく、収入を増やしながら長く継続できる時間です。無理な金額を設定せず、収入増に合わせて積立額を見直します。" },
+      { heading: "03｜高い利回りより、続けられる金額を選ぶ", body: "短期間で大きく増やそうとすれば、大きく減る可能性も高くなります。若い人の強みは、最初から大金を持っていることではありません。長く続けられる時間があることです。まず無理のない金額で始め、収入が増えたら積立額を見直します。" },
     ],
     example: { title: "月1万円を20年間積み立てる", body: "元本は240万円。仮に年率3%なら約328万円、5%なら約411万円になります。ただし実際の価格は毎年揺れ、手数料や税金も影響します。シミュレーションは予言ではなく、条件差を理解する道具です。" },
     mistake: "「長期なら絶対に損しない」は誤りです。長期は結果の安定を期待しやすくしますが、商品選択、費用、売却時期のリスクは残ります。",
@@ -113,10 +113,10 @@ const lessons: Lesson[] = [
   },
   {
     week: 6, module: 3, kicker: "組み合わせる", title: "分散投資とポートフォリオ", time: "20分",
-    summary: "数を増やすだけでは分散になりません。値動きの理由が異なる資産を組み合わせます。",
+    summary: "分散とは、ただ数を増やすことではありません。同じ理由で一緒に下がらない資産を組み合わせることです。",
     goals: ["集中リスクを説明できる", "資産・地域・時間の分散を区別する", "自分の配分ルールをつくる"],
     sections: [
-      { heading: "01｜分散は、外れた予想で致命傷を負わないため", body: "どれほど調べても未来は不確実です。一社、一業種、一国へ集中すると、一つの出来事が資産全体を大きく傷つけます。分散は最高のリターンを狙う方法ではなく、予想が外れても市場に残り続けるためのリスク管理です。" },
+      { heading: "01｜分散は、予想が外れた時に生き残るため", body: "どれほど調べても、未来を当て続けることはできません。一つの会社、業種、国に集中すると、一つの悪い出来事で資産全体が大きく減ります。分散の目的は、最高の利益を出すことではありません。予想が外れても、投資を続けられる状態を守ることです。" },
       { heading: "02｜銘柄数ではなく、値動きの原因を分ける", body: "同じ業種の株を10社持っても、共通の景気や規制で同時に下がる可能性があります。株式と債券、国内と海外、異なる業種など、収益源やリスク要因の違いを考えます。ただし世界危機では多くの資産が同時に下がるため、分散も損失をゼロにはしません。" },
       { heading: "03｜配分を先に決め、定期的に戻す", body: "ポートフォリオは資産の組み合わせです。値上がりした資産の比率は自然に大きくなります。最初に目標比率を決め、年1回など一定の基準で元へ戻すリバランスを行うと、感情ではなくルールでリスクを管理できます。" },
     ],
@@ -133,10 +133,10 @@ const lessons: Lesson[] = [
   },
   {
     week: 7, module: 4, kicker: "制度を使う", title: "NISAを『節税商品』と誤解しない", time: "20分",
-    summary: "NISAは商品ではなく非課税制度です。制度のメリットと、投資リスクを分けて理解します。",
+    summary: "NISAは、投資商品ではなく税金が優遇される口座です。口座のメリットと、商品のリスクを分けて考えます。",
     goals: ["NISAと金融商品の違いを説明できる", "非課税の対象と限界を理解する", "口座選びの比較軸を持つ"],
     sections: [
-      { heading: "01｜NISAは利益への税金を非課税にする箱", body: "通常、株式や投資信託の売却益や配当・分配金には約20%の税金がかかります。NISA口座内の対象商品から得た利益は非課税です。ただし、口座に入れれば元本が保証されるわけではありません。制度と商品の安全性は別問題です。" },
+      { heading: "01｜NISAは、利益に税金がかからない口座", body: "通常、株式や投資信託で得た利益には約20%の税金がかかります。NISA口座で対象商品を買うと、その利益は非課税になります。ただし、NISAで買えば安全になるわけではありません。口座の税制と、商品の値動きは別の話です。" },
       { heading: "02｜つみたて投資枠と成長投資枠", body: "つみたて投資枠は長期・積立・分散に適した一定の投資信託が対象です。成長投資枠では上場株式など、より幅広い商品を購入できます。年間投資枠や生涯の非課税保有限度額があり、売却した簿価分は翌年以降に再利用できます。制度は変更される可能性があるため、必ず金融庁の最新情報を確認します。" },
       { heading: "03｜証券会社は、商品・費用・使いやすさで比較する", body: "ポイント還元だけでなく、購入できる商品、売買手数料、積立方法、画面の分かりやすさ、問い合わせ対応、セキュリティを比較します。口座開設は投資判断の前段階です。広告報酬の高い順ではなく、利用者の目的に合うかを基準にします。" },
     ],
@@ -153,7 +153,7 @@ const lessons: Lesson[] = [
   },
   {
     week: 8, module: 4, kicker: "コストを見る", title: "手数料・税金・為替を理解する", time: "18分",
-    summary: "運用成績は市場だけで決まりません。見えにくいコストを理解し、比較できるようになります。",
+    summary: "利益を増やす方法は、値上がりを当てることだけではありません。手数料や税金を減らすことも、確実に残る金額を増やします。",
     goals: ["主な投資コストを挙げられる", "小さな費用差の長期影響を理解する", "為替変動をリターンへ反映できる"],
     sections: [
       { heading: "01｜買う時・持つ間・売る時の費用", body: "投資信託には購入時手数料、保有中に差し引かれる信託報酬、売却時の信託財産留保額などがあります。株式には売買手数料、外国資産には為替手数料が生じる場合があります。無料という表示でも、スプレッドや商品の内部費用まで確認します。" },
@@ -173,10 +173,10 @@ const lessons: Lesson[] = [
   },
   {
     week: 9, module: 5, kicker: "企業を読む", title: "売上・利益・キャッシュフロー", time: "22分",
-    summary: "株価チャートの前に事業を見る。企業が価値を生む仕組みを財務諸表から読みます。",
+    summary: "株価を見る前に、その会社が何で稼いでいるかを見ます。売上・利益・現金の3つから会社の状態を読みます。",
     goals: ["売上と利益の違いを説明できる", "損益と現金の動きを区別する", "企業分析の基本質問を持つ"],
     sections: [
-      { heading: "01｜売上は人気、利益は残った価値", body: "売上が増えても、原価や人件費、広告費がそれ以上に増えれば利益は減ります。売上総利益、営業利益、純利益は、それぞれ何を差し引いた後かが違います。企業を見るときは、売上成長だけでなく、利益率とその持続性を確認します。" },
+      { heading: "01｜売上が増えても、利益が増えるとは限らない", body: "売上は、お客さんから受け取った金額です。そこから材料費、人件費、広告費などを引いて、利益が残ります。売上が増えても、費用がそれ以上に増えれば利益は減ります。会社を見る時は「売れたか」だけでなく、「いくら残ったか」「それが続きそうか」を確認します。" },
       { heading: "02｜利益があっても現金がないことがある", body: "商品を売っても代金回収が先なら、帳簿上の利益と手元の現金は一致しません。キャッシュフロー計算書は、営業・投資・財務の活動による現金の増減を示します。成長企業では投資支出が大きいこともありますが、資金調達に依存し続けていないかを確認します。" },
       { heading: "03｜良い会社と良い投資は同じではない", body: "優れた会社でも、期待が株価に織り込まれ高すぎれば投資収益が低くなる可能性があります。反対に安い株価には、安い理由があるかもしれません。事業の質と価格の妥当性を分けて判断します。" },
     ],
@@ -193,10 +193,10 @@ const lessons: Lesson[] = [
   },
   {
     week: 10, module: 5, kicker: "経済を読む", title: "金利・景気・為替と市場", time: "22分",
-    summary: "ニュースを点ではなく因果関係で読む。経済指標が企業と資産価格へ届く経路を学びます。",
+    summary: "経済ニュースを見て、すぐ売買するのは危険です。その変化が家計、企業、株価へどう伝わるかを順番に考えます。",
     goals: ["政策金利の主な波及経路を説明できる", "為替変動の複数要因を理解する", "ニュースから投資判断までの距離を取る"],
     sections: [
-      { heading: "01｜金利はお金の時間価格", body: "金利が上がると借入コストが増え、住宅購入や企業投資が抑えられやすくなります。預金や債券の魅力は相対的に上がり、将来利益の現在価値は低下します。そのため、特に将来成長への期待が大きい株式の評価に影響します。ただし実際の市場は、利上げそのものより予想との差で動くことがあります。" },
+      { heading: "01｜金利は、お金を借りるための料金", body: "金利が上がると、住宅ローンや会社の借入負担が増えます。その結果、買い物や設備投資が減りやすくなります。一方で、預金や債券の魅力は上がります。株価は「利上げしたか」だけでなく、「市場の予想より上だったか、下だったか」でも動きます。" },
       { heading: "02｜景気と株価は同時には動かない", body: "株価は現在の景気だけでなく、半年後、一年後の企業利益を先回りして動きます。悪い経済指標で金融緩和期待が高まり、株価が上がることもあります。ニュースの良し悪しと市場の上下を単純に結びつけず、何がすでに価格へ織り込まれていたかを考えます。" },
       { heading: "03｜為替は一つの理由で説明できない", body: "金利差、貿易、投資資金、政策、リスク回避など多くの要因で通貨は動きます。円安は輸出企業の円換算利益を押し上げる一方、輸入価格と家計負担を上げます。同じ変化でも立場によって影響が違います。" },
     ],
@@ -213,12 +213,12 @@ const lessons: Lesson[] = [
   },
   {
     week: 11, module: 6, kicker: "自分を守る", title: "詐欺・煽り・認知バイアス", time: "18分",
-    summary: "市場より先に、自分の感情と悪質な勧誘から資産を守ります。",
+    summary: "投資では、相場だけでなく、詐欺と自分の感情からもお金を守る必要があります。怪しい情報を見抜く順番を決めます。",
     goals: ["投資詐欺の警告サインを見抜く", "自分の認知バイアスを知る", "情報源を確認する習慣を持つ"],
     sections: [
       { heading: "01｜「必ず」「元本保証」「今だけ」は止まる合図", body: "高利回りを保証する、紹介者を増やせば儲かる、出金に追加送金が必要、著名人を無断使用する、といった勧誘は重大な警告サインです。取引前に金融庁の登録事業者検索で相手を確認し、SNS内だけで手続きを完結させません。" },
       { heading: "02｜人は、自分に都合のよい情報を集める", body: "保有銘柄に肯定的な情報だけを見る確証バイアス、周囲が買うと安心する群集心理、買値にこだわるアンカリング、損失確定を避ける損失回避などがあります。知識があっても消えないため、売買前のチェックリストと記録で対処します。" },
-      { heading: "03｜情報は、発信者・根拠・利益相反を見る", body: "誰が発信し、一次資料は何で、発信者がどのように利益を得るかを確認します。アフィリエイト記事なら広告であること、比較基準、デメリット、更新日を確認します。このサイトも将来広告を掲載する場合、教材と広告を明確に分離します。" },
+      { heading: "03｜誰が、何を根拠に、なぜ発信しているか", body: "まず、誰が発信しているかを見ます。次に、元になった公式資料を確かめます。最後に、その人が紹介料や値上がりで利益を得る立場かを確認します。アフィリエイト記事では、広告表示、比較基準、デメリット、更新日を見ます。このサイトでも、教材と広告は明確に分けます。" },
     ],
     example: { title: "SNSで『来週2倍』を見たら", body: "①発信者の登録・実名、②企業の適時開示、③根拠となる数字、④発信者の保有や報酬、⑤損失時の説明を確認。確認できなければ取引しないことが最善です。" },
     mistake: "自分だけは騙されないと思うこと自体がリスクです。焦り、欲、孤立を利用されるため、第三者へ相談する時間を置きます。",
@@ -233,10 +233,10 @@ const lessons: Lesson[] = [
   },
   {
     week: 12, module: 6, kicker: "自分の方針", title: "投資方針書をつくり、少額で始める", time: "25分",
-    summary: "学んだ内容を一枚のルールへまとめます。商品より先に、目的・配分・行動ルールを決めます。",
+    summary: "最後に、自分の投資ルールを一枚にまとめます。大切なのは、良い商品を探すことより、決めたルールを守り続けることです。",
     goals: ["自分の投資目的と期間を言語化する", "資産配分と積立額を決める", "下落時と見直し時のルールを持つ"],
     sections: [
-      { heading: "01｜目的がなければ、成績を評価できない", body: "老後、住宅、学び直しなど、目的と時期で必要なリターンと取れるリスクは変わります。「お金を増やしたい」だけでは、上がれば欲が増え、下がれば恐怖で売ることになります。目標金額、期間、毎月の投資可能額を先に決めます。" },
+      { heading: "01｜目的がなければ、成功か失敗かも決められない", body: "老後、住宅、学び直しなど、何のために、いつ使うかで投資方法は変わります。「お金を増やしたい」だけでは、上がるともっと欲しくなり、下がると怖くなって売ってしまいます。まず、目的、目標金額、期間、毎月出せる金額を決めます。" },
       { heading: "02｜投資方針書に7項目を書く", body: "①目的、②期間、③生活防衛資金、④毎月の積立額、⑤目標資産配分、⑥見直し頻度、⑦禁止事項を書きます。禁止事項には、借金による投資、理解できない商品、SNSだけを根拠にした売買などを入れます。" },
       { heading: "03｜少額で始め、判断の記録を残す", body: "最初の目的は最大利益ではなく、値動きの中で自分の感情と行動を知ることです。購入理由、想定リスク、売却条件を記録します。毎日の価格確認より、半年や一年ごとに家計・目的・配分を見直します。" },
     ],
@@ -317,12 +317,12 @@ export default function Home() {
 
   return <main>
     <header className="topbar"><a className="brand" href="#top"><span className="brand-mark">18</span><span>投資の地図</span></a><div className="progress-mini"><span>{progress}%</span><div><i style={{ width: `${progress}%` }} /></div></div></header>
-    <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">12-WEEK INVESTMENT FOUNDATION</p><h1>未来のお金を、<br/><em>自分で考える力</em>を。</h1><p className="lead">銘柄の答えではなく、一生使える判断の順序を学ぶ。知識ゼロから家計、経済、金融商品、企業分析、実践まで進む全12回の講座です。</p><button className="primary" onClick={() => document.getElementById("curriculum")?.scrollIntoView({behavior:"smooth"})}>学習を始める <span>→</span></button></div><div className="hero-orbit" aria-hidden="true"><div className="orbit"/><div className="orbit orbit-two"/><div className="coin"><span>¥</span></div><span className="orbit-label label-a">THINK</span><span className="orbit-label label-b">LEARN</span><span className="orbit-label label-c">DECIDE</span></div></section>
-    <section className="course-intro"><p className="eyebrow">HOW TO LEARN</p><h2>15分で理解する。<br/>1週間かけて考える。</h2><div className="intro-grid"><div><b>01</b><strong>全体をつかむ</strong><p>学習目標と結論を先に確認。</p></div><div><b>02</b><strong>仕組みを理解</strong><p>数字・具体例・誤解まで読む。</p></div><div><b>03</b><strong>自分で判断</strong><p>クイズと実践課題で言語化。</p></div></div><div className="journey"><p className="eyebrow">THE STORY OF 12 WEEKS</p><div><span>守る</span><i>→</i><span>知る</span><i>→</i><span>組み合わせる</span><i>→</i><span>選ぶ</span><i>→</i><span>読む</span><i>→</i><span>ルールにする</span></div><p>毎回の知識は次の判断材料になります。最後に、すべてを自分の投資方針へまとめます。</p></div></section>
+    <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">12-WEEK INVESTMENT FOUNDATION</p><h1>未来のお金を、<br/><em>自分で考える力</em>を。</h1><p className="lead">「何を買えばいいか」ではなく、「どう考えて決めるか」を学ぶ。知識ゼロから、自分の投資ルールを作るまでの全12回です。</p><button className="primary" onClick={() => document.getElementById("curriculum")?.scrollIntoView({behavior:"smooth"})}>第1回から始める <span>→</span></button></div><div className="hero-orbit" aria-hidden="true"><div className="orbit"/><div className="orbit orbit-two"/><div className="coin"><span>¥</span></div><span className="orbit-label label-a">THINK</span><span className="orbit-label label-b">LEARN</span><span className="orbit-label label-c">DECIDE</span></div></section>
+    <section className="course-intro"><p className="eyebrow">HOW TO LEARN</p><h2>一度で覚えなくていい。<br/>使いながら身につける。</h2><div className="intro-grid"><div><b>01</b><strong>まず結論をつかむ</strong><p>何のために学ぶ回なのかを知る。</p></div><div><b>02</b><strong>具体例で確かめる</strong><p>数字とユウのケースに置き換える。</p></div><div><b>03</b><strong>自分の言葉にする</strong><p>クイズと実践課題で考え直す。</p></div></div><div className="journey"><p className="eyebrow">THE STORY OF 12 WEEKS</p><div><span>守る</span><i>→</i><span>知る</span><i>→</i><span>組み合わせる</span><i>→</i><span>選ぶ</span><i>→</i><span>読む</span><i>→</i><span>ルールにする</span></div><p>前の回で学んだことを、次の回で使います。最後は、12回の知識を自分の投資ルールへまとめます。</p></div></section>
     <section className="map-section" id="curriculum"><div className="section-heading"><p className="eyebrow">YOUR LEARNING MAP</p><h2>全12回の地図</h2><p>「何を買うか」は最後。まず生活を守り、リスクと仕組みを理解してから実践へ進みます。</p></div>{[1,2,3,4,5,6].map(mod=><div className="module-row" key={mod}><div className="module-title"><span>MODULE {String(mod).padStart(2,"0")}</span><strong>{moduleNames[mod-1]}</strong></div><div className="module-lessons">{lessons.map((item,index)=>item.module===mod&&<button key={item.week} className={`lesson-card ${active===index?"active":""}`} onClick={()=>selectLesson(index)}><span className="week">WEEK {String(item.week).padStart(2,"0")}</span><strong>{item.title}</strong><span className="card-bottom">{item.time}<b>{completed.includes(item.week)?"✓ 完了":"→"}</b></span></button>)}</div></div>)}</section>
     <section className="lesson-shell" id="lesson"><aside><p className="week-large">{String(lesson.week).padStart(2,"0")}</p><p className="kicker">{lesson.kicker}</p><div className="side-line"/><p className="side-note">学習時間<br/><strong>{lesson.time}</strong></p><nav className="lesson-nav">{lessons.map((l,i)=><button aria-label={`第${l.week}回へ`} key={l.week} className={active===i?"current":""} onClick={()=>selectLesson(i)}>{l.week}</button>)}</nav></aside><article className="lesson-content"><p className="eyebrow">WEEK {String(lesson.week).padStart(2,"0")} · MODULE {lesson.module}</p><h2>{lesson.title}</h2><p className="summary"><AnnotatedText text={lesson.summary} onTerm={setOpenTerm}/></p><div className="flow-card"><div><span>ここまで</span><p>{active===0?"投資を学ぶ出発点です。まず、お金そのものの価値から考えます。":`前回「${lessons[active-1].title}」で、${lessons[active-1].kicker}を学びました。`}</p></div><div className="flow-now"><span>今回</span><p>{lesson.summary}</p></div><div><span>この次</span><p>{active===lessons.length-1?"12回の知識を、自分のルールとして実行し、記録し、見直していきます。":`次回「${lessons[active+1].title}」で、今回の知識を次の判断へつなげます。`}</p></div></div><p className="term-guide">点線の専門用語を押すと、その場で意味を確認できます。</p><div className="goals"><span>この回のゴール</span>{lesson.goals.map(g=><p key={g}>✓ <AnnotatedText text={g} onTerm={setOpenTerm}/></p>)}</div>{lesson.sections.map(s=><section className="reading-section" key={s.heading}><h3>{s.heading}</h3><p><AnnotatedText text={s.body} onTerm={setOpenTerm}/></p></section>)}<div className="number-example"><span>ユウのケース｜数字で考える</span><h3>{lesson.example.title}</h3><p><AnnotatedText text={lesson.example.body} onTerm={setOpenTerm}/></p></div><div className="warning"><span>よくある誤解</span><p><AnnotatedText text={lesson.mistake} onTerm={setOpenTerm}/></p></div><div className="practice"><span>今週の実践課題</span><p><AnnotatedText text={lesson.task} onTerm={setOpenTerm}/></p></div><div className="quiz"><p className="eyebrow">UNDERSTANDING CHECK</p><h3>3問すべて、自分の言葉で考えてから選ぼう。</h3>{lesson.quizzes.map((q,qi)=><div className="quiz-item" key={q.question}><h4>{qi+1}. {q.question}</h4><div className="choices">{q.choices.map((c,ci)=><button key={c} onClick={()=>{const next=[...answers];next[qi]=ci;setAnswers(next);setChecked(false)}} className={answers[qi]===ci?"selected":""}><span>{String.fromCharCode(65+ci)}</span>{c}</button>)}</div>{checked&&<p className={answers[qi]===q.answer?"correct":"wrong"}>{answers[qi]===q.answer?"正解。":"もう一度考えよう。"} {q.explanation}</p>}</div>)}<button className="check" onClick={checkAnswers} disabled={answers.some(a=>a===null)}>採点する</button>{checked&&allCorrect&&<p className="completion">✓ 第{lesson.week}回を完了しました</p>}</div><div className="talk-card"><span>親子で話す問い</span><p>「{lesson.talk}」</p></div><div className="sources"><span>公式資料・さらに学ぶ</span>{lesson.sources.map(s=><a href={s.url} target="_blank" rel="noreferrer" key={s.url}>{s.label} ↗</a>)}</div><div className="lesson-actions">{active>0&&<button onClick={()=>selectLesson(active-1)}>← 前の回</button>}{active<lessons.length-1&&<button className="next" onClick={()=>selectLesson(active+1)}>次の回 →</button>}</div></article></section>
     <section className="future-monetization"><p className="eyebrow">INDEPENDENT FIRST</p><h2>教材と広告を、混ぜない。</h2><p>将来、証券口座・書籍・学習サービスの比較記事を追加する場合も、広告であること、比較基準、費用、デメリット、更新日を明示します。報酬の高さではなく、学習者の目的との適合を優先します。</p><div><span>学習教材</span><b>理解と判断力を育てる</b><span>比較ガイド</span><b>選択肢を公平に比べる</b><span>広告</span><b>明確に表示して分離する</b></div></section>
-    <section className="principle"><p className="eyebrow">OUR PRINCIPLE</p><blockquote>何を買うかより、<br/><em>なぜそう考えたか。</em></blockquote><p>本サイトは金融教育を目的とし、個別の投資助言や特定商品の推奨を行うものではありません。投資には元本割れを含むリスクがあります。制度や数値は公式情報で最新内容をご確認ください。</p></section>
+    <section className="principle"><p className="eyebrow">OUR PRINCIPLE</p><blockquote>自分のルールを作り、<br/><em>そのルールを守る。</em></blockquote><p>本サイトは金融教育を目的とし、個別の投資助言や特定商品の推奨を行うものではありません。投資には元本割れを含むリスクがあります。制度や数値は公式情報で最新内容をご確認ください。</p></section>
     <footer><div className="brand"><span className="brand-mark">18</span><span>投資の地図</span></div><p>© 2026 Investment Map. Learn first, decide for yourself.</p></footer>
     {openTerm && <div className="term-overlay" role="presentation" onClick={()=>setOpenTerm(null)}><section className="term-window" role="dialog" aria-modal="true" aria-labelledby="term-title" onClick={e=>e.stopPropagation()}><button className="term-close" aria-label="用語説明を閉じる" onClick={()=>setOpenTerm(null)}>×</button><p className="eyebrow">INVESTMENT WORD</p><h2 id="term-title">{openTerm}</h2><p className="term-short">{glossary[openTerm].short}</p><div><span>もう少し詳しく</span><p>{glossary[openTerm].detail}</p></div><button className="term-deep" onClick={()=>goToLesson(glossary[openTerm].lesson)}>第{glossary[openTerm].lesson}回で詳しく学ぶ <b>→</b></button></section></div>}
   </main>;
