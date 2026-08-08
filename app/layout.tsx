@@ -7,7 +7,7 @@ const mincho = Shippori_Mincho({ variable: "--font-serif", subsets: ["latin"], w
 
 export const metadata: Metadata = {
   title: "18歳からの投資の地図",
-  description: "お金と経済の仕組みを知り、自分で判断するための週1回・5分の投資レッスン。",
+  description: "知識ゼロから家計、経済、金融商品、企業分析、実践まで学ぶ全12回の投資講座。",
   other: { "codex-preview": "development" },
 };
 
