@@ -255,11 +255,53 @@ const lessons: Lesson[] = [
 
 const moduleNames = ["お金と生活", "資産とリスク", "長期運用", "制度とコスト", "企業と経済", "防御と実践"];
 
+type GlossaryItem = { short: string; detail: string; lesson: number };
+const glossary: Record<string, GlossaryItem> = {
+  "購買力": { short: "同じ金額で、実際にどれだけの商品やサービスを買えるか。", detail: "お金の額面ではなく、実質的な価値を見るための考え方です。物価が上がると、同じ1万円でも買える量は減ります。", lesson: 1 },
+  "インフレ": { short: "モノやサービスの価格が全体として継続的に上がる状態。", detail: "需要、原材料、賃金、為替など複数の要因で起こります。資産運用では現金の購買力が下がるリスクとして考えます。", lesson: 1 },
+  "消費者物価指数": { short: "家計が購入する幅広い商品・サービスの価格変化を測る指数。", detail: "英語ではCPI。特定商品の値上げではなく、物価全体の動きを捉える代表的な統計です。", lesson: 1 },
+  "CPI": { short: "Consumer Price Index。日本語では消費者物価指数。", detail: "基準時点と比べて、家計が購入する商品・サービスの価格がどれだけ変化したかを示します。", lesson: 1 },
+  "実質金利": { short: "名目金利から物価上昇率を差し引いて考える金利。", detail: "預金が増えた額ではなく、購買力がどれだけ増減したかを見る目安です。厳密な計算と概算は異なります。", lesson: 1 },
+  "生活防衛資金": { short: "病気・失業・急な出費に備えて、すぐ使える形で確保するお金。", detail: "相場下落時に投資資産を売らずに済むため、長期投資を続ける土台にもなります。", lesson: 2 },
+  "株式": { short: "会社の一部を所有する権利。", detail: "株主は企業成長の成果を受けられる一方、事業悪化や倒産による損失も引き受けます。", lesson: 3 },
+  "債券": { short: "国や会社などへお金を貸したことを示す証券。", detail: "原則として利息と満期時の元本返済を受けますが、信用悪化、金利上昇、途中売却などによる損失があります。", lesson: 3 },
+  "投資信託": { short: "多くの投資家のお金をまとめ、専門家が複数資産へ投資する仕組み。", detail: "少額で分散しやすい一方、中身、リスク、信託報酬などの費用を確認する必要があります。", lesson: 3 },
+  "元本割れ": { short: "売却時などに、受取額が投資した元の金額を下回ること。", detail: "投資商品には元本保証がないものが多く、手数料や為替も損益へ影響します。", lesson: 4 },
+  "リターン": { short: "投資から得た収益または損失の割合。", detail: "値上がり益、配当、利息などを含みます。過去のリターンは将来の結果を保証しません。", lesson: 4 },
+  "レバレッジ": { short: "元手より大きな金額を取引する仕組み。", detail: "利益を拡大できる一方、損失も拡大し、場合によっては元手を超える損失が生じます。", lesson: 4 },
+  "複利": { short: "得た利益も元本へ加え、次の利益を生む仕組み。", detail: "時間が長いほど効果は大きくなりますが、例示される利回りは保証ではありません。", lesson: 5 },
+  "積立投資": { short: "決まった金額を定期的に投資する方法。", detail: "購入時期を分け、タイミングの迷いを減らせます。ただし投資対象そのものの下落リスクは残ります。", lesson: 5 },
+  "ポートフォリオ": { short: "保有する資産の組み合わせ。", detail: "株式・債券・現金、地域、業種などの配分を通じて、目的に合ったリスクとリターンを設計します。", lesson: 6 },
+  "リバランス": { short: "変化した資産配分を、あらかじめ決めた比率へ戻すこと。", detail: "値上がりした資産の一部を減らし、比率が下がった資産を増やすなど、ルールに沿ってリスクを調整します。", lesson: 6 },
+  "NISA": { short: "対象となる投資利益を非課税にする制度。", detail: "商品名ではなく口座の制度です。非課税でも、購入した金融商品の価格変動リスクはなくなりません。", lesson: 7 },
+  "損益通算": { short: "一定の利益と損失を相殺して税額を計算する仕組み。", detail: "NISA口座内の損失は税務上ないものとされ、課税口座の利益との損益通算はできません。", lesson: 7 },
+  "信託報酬": { short: "投資信託を保有している間、資産から継続的に差し引かれる費用。", detail: "年率で表示されます。小さな差でも長期では運用結果へ影響するため、同種商品を比べる重要項目です。", lesson: 8 },
+  "スプレッド": { short: "買値と売値の差。実質的な取引コストになる。", detail: "手数料無料でもスプレッドが広ければ取引コストは大きくなります。商品や時間帯で変化します。", lesson: 8 },
+  "為替": { short: "異なる国の通貨を交換するときの比率。", detail: "海外資産の円換算リターンは、資産価格と為替の両方から影響を受けます。", lesson: 8 },
+  "営業利益": { short: "企業が本業で生み出した利益。", detail: "売上高から売上原価と販売費・一般管理費を差し引きます。本業の収益力を見る基本指標です。", lesson: 9 },
+  "キャッシュフロー": { short: "企業や家計における現金の流れ。", detail: "企業では営業・投資・財務に分けて確認します。会計上の利益と実際の現金増減は一致しないことがあります。", lesson: 9 },
+  "PER": { short: "株価が1株当たり利益の何倍かを示す指標。", detail: "株価収益率。業種や成長率で妥当水準が異なるため、PERだけで割安・割高は決められません。", lesson: 9 },
+  "政策金利": { short: "中央銀行が金融政策で誘導する基準的な短期金利。", detail: "借入、預金、債券、為替、企業投資などへ波及します。市場は変更そのものより事前予想との差で動くことがあります。", lesson: 10 },
+  "織り込み": { short: "将来予想が、すでに現在の価格へ反映されていること。", detail: "良いニュースで価格が下がる場合、内容が事前期待を下回った可能性があります。ニュースと価格を単純に結びつけないための概念です。", lesson: 10 },
+  "確証バイアス": { short: "自分の考えに合う情報を重く見て、反対情報を軽視する傾向。", detail: "保有銘柄への思い入れで起きやすいため、購入前に反対材料と売却条件も記録します。", lesson: 11 },
+  "資産配分": { short: "資金を株式・債券・現金などへ、どの比率で振り分けるか。", detail: "運用結果と値動きの大部分を左右する設計です。目的、期間、損失許容度に合わせます。", lesson: 12 },
+};
+
+const glossaryTerms = Object.keys(glossary).sort((a, b) => b.length - a.length);
+const glossaryPattern = new RegExp(`(${glossaryTerms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "g");
+
+function AnnotatedText({ text, onTerm }: { text: string; onTerm: (term: string) => void }) {
+  return <>{text.split(glossaryPattern).map((part, index) => glossary[part]
+    ? <button type="button" className="term" onClick={() => onTerm(part)} key={`${part}-${index}`}>{part}<sup>?</sup></button>
+    : <span key={`${part}-${index}`}>{part}</span>)}</>;
+}
+
 export default function Home() {
   const [active, setActive] = useState(0);
   const [completed, setCompleted] = useState<number[]>([]);
   const [answers, setAnswers] = useState<(number | null)[]>([null, null, null]);
   const [checked, setChecked] = useState(false);
+  const [openTerm, setOpenTerm] = useState<string | null>(null);
 
   useEffect(() => { const saved = localStorage.getItem("investment-map-progress-v2"); if (saved) setCompleted(JSON.parse(saved)); }, []);
   const lesson = lessons[active];
@@ -267,6 +309,7 @@ export default function Home() {
   const allCorrect = lesson.quizzes.every((q, i) => answers[i] === q.answer);
 
   function selectLesson(index: number) { setActive(index); setAnswers([null, null, null]); setChecked(false); setTimeout(() => document.getElementById("lesson")?.scrollIntoView({ behavior: "smooth" }), 20); }
+  function goToLesson(week: number) { setOpenTerm(null); selectLesson(week - 1); }
   function checkAnswers() {
     setChecked(true);
     if (allCorrect && !completed.includes(lesson.week)) { const next = [...completed, lesson.week]; setCompleted(next); localStorage.setItem("investment-map-progress-v2", JSON.stringify(next)); }
@@ -275,11 +318,12 @@ export default function Home() {
   return <main>
     <header className="topbar"><a className="brand" href="#top"><span className="brand-mark">18</span><span>投資の地図</span></a><div className="progress-mini"><span>{progress}%</span><div><i style={{ width: `${progress}%` }} /></div></div></header>
     <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">12-WEEK INVESTMENT FOUNDATION</p><h1>未来のお金を、<br/><em>自分で考える力</em>を。</h1><p className="lead">銘柄の答えではなく、一生使える判断の順序を学ぶ。知識ゼロから家計、経済、金融商品、企業分析、実践まで進む全12回の講座です。</p><button className="primary" onClick={() => document.getElementById("curriculum")?.scrollIntoView({behavior:"smooth"})}>学習を始める <span>→</span></button></div><div className="hero-orbit" aria-hidden="true"><div className="orbit"/><div className="orbit orbit-two"/><div className="coin"><span>¥</span></div><span className="orbit-label label-a">THINK</span><span className="orbit-label label-b">LEARN</span><span className="orbit-label label-c">DECIDE</span></div></section>
-    <section className="course-intro"><p className="eyebrow">HOW TO LEARN</p><h2>15分で理解する。<br/>1週間かけて考える。</h2><div className="intro-grid"><div><b>01</b><strong>全体をつかむ</strong><p>学習目標と結論を先に確認。</p></div><div><b>02</b><strong>仕組みを理解</strong><p>数字・具体例・誤解まで読む。</p></div><div><b>03</b><strong>自分で判断</strong><p>クイズと実践課題で言語化。</p></div></div></section>
+    <section className="course-intro"><p className="eyebrow">HOW TO LEARN</p><h2>15分で理解する。<br/>1週間かけて考える。</h2><div className="intro-grid"><div><b>01</b><strong>全体をつかむ</strong><p>学習目標と結論を先に確認。</p></div><div><b>02</b><strong>仕組みを理解</strong><p>数字・具体例・誤解まで読む。</p></div><div><b>03</b><strong>自分で判断</strong><p>クイズと実践課題で言語化。</p></div></div><div className="journey"><p className="eyebrow">THE STORY OF 12 WEEKS</p><div><span>守る</span><i>→</i><span>知る</span><i>→</i><span>組み合わせる</span><i>→</i><span>選ぶ</span><i>→</i><span>読む</span><i>→</i><span>ルールにする</span></div><p>毎回の知識は次の判断材料になります。最後に、すべてを自分の投資方針へまとめます。</p></div></section>
     <section className="map-section" id="curriculum"><div className="section-heading"><p className="eyebrow">YOUR LEARNING MAP</p><h2>全12回の地図</h2><p>「何を買うか」は最後。まず生活を守り、リスクと仕組みを理解してから実践へ進みます。</p></div>{[1,2,3,4,5,6].map(mod=><div className="module-row" key={mod}><div className="module-title"><span>MODULE {String(mod).padStart(2,"0")}</span><strong>{moduleNames[mod-1]}</strong></div><div className="module-lessons">{lessons.map((item,index)=>item.module===mod&&<button key={item.week} className={`lesson-card ${active===index?"active":""}`} onClick={()=>selectLesson(index)}><span className="week">WEEK {String(item.week).padStart(2,"0")}</span><strong>{item.title}</strong><span className="card-bottom">{item.time}<b>{completed.includes(item.week)?"✓ 完了":"→"}</b></span></button>)}</div></div>)}</section>
-    <section className="lesson-shell" id="lesson"><aside><p className="week-large">{String(lesson.week).padStart(2,"0")}</p><p className="kicker">{lesson.kicker}</p><div className="side-line"/><p className="side-note">学習時間<br/><strong>{lesson.time}</strong></p><nav className="lesson-nav">{lessons.map((l,i)=><button aria-label={`第${l.week}回へ`} key={l.week} className={active===i?"current":""} onClick={()=>selectLesson(i)}>{l.week}</button>)}</nav></aside><article className="lesson-content"><p className="eyebrow">WEEK {String(lesson.week).padStart(2,"0")} · MODULE {lesson.module}</p><h2>{lesson.title}</h2><p className="summary">{lesson.summary}</p><div className="goals"><span>この回のゴール</span>{lesson.goals.map(g=><p key={g}>✓ {g}</p>)}</div>{lesson.sections.map(s=><section className="reading-section" key={s.heading}><h3>{s.heading}</h3><p>{s.body}</p></section>)}<div className="number-example"><span>数字で考える</span><h3>{lesson.example.title}</h3><p>{lesson.example.body}</p></div><div className="warning"><span>よくある誤解</span><p>{lesson.mistake}</p></div><div className="practice"><span>今週の実践課題</span><p>{lesson.task}</p></div><div className="quiz"><p className="eyebrow">UNDERSTANDING CHECK</p><h3>3問すべて、自分の言葉で考えてから選ぼう。</h3>{lesson.quizzes.map((q,qi)=><div className="quiz-item" key={q.question}><h4>{qi+1}. {q.question}</h4><div className="choices">{q.choices.map((c,ci)=><button key={c} onClick={()=>{const next=[...answers];next[qi]=ci;setAnswers(next);setChecked(false)}} className={answers[qi]===ci?"selected":""}><span>{String.fromCharCode(65+ci)}</span>{c}</button>)}</div>{checked&&<p className={answers[qi]===q.answer?"correct":"wrong"}>{answers[qi]===q.answer?"正解。":"もう一度考えよう。"} {q.explanation}</p>}</div>)}<button className="check" onClick={checkAnswers} disabled={answers.some(a=>a===null)}>採点する</button>{checked&&allCorrect&&<p className="completion">✓ 第{lesson.week}回を完了しました</p>}</div><div className="talk-card"><span>親子で話す問い</span><p>「{lesson.talk}」</p></div><div className="sources"><span>公式資料・さらに学ぶ</span>{lesson.sources.map(s=><a href={s.url} target="_blank" rel="noreferrer" key={s.url}>{s.label} ↗</a>)}</div><div className="lesson-actions">{active>0&&<button onClick={()=>selectLesson(active-1)}>← 前の回</button>}{active<lessons.length-1&&<button className="next" onClick={()=>selectLesson(active+1)}>次の回 →</button>}</div></article></section>
+    <section className="lesson-shell" id="lesson"><aside><p className="week-large">{String(lesson.week).padStart(2,"0")}</p><p className="kicker">{lesson.kicker}</p><div className="side-line"/><p className="side-note">学習時間<br/><strong>{lesson.time}</strong></p><nav className="lesson-nav">{lessons.map((l,i)=><button aria-label={`第${l.week}回へ`} key={l.week} className={active===i?"current":""} onClick={()=>selectLesson(i)}>{l.week}</button>)}</nav></aside><article className="lesson-content"><p className="eyebrow">WEEK {String(lesson.week).padStart(2,"0")} · MODULE {lesson.module}</p><h2>{lesson.title}</h2><p className="summary"><AnnotatedText text={lesson.summary} onTerm={setOpenTerm}/></p><div className="flow-card"><div><span>ここまで</span><p>{active===0?"投資を学ぶ出発点です。まず、お金そのものの価値から考えます。":`前回「${lessons[active-1].title}」で、${lessons[active-1].kicker}を学びました。`}</p></div><div className="flow-now"><span>今回</span><p>{lesson.summary}</p></div><div><span>この次</span><p>{active===lessons.length-1?"12回の知識を、自分のルールとして実行し、記録し、見直していきます。":`次回「${lessons[active+1].title}」で、今回の知識を次の判断へつなげます。`}</p></div></div><p className="term-guide">点線の専門用語を押すと、その場で意味を確認できます。</p><div className="goals"><span>この回のゴール</span>{lesson.goals.map(g=><p key={g}>✓ <AnnotatedText text={g} onTerm={setOpenTerm}/></p>)}</div>{lesson.sections.map(s=><section className="reading-section" key={s.heading}><h3>{s.heading}</h3><p><AnnotatedText text={s.body} onTerm={setOpenTerm}/></p></section>)}<div className="number-example"><span>ユウのケース｜数字で考える</span><h3>{lesson.example.title}</h3><p><AnnotatedText text={lesson.example.body} onTerm={setOpenTerm}/></p></div><div className="warning"><span>よくある誤解</span><p><AnnotatedText text={lesson.mistake} onTerm={setOpenTerm}/></p></div><div className="practice"><span>今週の実践課題</span><p><AnnotatedText text={lesson.task} onTerm={setOpenTerm}/></p></div><div className="quiz"><p className="eyebrow">UNDERSTANDING CHECK</p><h3>3問すべて、自分の言葉で考えてから選ぼう。</h3>{lesson.quizzes.map((q,qi)=><div className="quiz-item" key={q.question}><h4>{qi+1}. {q.question}</h4><div className="choices">{q.choices.map((c,ci)=><button key={c} onClick={()=>{const next=[...answers];next[qi]=ci;setAnswers(next);setChecked(false)}} className={answers[qi]===ci?"selected":""}><span>{String.fromCharCode(65+ci)}</span>{c}</button>)}</div>{checked&&<p className={answers[qi]===q.answer?"correct":"wrong"}>{answers[qi]===q.answer?"正解。":"もう一度考えよう。"} {q.explanation}</p>}</div>)}<button className="check" onClick={checkAnswers} disabled={answers.some(a=>a===null)}>採点する</button>{checked&&allCorrect&&<p className="completion">✓ 第{lesson.week}回を完了しました</p>}</div><div className="talk-card"><span>親子で話す問い</span><p>「{lesson.talk}」</p></div><div className="sources"><span>公式資料・さらに学ぶ</span>{lesson.sources.map(s=><a href={s.url} target="_blank" rel="noreferrer" key={s.url}>{s.label} ↗</a>)}</div><div className="lesson-actions">{active>0&&<button onClick={()=>selectLesson(active-1)}>← 前の回</button>}{active<lessons.length-1&&<button className="next" onClick={()=>selectLesson(active+1)}>次の回 →</button>}</div></article></section>
     <section className="future-monetization"><p className="eyebrow">INDEPENDENT FIRST</p><h2>教材と広告を、混ぜない。</h2><p>将来、証券口座・書籍・学習サービスの比較記事を追加する場合も、広告であること、比較基準、費用、デメリット、更新日を明示します。報酬の高さではなく、学習者の目的との適合を優先します。</p><div><span>学習教材</span><b>理解と判断力を育てる</b><span>比較ガイド</span><b>選択肢を公平に比べる</b><span>広告</span><b>明確に表示して分離する</b></div></section>
     <section className="principle"><p className="eyebrow">OUR PRINCIPLE</p><blockquote>何を買うかより、<br/><em>なぜそう考えたか。</em></blockquote><p>本サイトは金融教育を目的とし、個別の投資助言や特定商品の推奨を行うものではありません。投資には元本割れを含むリスクがあります。制度や数値は公式情報で最新内容をご確認ください。</p></section>
     <footer><div className="brand"><span className="brand-mark">18</span><span>投資の地図</span></div><p>© 2026 Investment Map. Learn first, decide for yourself.</p></footer>
+    {openTerm && <div className="term-overlay" role="presentation" onClick={()=>setOpenTerm(null)}><section className="term-window" role="dialog" aria-modal="true" aria-labelledby="term-title" onClick={e=>e.stopPropagation()}><button className="term-close" aria-label="用語説明を閉じる" onClick={()=>setOpenTerm(null)}>×</button><p className="eyebrow">INVESTMENT WORD</p><h2 id="term-title">{openTerm}</h2><p className="term-short">{glossary[openTerm].short}</p><div><span>もう少し詳しく</span><p>{glossary[openTerm].detail}</p></div><button className="term-deep" onClick={()=>goToLesson(glossary[openTerm].lesson)}>第{glossary[openTerm].lesson}回で詳しく学ぶ <b>→</b></button></section></div>}
   </main>;
 }
