@@ -32,6 +32,7 @@ h1 em, blockquote em { font-style:normal; box-shadow:inset 0 -.28em var(--lime);
 .section-heading { display:grid; grid-template-columns:1fr 1fr; align-items:end; margin-bottom:40px; }
 .section-heading .eyebrow { color:#aeb8b0; grid-column:1/-1; }.section-heading h2 { font-size:50px; margin:10px 0; }.section-heading>p:last-child { color:#b8c0ba; max-width:420px; justify-self:end; }
 .module-row{display:grid;grid-template-columns:190px 1fr;gap:24px;padding:24px 0;border-top:1px solid #46564b}.module-title{display:flex;flex-direction:column;gap:9px}.module-title span{font-size:9px;letter-spacing:.2em;color:#99a59c}.module-title strong{font:600 20px var(--font-serif)}.module-lessons{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.module-row.practice-start{position:relative;margin-top:72px;border-top:2px solid var(--lime);padding-top:54px}.phase-label{position:absolute;top:15px;left:0;grid-column:1/-1;color:var(--lime);font-size:11px;letter-spacing:.18em;font-weight:700}
 .lesson-card { min-height:210px; text-align:left; border:1px solid #536158; color:white; background:transparent; padding:24px; display:flex; flex-direction:column; transition:.2s; }
 .lesson-card:hover,.lesson-card.active { background:var(--lime); color:var(--ink); border-color:var(--lime); transform:translateY(-4px); }
 .lesson-card .week { font-size:10px; letter-spacing:.18em; }.lesson-card strong { font:600 22px/1.5 var(--font-serif); margin-top:24px; }.card-bottom { margin-top:auto; display:flex; justify-content:space-between; font-size:12px; }.card-bottom b { color:inherit; }

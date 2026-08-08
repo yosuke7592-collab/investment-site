@@ -251,9 +251,169 @@ const lessons: Lesson[] = [
     ],
     sources: [{ label: "J-FLEC｜標準講義資料 2026年版", url: "https://www.j-flec.go.jp/announcements/news/23568/" }, { label: "金融庁｜資産形成の基本", url: "https://www.fsa.go.jp/policy/nisa2/invest/" }],
   },
+  {
+    week: 13, module: 7, kicker: "実践の入口", title: "どこで、どの口座から始める？", time: "22分",
+    summary: "実践編の最初は、証券会社と口座の役割を整理します。口座を開くことと、投資商品を選ぶことは別の判断です。",
+    goals: ["証券会社と銀行の役割の違いを説明できる", "NISA・特定口座・一般口座を区別できる", "口座を比較する基準を持つ"],
+    sections: [
+      { heading: "01｜投資商品は、証券口座を通して売買する", body: "株式や投資信託は、主に証券会社の口座から買います。銀行でも投資信託を扱いますが、商品の数や手数料は会社ごとに違います。大切なのは有名さだけで選ばず、買いたい商品、費用、使いやすさ、安全対策を比べることです。" },
+      { heading: "02｜NISAは非課税、特定口座は税計算を任せやすい", body: "NISA口座では対象商品の利益が非課税になります。特定口座の「源泉徴収あり」なら、証券会社が税金を計算して差し引くため、初心者には管理しやすい方法です。一般口座は自分で損益を計算する場面が増えます。口座の名前ではなく、税金を誰が計算するかで理解します。" },
+      { heading: "03｜比較するのは、商品・費用・操作・安全性", body: "確認するのは、①買える商品、②売買や為替の費用、③積立設定、④画面の分かりやすさ、⑤問い合わせ対応、⑥二段階認証などの安全性です。ポイント還元は最後に比べます。最初に買う商品が決まっていないなら、先に学習を進めても遅くありません。" },
+    ],
+    example: { title: "3社を同じ表で比べる", body: "ユウは候補3社について、欲しい投資信託の有無、売買手数料、最低積立額、アプリの見やすさ、二段階認証を一覧にしました。広告の順位ではなく、自分の目的に必要な条件で比べます。" },
+    mistake: "口座を開けば投資を始めたことになる、という誤解。口座は道具です。入金や購入は、商品と金額を理解してから行います。",
+    task: "証券会社3社を選び、商品・費用・積立・操作性・安全性の5項目で比較表を作る。まだ口座開設はしなくてよい。",
+    talk: "自分が口座を選ぶなら、手数料と使いやすさのどちらを重く見る？なぜ？",
+    quizzes: [
+      { question: "NISAとは何？", choices: ["証券会社の名前", "利益が非課税になる制度", "元本保証の商品"], answer: 1, explanation: "NISAは税制上の口座で、商品そのものではありません。" },
+      { question: "特定口座の特徴は？", choices: ["税計算を証券会社に任せやすい", "損をしない", "どの商品も無料"], answer: 0, explanation: "年間の損益計算を証券会社が行います。" },
+      { question: "口座比較で最初に見るものは？", choices: ["広告の派手さ", "目的に必要な商品・費用・安全性", "キャンペーンだけ"], answer: 1, explanation: "自分の目的に必要な条件から比べます。" },
+    ],
+    sources: [{ label: "金融庁｜NISAを知る", url: "https://www.fsa.go.jp/policy/nisa2/know/index.html" }, { label: "日本証券業協会｜投資を始める方へ", url: "https://www.jsda.or.jp/start/" }],
+  },
+  {
+    week: 14, module: 7, kicker: "注文の仕組み", title: "買う・売るは、どう成立する？", time: "23分",
+    summary: "注文画面の言葉を覚えるだけでなく、価格と数量を誰とどう交換するのかを理解します。",
+    goals: ["成行注文と指値注文を使い分けられる", "注文から約定までの流れを説明できる", "注文前の確認項目を持つ"],
+    sections: [
+      { heading: "01｜注文を出しても、必ずその価格で買えるとは限らない", body: "市場では、買いたい人と売りたい人の条件が合った時に取引が成立します。この成立を約定といいます。画面に見える価格は直前の取引価格であり、自分の注文価格とは限りません。注文前に銘柄、売買区分、数量、価格、口座区分を確認します。" },
+      { heading: "02｜成行は価格を指定せず、指値は上限・下限を決める", body: "成行注文は価格を指定せず、成立を優先します。取引が少ない銘柄や相場が急変している時は、想定外の価格になることがあります。指値注文は、買う上限価格や売る下限価格を決めますが、その価格に届かなければ成立しません。速さと価格のどちらを優先するかの違いです。" },
+      { heading: "03｜投資信託は、注文時に価格が確定していない", body: "一般的な投資信託は、一日一回計算される基準価額で売買します。注文した時点では、最終的な価格がまだ分からないことがあります。株式のリアルタイム価格とは仕組みが違います。商品ごとの注文締切、約定日、受渡日を確認します。" },
+    ],
+    example: { title: "1株1,000円に見えても", body: "ユウが成行で100株を注文した時、売り注文が1,000円に30株、1,005円に40株、1,010円に30株しかなければ、平均購入価格は1,005円になります。表示価格だけで総額を決めつけません。" },
+    mistake: "指値なら必ず有利に買える、という誤解。希望価格に届かなければ取引は成立せず、機会を逃すこともあります。",
+    task: "実際の注文は出さず、証券会社のデモ画面や説明ページで、銘柄・数量・成行／指値・口座区分の位置を確認する。",
+    talk: "価格を確実にしたい時と、成立を優先したい時は、それぞれどんな場面？",
+    quizzes: [
+      { question: "成行注文が優先するものは？", choices: ["指定価格", "取引の成立", "配当"], answer: 1, explanation: "価格を指定せず、成立を優先します。" },
+      { question: "指値注文が成立しない場合は？", choices: ["希望価格に届かなかった", "口座が必ず壊れた", "税金がゼロになった"], answer: 0, explanation: "相手の注文と条件が合わなければ成立しません。" },
+      { question: "一般的な投資信託の価格は？", choices: ["常にリアルタイム", "一日一回の基準価額", "買う人が自由に決める"], answer: 1, explanation: "多くは一日一回算出される基準価額で取引します。" },
+    ],
+    sources: [{ label: "JPX｜株式の売買制度", url: "https://www.jpx.co.jp/equities/trading/domestic/index.html" }, { label: "投資信託協会｜投資信託の基礎", url: "https://www.toushin.or.jp/investmenttrust/" }],
+  },
+  {
+    week: 15, module: 8, kicker: "商品を選ぶ", title: "投資信託を5項目で比べる", time: "24分",
+    summary: "人気ランキングではなく、中身・範囲・費用・規模・運用実績を同じ順番で確認します。",
+    goals: ["目論見書から投資対象を確認できる", "インデックスと運用商品の関係を説明できる", "似た商品を同じ基準で比較できる"],
+    sections: [
+      { heading: "01｜最初に見るのは、どこへ何％投資しているか", body: "商品名より先に、国内か海外か、株式か債券か、何社に分散しているかを見ます。「世界株式」でも対象国や小型株の扱いは商品によって違います。目論見書の目的・特色・投資リスクを読み、自分の資産配分と重ならないかを確認します。" },
+      { heading: "02｜指数は地図、投資信託はその地図を走る乗り物", body: "インデックスは、市場全体の動きを表す基準です。インデックスファンドは、その指数に近い値動きを目指します。同じ指数を目指す商品でも、信託報酬、指数とのずれ、純資産総額、運用年数が違います。名前ではなく、実際にどれだけ安定して追えているかを見ます。" },
+      { heading: "03｜5項目を同じ表で比較する", body: "見る順番は、①投資対象、②連動する指数、③信託報酬などの費用、④純資産総額と資金流入、⑤運用実績です。過去のリターンが一番高い商品を選ぶのではありません。目的が同じ商品同士を比べ、長く保有できる条件を確認します。" },
+    ],
+    example: { title: "同じ指数の2商品を比較", body: "Aは信託報酬0.10%、純資産1兆円、運用10年。Bは0.08%、純資産20億円、運用6か月。Bの費用は低いですが、規模と実績はAが上です。0.02%だけで即決せず、全体を見ます。" },
+    mistake: "直近1年で一番上がった商品が最善とは限りません。上昇後に人気化しただけの場合もあり、今後の成果を保証しません。",
+    task: "同じ指数に連動する投資信託を2本選び、5項目の比較表を完成させる。どちらを選ぶかと理由を一文で書く。",
+    talk: "費用が少し高くても、規模と実績が十分な商品を選ぶ場面はある？",
+    quizzes: [
+      { question: "商品比較の最初に見るものは？", choices: ["投資対象", "広告出演者", "愛称"], answer: 0, explanation: "何に投資する商品かが最初です。" },
+      { question: "インデックスファンドの目的は？", choices: ["指数に近い値動きを目指す", "必ず市場に勝つ", "元本を保証する"], answer: 0, explanation: "特定の指数への連動を目指します。" },
+      { question: "信託報酬以外に見るものは？", choices: ["純資産総額や運用実績", "ロゴだけ", "口コミの数だけ"], answer: 0, explanation: "継続性と運用の安定も確認します。" },
+    ],
+    sources: [{ label: "投資信託協会｜投資信託を学ぶ", url: "https://www.toushin.or.jp/investmenttrust/" }, { label: "金融庁｜つみたて投資枠対象商品", url: "https://www.fsa.go.jp/policy/nisa2/about/tsumitate/target/index.html" }],
+  },
+  {
+    week: 16, module: 8, kicker: "会社を調べる", title: "個別株を買う前の5つの質問", time: "27分",
+    summary: "銘柄コードやチャートを見る前に、会社が何で稼ぎ、なぜ今後も選ばれるのかを調べます。",
+    goals: ["企業の稼ぐ仕組みを一文で説明できる", "成長の理由と崩れる条件を分けられる", "一次資料から投資仮説を作れる"],
+    sections: [
+      { heading: "01｜その会社は、誰に何を売っているか", body: "最初の質問は「誰が、何にお金を払っているか」です。売上の大きい事業、利益率の高い事業、国内外の比率を確認します。会社名を知っていることと、稼ぎ方を理解していることは違います。自分の言葉で一文にできなければ、まだ調査の途中です。" },
+      { heading: "02｜売上と利益は、なぜ増えるのか", body: "店舗数、利用者数、単価、継続率、市場の成長など、数字を動かす原因を探します。「将来性がある」では足りません。何がどれだけ増えれば利益が伸びるのか、そのために必要な費用は何かまで考えます。競合他社と比べると強みと弱みが見えます。" },
+      { heading: "03｜買う理由と同じくらい、間違いの条件を書く", body: "投資仮説とは「この条件が続けば、企業価値が高まる」という自分の考えです。同時に、顧客離れ、競争激化、規制、原価上昇など、仮説が崩れる条件を書きます。決算のたびに、株価ではなく仮説が続いているかを確認します。" },
+    ],
+    example: { title: "身近なサービスを5問で調べる", body: "①顧客は誰か、②何で売上が立つか、③利益率は上がっているか、④競合より強い理由は何か、⑤その強みが崩れる条件は何か。ユウは決算説明資料の数字を使い、各問を一文で答えます。" },
+    mistake: "良いサービスを使っているから良い株、とは限りません。会社の質が高くても、株価が期待を織り込みすぎていれば投資結果は悪くなることがあります。",
+    task: "身近な上場企業を1社選び、決算短信と決算説明資料を読み、5つの質問へ一文ずつ答える。まだ購入しない。",
+    talk: "好きな会社について、買わない理由を3つ挙げられる？",
+    quizzes: [
+      { question: "企業調査の最初の質問は？", choices: ["誰に何を売っているか", "明日の株価", "SNSの人気"], answer: 0, explanation: "まず事業の仕組みを理解します。" },
+      { question: "投資仮説に必要なものは？", choices: ["上がる理由だけ", "続く条件と崩れる条件", "社名の印象"], answer: 1, explanation: "反対の条件も事前に決めます。" },
+      { question: "一次資料として適切なのは？", choices: ["企業の決算短信", "匿名投稿だけ", "切り抜き動画だけ"], answer: 0, explanation: "企業が公表する正式な資料を確認します。" },
+    ],
+    sources: [{ label: "JPX｜会社情報・適時開示", url: "https://www.jpx.co.jp/listing/disclosure/index.html" }, { label: "EDINET｜開示書類", url: "https://disclosure2.edinet-fsa.go.jp/" }],
+  },
+  {
+    week: 17, module: 9, kicker: "指標を使う", title: "PER・PBR・ROEをどう読む？", time: "26分",
+    summary: "指標は答えではなく、会社へ質問するための道具です。一つの数字だけで割安・割高を決めません。",
+    goals: ["PER・PBR・ROEの意味を説明できる", "同業他社や過去と比較できる", "指標の弱点を理解する"],
+    sections: [
+      { heading: "01｜PERは、利益に対して株価が何倍か", body: "PERは株価を1株当たり利益で割った数字です。高いPERは成長期待を表すこともあれば、期待が高すぎることもあります。低いPERは割安とは限らず、利益減少や事業不安が織り込まれている場合があります。同じ業種と、その会社の過去を比べます。" },
+      { heading: "02｜PBRは純資産、ROEは資本の使い方を見る", body: "PBRは株価が1株当たり純資産の何倍かを示します。ROEは株主が出した資本を使って、どれだけ利益を生んだかを見る指標です。ROEが高くても、大きな借金や一時的な利益が原因なら注意が必要です。数字が高いか低いかより、なぜそうなったかを調べます。" },
+      { heading: "03｜指標は、比較して初めて意味を持つ", body: "業種が違えば、利益率、必要設備、成長速度も違います。銀行とIT企業のPERをそのまま比べても判断しにくい理由です。同業他社、過去5年、会社計画と比べ、数字の変化を事業の出来事と結びつけます。指標は買いボタンではなく、調査を始める入口です。" },
+    ],
+    example: { title: "PER10倍と30倍、どちらが安い？", body: "A社はPER10倍でも利益が毎年減少。B社は30倍でも利益が年20%成長。数字だけでは答えは出ません。成長率、利益の安定性、競争力、金利を加えて初めて比較できます。" },
+    mistake: "PERが低いから買う、ROEが高いから買う、という一指標だけの判断。数字の原因と今後も続くかを確認します。",
+    task: "同じ業種の3社について、PER・PBR・ROE・売上成長率を並べ、違いの理由を一つずつ調べる。",
+    talk: "数字が良すぎる時、どんな理由を疑うべきだと思う？",
+    quizzes: [
+      { question: "PERが低ければ必ず割安？", choices: ["必ず割安", "利益減少などの理由も確認する", "必ず倒産する"], answer: 1, explanation: "低い理由を調べる必要があります。" },
+      { question: "ROEが示すものは？", choices: ["株主資本から利益を生む効率", "株価の翌日予想", "商品の手数料"], answer: 0, explanation: "資本を使って利益を生む効率を見ます。" },
+      { question: "指標の正しい使い方は？", choices: ["一つで売買を決める", "比較し、疑問を見つける", "高い順に買う"], answer: 1, explanation: "指標は調査の入口です。" },
+    ],
+    sources: [{ label: "JPX｜投資の基礎", url: "https://www.jpx.co.jp/learning/basics/index.html" }],
+  },
+  {
+    week: 18, module: 9, kicker: "値動きを読む", title: "チャートと出来高の役割", time: "24分",
+    summary: "チャートは未来を当てる道具ではありません。参加者がどの価格でどう行動したかを整理する道具です。",
+    goals: ["ローソク足と出来高の意味を説明できる", "トレンドと期間の関係を理解する", "チャートの限界を言葉にできる"],
+    sections: [
+      { heading: "01｜一本のローソク足は、4つの価格を表す", body: "ローソク足は、一定期間の始値、高値、安値、終値をまとめたものです。日足なら一日、週足なら一週間を表します。同じ銘柄でも見る期間によって上昇にも下落にも見えます。自分の投資期間に合った時間軸で確認します。" },
+      { heading: "02｜出来高は、何株取引されたか", body: "出来高が増えると、多くの参加者が売買したことが分かります。価格上昇と出来高増加が同時に起きても、その後の上昇を保証するわけではありません。決算発表、指数への採用、大口取引など、なぜ取引が増えたかを企業情報と合わせて考えます。" },
+      { heading: "03｜チャートは売買ルールを実行する補助線", body: "長期投資では事業と価格の妥当性が中心です。チャートは、買う時期を分ける、損失を限定する、感情的な追いかけ買いを避けるために使えます。線の形だけで未来を断定せず、どの条件なら買い、どの条件なら見送るかを先に決めます。" },
+    ],
+    example: { title: "急騰した翌日に買いたくなったら", body: "ユウは理由を確認します。決算による利益見通しの変化か、話題だけの一時的な売買か。買う場合も一度に全額を入れず、価格と数量のルールに戻ります。" },
+    mistake: "チャートの形を覚えれば未来を予測できる、という誤解。同じ形でも、その後の結果は一つではありません。",
+    task: "1銘柄について日足・週足・月足を見比べ、同じ値動きがどう違って見えるかを書く。売買はしない。",
+    talk: "急に値上がりした時、買いたくなる気持ちを止めるルールは何にする？",
+    quizzes: [
+      { question: "ローソク足が示す4価格は？", choices: ["始値・高値・安値・終値", "売上・利益・税金・配当", "円・ドル・金・原油"], answer: 0, explanation: "一定期間の4つの価格を示します。" },
+      { question: "出来高が増えた意味は？", choices: ["必ず上がる", "取引量が増えた", "利益が保証された"], answer: 1, explanation: "売買された数量が増えたことを示します。" },
+      { question: "チャートの役割として適切なのは？", choices: ["未来を確定する", "行動ルールを補助する", "企業分析を不要にする"], answer: 1, explanation: "判断の補助線として使います。" },
+    ],
+    sources: [{ label: "JPX｜株式投資の基礎", url: "https://www.jpx.co.jp/learning/basics/equities/index.html" }],
+  },
+  {
+    week: 19, module: 10, kicker: "手法を選ぶ", title: "投資手法は、目的から選ぶ", time: "27分",
+    summary: "インデックス、成長株、割安株、配当、短期売買を比べ、自分の時間・知識・性格に合う方法を考えます。",
+    goals: ["主な投資手法の違いを説明できる", "手法ごとの必要時間とリスクを比べられる", "手法を混ぜる時のルールを作れる"],
+    sections: [
+      { heading: "01｜手法が違えば、見る数字も売る理由も違う", body: "インデックス投資は市場全体の成長を長期で受け取る方法です。成長株投資は売上や利益の高い成長、割安株投資は価格と企業価値の差、配当投資は継続的な現金収入を重視します。目的が違うため、同じ基準で優劣は決められません。" },
+      { heading: "02｜短期売買は、長期投資より簡単ではない", body: "短期売買は価格変化を利用します。判断回数が多く、手数料、税金、スプレッド、感情の影響を受けやすくなります。学業や仕事中も値動きが続くため、時間管理も必要です。少額でも、ルールと記録なしに始めれば運任せになりやすい方法です。" },
+      { heading: "03｜中心と実験を分ける", body: "一つに決めきれない場合は、長期の資産形成を担う中心部分と、個別株などを学ぶ実験部分を分けます。例えば90%を長期分散、10%を個別株研究にする考え方です。比率を先に決めれば、興味が高まった時も全資産を賭けずに済みます。" },
+    ],
+    example: { title: "ユウの時間に合う方法", body: "大学生活を優先し、毎日相場を見られないユウは、中心を月1回のインデックス積立にします。個別株研究は資産の10%以内とし、決算ごとに確認します。手法を生活へ合わせます。" },
+    mistake: "利益が出た人の手法をそのまま真似すればよい、という誤解。資金、期間、知識、生活時間、損失への耐性が違えば、同じ行動は続きません。",
+    task: "5つの手法を、必要時間・見る情報・主なリスク・売る理由で比較し、自分に合う中心手法を一つ選ぶ。",
+    talk: "投資に毎週どれくらい時間を使える？その時間で続けられる方法は？",
+    quizzes: [
+      { question: "投資手法を選ぶ基準は？", choices: ["SNSの流行", "目的・時間・知識・性格", "去年の利益だけ"], answer: 1, explanation: "自分が続けられる条件から選びます。" },
+      { question: "短期売買で増えやすいものは？", choices: ["判断回数と感情の影響", "元本保証", "自由時間"], answer: 0, explanation: "判断と取引が増える分、管理も難しくなります。" },
+      { question: "中心と実験を分ける目的は？", choices: ["全資産を賭ける", "学びながら致命傷を避ける", "手数料を最大化する"], answer: 1, explanation: "資産形成を守りながら経験を積みます。" },
+    ],
+    sources: [{ label: "金融庁｜長期・積立・分散投資", url: "https://www.fsa.go.jp/policy/nisa2/invest/" }, { label: "JPX｜投資の基礎", url: "https://www.jpx.co.jp/learning/basics/index.html" }],
+  },
+  {
+    week: 20, module: 10, kicker: "最初の一歩", title: "仮想売買から、最初の少額投資へ", time: "30分",
+    summary: "調べる、決める、注文する、記録する、見直す。この一連の流れを仮想資金で試し、最後に少額で実行します。",
+    goals: ["購入前チェックリストを完成できる", "損失額から投資数量を決められる", "売買記録を次の判断へ使える"],
+    sections: [
+      { heading: "01｜買う前に、買わない条件まで書く", body: "商品名、目的、保有期間、買う理由、主なリスク、金額、売る条件を一枚にします。個別株なら仮説が崩れた条件、積立なら家計や資産配分を見直す条件を書きます。価格が動いてから考えると、恐怖と欲に判断を奪われます。" },
+      { heading: "02｜金額ではなく、失っても続けられる範囲から決める", body: "最初の投資額は、利益目標から逆算しません。値下がりした時に生活へ影響せず、学習を続けられる金額にします。個別株では、一回の判断で許容する損失額を先に決め、購入価格と売却条件の差から数量を考える方法もあります。借金とレバレッジは使いません。" },
+      { heading: "03｜記録するのは結果より、判断の過程", body: "記録するのは、日付、商品、価格、数量、買った理由、反対材料、売る条件、感情です。利益が出てもルール違反なら良い判断とは限りません。損失が出ても、決めたルールを守り、誤りを修正できたなら学びになります。月次ではなく、決めた頻度で見直します。" },
+    ],
+    example: { title: "1万円を投資する前の最終確認", body: "ユウは仮想資金で注文までの流れを試し、翌日にもう一度理由を読みます。生活防衛資金に手を付けていない、商品を説明できる、費用を確認した、下落時の行動を決めた。この4つが揃ってから少額で始めます。" },
+    mistake: "最初の投資で正解を当てようとすること。目的は一度で儲けることではなく、自分の判断手順を実際の値動きの中で守れるか確かめることです。",
+    task: "仮想資金10万円で購入計画と記録表を作る。24時間置いて再確認し、全項目を説明できた場合だけ、生活に影響しない少額投資を検討する。",
+    talk: "利益が出ても破ってはいけないルールは何？損失が出た時に見直すものは何？",
+    quizzes: [
+      { question: "買う前に決めるものは？", choices: ["買う理由と売る条件", "利益の保証", "毎日の予想"], answer: 0, explanation: "出口と間違いの条件まで事前に決めます。" },
+      { question: "最初の投資額の基準は？", choices: ["最大利益が出る額", "生活に影響せず続けられる額", "借りられる最大額"], answer: 1, explanation: "損失が出ても学習を続けられる範囲にします。" },
+      { question: "良い投資記録とは？", choices: ["利益だけを書く", "判断理由・反対材料・感情も残す", "負けた取引を消す"], answer: 1, explanation: "結果ではなく判断過程を改善するために記録します。" },
+    ],
+    sources: [{ label: "J-FLEC｜標準講義資料", url: "https://www.j-flec.go.jp/announcements/news/23568/" }, { label: "金融庁｜資産形成の基本", url: "https://www.fsa.go.jp/policy/nisa2/invest/" }],
+  },
 ];
 
-const moduleNames = ["お金と生活", "資産とリスク", "長期運用", "制度とコスト", "企業と経済", "防御と実践"];
+const moduleNames = ["お金と生活", "資産とリスク", "長期運用", "制度とコスト", "企業と経済", "防御と方針", "口座と注文", "商品と企業", "指標と値動き", "手法と実行"];
 
 type GlossaryItem = { short: string; detail: string; lesson: number };
 const glossary: Record<string, GlossaryItem> = {
@@ -285,6 +445,18 @@ const glossary: Record<string, GlossaryItem> = {
   "織り込み": { short: "将来予想が、すでに現在の価格へ反映されていること。", detail: "良いニュースで価格が下がる場合、内容が事前期待を下回った可能性があります。ニュースと価格を単純に結びつけないための概念です。", lesson: 10 },
   "確証バイアス": { short: "自分の考えに合う情報を重く見て、反対情報を軽視する傾向。", detail: "保有銘柄への思い入れで起きやすいため、購入前に反対材料と売却条件も記録します。", lesson: 11 },
   "資産配分": { short: "資金を株式・債券・現金などへ、どの比率で振り分けるか。", detail: "運用結果と値動きの大部分を左右する設計です。目的、期間、損失許容度に合わせます。", lesson: 12 },
+  "特定口座": { short: "証券会社が年間の損益を計算してくれる課税口座。", detail: "源泉徴収ありを選ぶと、原則として証券会社が税金の計算と納付まで行います。NISAとは別の口座区分です。", lesson: 13 },
+  "成行注文": { short: "価格を指定せず、取引の成立を優先する注文。", detail: "早く成立しやすい一方、相場急変時や取引量が少ない銘柄では、想定外の価格で約定することがあります。", lesson: 14 },
+  "指値注文": { short: "買う上限価格、または売る下限価格を指定する注文。", detail: "価格を管理できますが、市場価格が指定した条件に届かなければ取引は成立しません。", lesson: 14 },
+  "約定": { short: "買い注文と売り注文の条件が合い、取引が成立すること。", detail: "注文を出しただけでは保有になりません。約定後、定められた受渡日に代金と金融商品が受け渡されます。", lesson: 14 },
+  "基準価額": { short: "投資信託の一口当たりの値段を示すもの。", detail: "一般的な投資信託では一日一回計算され、注文時には最終価格が分からない場合があります。", lesson: 14 },
+  "インデックス": { short: "市場全体などの値動きを表す指数。", detail: "日経平均株価やTOPIXなどがあり、インデックスファンドは特定の指数に近い値動きを目指します。", lesson: 15 },
+  "純資産総額": { short: "投資信託が保有する資産の合計から負債を引いた金額。", detail: "商品の規模を見る目安です。規模だけで良し悪しは決まりませんが、継続性や運用の安定を見る材料になります。", lesson: 15 },
+  "投資仮説": { short: "どの条件が続けば企業価値が高まるかという自分の考え。", detail: "買う理由だけでなく、考えが間違いになる条件も書き、決算ごとに確認します。", lesson: 16 },
+  "PBR": { short: "株価が1株当たり純資産の何倍かを示す指標。", detail: "株価純資産倍率。同業他社や過去と比べ、事業の収益力や資産の質と一緒に見ます。", lesson: 17 },
+  "ROE": { short: "株主資本から、どれだけ利益を生み出したかを示す指標。", detail: "自己資本利益率。高い場合も、借入や一時利益が原因でないかを確認します。", lesson: 17 },
+  "ローソク足": { short: "一定期間の始値・高値・安値・終値を一本で表す図。", detail: "日足、週足、月足など期間によって見え方が変わるため、自分の投資期間に合わせて使います。", lesson: 18 },
+  "出来高": { short: "一定期間に売買が成立した数量。", detail: "市場参加者の関心や取引の活発さを見る材料ですが、増加だけでその後の上昇は予測できません。", lesson: 18 },
 };
 
 const glossaryTerms = Object.keys(glossary).sort((a, b) => b.length - a.length);
@@ -317,10 +489,10 @@ export default function Home() {
 
   return <main>
     <header className="topbar"><a className="brand" href="#top"><span className="brand-mark">18</span><span>投資の地図</span></a><div className="progress-mini"><span>{progress}%</span><div><i style={{ width: `${progress}%` }} /></div></div></header>
-    <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">12-WEEK INVESTMENT FOUNDATION</p><h1>未来のお金を、<br/><em>自分で考える力</em>を。</h1><p className="lead">「何を買えばいいか」ではなく、「どう考えて決めるか」を学ぶ。知識ゼロから、自分の投資ルールを作るまでの全12回です。</p><button className="primary" onClick={() => document.getElementById("curriculum")?.scrollIntoView({behavior:"smooth"})}>第1回から始める <span>→</span></button></div><div className="hero-orbit" aria-hidden="true"><div className="orbit"/><div className="orbit orbit-two"/><div className="coin"><span>¥</span></div><span className="orbit-label label-a">THINK</span><span className="orbit-label label-b">LEARN</span><span className="orbit-label label-c">DECIDE</span></div></section>
-    <section className="course-intro"><p className="eyebrow">HOW TO LEARN</p><h2>一度で覚えなくていい。<br/>使いながら身につける。</h2><div className="intro-grid"><div><b>01</b><strong>まず結論をつかむ</strong><p>何のために学ぶ回なのかを知る。</p></div><div><b>02</b><strong>具体例で確かめる</strong><p>数字とユウのケースに置き換える。</p></div><div><b>03</b><strong>自分の言葉にする</strong><p>クイズと実践課題で考え直す。</p></div></div><div className="journey"><p className="eyebrow">THE STORY OF 12 WEEKS</p><div><span>守る</span><i>→</i><span>知る</span><i>→</i><span>組み合わせる</span><i>→</i><span>選ぶ</span><i>→</i><span>読む</span><i>→</i><span>ルールにする</span></div><p>前の回で学んだことを、次の回で使います。最後は、12回の知識を自分の投資ルールへまとめます。</p></div></section>
-    <section className="map-section" id="curriculum"><div className="section-heading"><p className="eyebrow">YOUR LEARNING MAP</p><h2>全12回の地図</h2><p>「何を買うか」は最後。まず生活を守り、リスクと仕組みを理解してから実践へ進みます。</p></div>{[1,2,3,4,5,6].map(mod=><div className="module-row" key={mod}><div className="module-title"><span>MODULE {String(mod).padStart(2,"0")}</span><strong>{moduleNames[mod-1]}</strong></div><div className="module-lessons">{lessons.map((item,index)=>item.module===mod&&<button key={item.week} className={`lesson-card ${active===index?"active":""}`} onClick={()=>selectLesson(index)}><span className="week">WEEK {String(item.week).padStart(2,"0")}</span><strong>{item.title}</strong><span className="card-bottom">{item.time}<b>{completed.includes(item.week)?"✓ 完了":"→"}</b></span></button>)}</div></div>)}</section>
-    <section className="lesson-shell" id="lesson"><aside><p className="week-large">{String(lesson.week).padStart(2,"0")}</p><p className="kicker">{lesson.kicker}</p><div className="side-line"/><p className="side-note">学習時間<br/><strong>{lesson.time}</strong></p><nav className="lesson-nav">{lessons.map((l,i)=><button aria-label={`第${l.week}回へ`} key={l.week} className={active===i?"current":""} onClick={()=>selectLesson(i)}>{l.week}</button>)}</nav></aside><article className="lesson-content"><p className="eyebrow">WEEK {String(lesson.week).padStart(2,"0")} · MODULE {lesson.module}</p><h2>{lesson.title}</h2><p className="summary"><AnnotatedText text={lesson.summary} onTerm={setOpenTerm}/></p><div className="flow-card"><div><span>ここまで</span><p>{active===0?"投資を学ぶ出発点です。まず、お金そのものの価値から考えます。":`前回「${lessons[active-1].title}」で、${lessons[active-1].kicker}を学びました。`}</p></div><div className="flow-now"><span>今回</span><p>{lesson.summary}</p></div><div><span>この次</span><p>{active===lessons.length-1?"12回の知識を、自分のルールとして実行し、記録し、見直していきます。":`次回「${lessons[active+1].title}」で、今回の知識を次の判断へつなげます。`}</p></div></div><p className="term-guide">点線の専門用語を押すと、その場で意味を確認できます。</p><div className="goals"><span>この回のゴール</span>{lesson.goals.map(g=><p key={g}>✓ <AnnotatedText text={g} onTerm={setOpenTerm}/></p>)}</div>{lesson.sections.map(s=><section className="reading-section" key={s.heading}><h3>{s.heading}</h3><p><AnnotatedText text={s.body} onTerm={setOpenTerm}/></p></section>)}<div className="number-example"><span>ユウのケース｜数字で考える</span><h3>{lesson.example.title}</h3><p><AnnotatedText text={lesson.example.body} onTerm={setOpenTerm}/></p></div><div className="warning"><span>よくある誤解</span><p><AnnotatedText text={lesson.mistake} onTerm={setOpenTerm}/></p></div><div className="practice"><span>今週の実践課題</span><p><AnnotatedText text={lesson.task} onTerm={setOpenTerm}/></p></div><div className="quiz"><p className="eyebrow">UNDERSTANDING CHECK</p><h3>3問すべて、自分の言葉で考えてから選ぼう。</h3>{lesson.quizzes.map((q,qi)=><div className="quiz-item" key={q.question}><h4>{qi+1}. {q.question}</h4><div className="choices">{q.choices.map((c,ci)=><button key={c} onClick={()=>{const next=[...answers];next[qi]=ci;setAnswers(next);setChecked(false)}} className={answers[qi]===ci?"selected":""}><span>{String.fromCharCode(65+ci)}</span>{c}</button>)}</div>{checked&&<p className={answers[qi]===q.answer?"correct":"wrong"}>{answers[qi]===q.answer?"正解。":"もう一度考えよう。"} {q.explanation}</p>}</div>)}<button className="check" onClick={checkAnswers} disabled={answers.some(a=>a===null)}>採点する</button>{checked&&allCorrect&&<p className="completion">✓ 第{lesson.week}回を完了しました</p>}</div><div className="talk-card"><span>親子で話す問い</span><p>「{lesson.talk}」</p></div><div className="sources"><span>公式資料・さらに学ぶ</span>{lesson.sources.map(s=><a href={s.url} target="_blank" rel="noreferrer" key={s.url}>{s.label} ↗</a>)}</div><div className="lesson-actions">{active>0&&<button onClick={()=>selectLesson(active-1)}>← 前の回</button>}{active<lessons.length-1&&<button className="next" onClick={()=>selectLesson(active+1)}>次の回 →</button>}</div></article></section>
+    <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">20-LESSON INVESTMENT ROADMAP</p><h1>未来のお金を、<br/><em>自分で考える力</em>を。</h1><p className="lead">基礎を知るだけで終わらない。口座、注文、商品比較、企業分析、指標、手法を学び、自分のルールで最初の少額投資へ進む全20回です。</p><button className="primary" onClick={() => document.getElementById("curriculum")?.scrollIntoView({behavior:"smooth"})}>学習の地図を見る <span>→</span></button></div><div className="hero-orbit" aria-hidden="true"><div className="orbit"/><div className="orbit orbit-two"/><div className="coin"><span>¥</span></div><span className="orbit-label label-a">THINK</span><span className="orbit-label label-b">LEARN</span><span className="orbit-label label-c">DECIDE</span></div></section>
+    <section className="course-intro"><p className="eyebrow">HOW TO LEARN</p><h2>一度で覚えなくていい。<br/>使いながら身につける。</h2><div className="intro-grid"><div><b>01</b><strong>まず結論をつかむ</strong><p>何のために学ぶ回なのかを知る。</p></div><div><b>02</b><strong>具体例で確かめる</strong><p>数字とユウのケースに置き換える。</p></div><div><b>03</b><strong>自分の言葉にする</strong><p>クイズと実践課題で考え直す。</p></div></div><div className="journey"><p className="eyebrow">FOUNDATION → PRACTICE</p><div><span>守る</span><i>→</i><span>知る</span><i>→</i><span>決める</span><i>→</i><span>調べる</span><i>→</i><span>注文する</span><i>→</i><span>記録する</span></div><p>第1〜12回で判断の土台を作り、第13〜20回で実際の投資手順を練習します。専門用語は必要になった時に何度でも確認できます。</p></div></section>
+    <section className="map-section" id="curriculum"><div className="section-heading"><p className="eyebrow">YOUR LEARNING MAP</p><h2>全20回の地図</h2><p>第1〜12回は基礎編。第13回からは、仮想資金で調べ方と注文を練習し、最初の少額投資へ進む実践編です。</p></div>{[1,2,3,4,5,6,7,8,9,10].map(mod=><div className={`module-row ${mod===7?"practice-start":""}`} key={mod}>{mod===7&&<p className="phase-label">PRACTICE COURSE｜ここから実践編</p>}<div className="module-title"><span>MODULE {String(mod).padStart(2,"0")}</span><strong>{moduleNames[mod-1]}</strong></div><div className="module-lessons">{lessons.map((item,index)=>item.module===mod&&<button key={item.week} className={`lesson-card ${active===index?"active":""}`} onClick={()=>selectLesson(index)}><span className="week">WEEK {String(item.week).padStart(2,"0")}</span><strong>{item.title}</strong><span className="card-bottom">{item.time}<b>{completed.includes(item.week)?"✓ 完了":"→"}</b></span></button>)}</div></div>)}</section>
+    <section className="lesson-shell" id="lesson"><aside><p className="week-large">{String(lesson.week).padStart(2,"0")}</p><p className="kicker">{lesson.kicker}</p><div className="side-line"/><p className="side-note">{lesson.week<=12?"基礎編":"実践編"}<br/>学習時間<br/><strong>{lesson.time}</strong></p><nav className="lesson-nav">{lessons.map((l,i)=><button aria-label={`第${l.week}回へ`} key={l.week} className={active===i?"current":""} onClick={()=>selectLesson(i)}>{l.week}</button>)}</nav></aside><article className="lesson-content"><p className="eyebrow">{lesson.week<=12?"FOUNDATION":"PRACTICE"} · LESSON {String(lesson.week).padStart(2,"0")} · MODULE {lesson.module}</p><h2>{lesson.title}</h2><p className="summary"><AnnotatedText text={lesson.summary} onTerm={setOpenTerm}/></p><div className="flow-card"><div><span>ここまで</span><p>{active===0?"投資を学ぶ出発点です。まず、お金そのものの価値から考えます。":`前回「${lessons[active-1].title}」で、${lessons[active-1].kicker}を学びました。`}</p></div><div className="flow-now"><span>今回</span><p>{lesson.summary}</p></div><div><span>この次</span><p>{active===lessons.length-1?"20回で作った判断手順を、少額で実行し、記録し、定期的に見直していきます。":`次回「${lessons[active+1].title}」で、今回の知識を次の判断へつなげます。`}</p></div></div><p className="term-guide">点線の専門用語を押すと、その場で意味を確認できます。</p><div className="goals"><span>この回のゴール</span>{lesson.goals.map(g=><p key={g}>✓ <AnnotatedText text={g} onTerm={setOpenTerm}/></p>)}</div>{lesson.sections.map(s=><section className="reading-section" key={s.heading}><h3>{s.heading}</h3><p><AnnotatedText text={s.body} onTerm={setOpenTerm}/></p></section>)}<div className="number-example"><span>ユウのケース｜数字で考える</span><h3>{lesson.example.title}</h3><p><AnnotatedText text={lesson.example.body} onTerm={setOpenTerm}/></p></div><div className="warning"><span>よくある誤解</span><p><AnnotatedText text={lesson.mistake} onTerm={setOpenTerm}/></p></div><div className="practice"><span>{lesson.week<=12?"今週の実践課題":"実際にやってみる"}</span><p><AnnotatedText text={lesson.task} onTerm={setOpenTerm}/></p></div><div className="quiz"><p className="eyebrow">UNDERSTANDING CHECK</p><h3>3問すべて、自分の言葉で考えてから選ぼう。</h3>{lesson.quizzes.map((q,qi)=><div className="quiz-item" key={q.question}><h4>{qi+1}. {q.question}</h4><div className="choices">{q.choices.map((c,ci)=><button key={c} onClick={()=>{const next=[...answers];next[qi]=ci;setAnswers(next);setChecked(false)}} className={answers[qi]===ci?"selected":""}><span>{String.fromCharCode(65+ci)}</span>{c}</button>)}</div>{checked&&<p className={answers[qi]===q.answer?"correct":"wrong"}>{answers[qi]===q.answer?"正解。":"もう一度考えよう。"} {q.explanation}</p>}</div>)}<button className="check" onClick={checkAnswers} disabled={answers.some(a=>a===null)}>採点する</button>{checked&&allCorrect&&<p className="completion">✓ 第{lesson.week}回を完了しました</p>}</div><div className="talk-card"><span>親子で話す問い</span><p>「{lesson.talk}」</p></div><div className="sources"><span>公式資料・さらに学ぶ</span>{lesson.sources.map(s=><a href={s.url} target="_blank" rel="noreferrer" key={s.url}>{s.label} ↗</a>)}</div><div className="lesson-actions">{active>0&&<button onClick={()=>selectLesson(active-1)}>← 前の回</button>}{active<lessons.length-1&&<button className="next" onClick={()=>selectLesson(active+1)}>次の回 →</button>}</div></article></section>
     <section className="future-monetization"><p className="eyebrow">INDEPENDENT FIRST</p><h2>教材と広告を、混ぜない。</h2><p>将来、証券口座・書籍・学習サービスの比較記事を追加する場合も、広告であること、比較基準、費用、デメリット、更新日を明示します。報酬の高さではなく、学習者の目的との適合を優先します。</p><div><span>学習教材</span><b>理解と判断力を育てる</b><span>比較ガイド</span><b>選択肢を公平に比べる</b><span>広告</span><b>明確に表示して分離する</b></div></section>
     <section className="principle"><p className="eyebrow">OUR PRINCIPLE</p><blockquote>自分のルールを作り、<br/><em>そのルールを守る。</em></blockquote><p>本サイトは金融教育を目的とし、個別の投資助言や特定商品の推奨を行うものではありません。投資には元本割れを含むリスクがあります。制度や数値は公式情報で最新内容をご確認ください。</p></section>
     <footer><div className="brand"><span className="brand-mark">18</span><span>投資の地図</span></div><p>© 2026 Investment Map. Learn first, decide for yourself.</p></footer>
