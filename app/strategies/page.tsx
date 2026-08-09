@@ -23,7 +23,7 @@ export default function StrategiesPage() {
   const strategy = strategies.find((item) => item.id === strategyId) ?? strategies[0];
 
   return <main className="strategy-page">
-    <header className="topbar"><a className="brand" href="/"><span className="brand-mark">18</span><span>投資の地図</span></a><a className="back-home" href="/lab">← アクティブ投資コースへ</a></header>
+    <header className="topbar site-header"><a className="brand" href="/"><span className="brand-mark">18</span><span>投資の地図</span></a><nav className="global-nav" aria-label="メインナビゲーション"><a href="/courses">2つのコース</a><a className="current" href="/strategies">データ・戦略</a><a href="/services">サービス比較</a></nav></header>
     <section className="strategy-hero"><p className="eyebrow">ACTIVE COURSE · ANALYSIS &amp; STRATEGY</p><h1>見る順番を決め、<br/><em>ルールに変える。</em></h1><p>データやチャートは未来を当てる道具ではありません。根拠、入口、損切り、出口を同じ形式で考えるための道具です。</p><nav><a href="#data">1 データ</a><a href="#candles">2 ローソク足</a><a href="#examples">3 戦略例</a></nav></section>
 
     <section className="data-lab" id="data"><div className="strategy-heading"><p className="eyebrow">01 · DATA MAP</p><h2>投資対象ごとに、<br/>見るデータは違う。</h2><p>すべてを見る必要はありません。価格が動く理由につながる数字を、同じ順番で確認します。</p></div><div className="data-tabs">{assetData.map((item) => <button key={item.id} className={assetId === item.id ? "active" : ""} onClick={() => setAssetId(item.id)}>{item.name}</button>)}</div><div className="data-card"><div><span>CHECK DATA</span><h3>{asset.name}で確認する4項目</h3><ol>{asset.items.map((item) => <li key={item}>{item}</li>)}</ol></div><aside><span>読み方のポイント</span><p>{asset.point}</p><b>数字 → 市場予想との差 → 価格の反応</b></aside></div></section>

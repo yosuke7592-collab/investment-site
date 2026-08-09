@@ -21,7 +21,7 @@ export default function LongTermPage() {
   }, [monthly, years]);
 
   return <main className="long-page">
-    <header className="topbar"><a className="brand" href="/"><span className="brand-mark">18</span><span>投資の地図</span></a><a className="back-home" href="/#choose-path">← 2つのコースへ戻る</a></header>
+    <header className="topbar"><a className="brand" href="/"><span className="brand-mark">18</span><span>投資の地図</span></a><a className="back-home" href="/courses">← 2つのコースへ戻る</a></header>
     <section className="long-hero"><p className="eyebrow">COURSE A · LONG-TERM WEALTH BUILDING</p><h1>時間を味方に、<br/><em>仕組みで続ける。</em></h1><p>長期資産形成では、毎日の値動きを当てません。目的・期間・資産配分・積立額を決め、無理なく続く仕組みをつくります。</p><div className="long-principles"><span>長期</span><i>×</i><span>積立</span><i>×</i><span>分散</span><i>×</i><span>低コスト</span></div></section>
 
     <section className="long-roadmap"><div className="long-heading"><p className="eyebrow">LEARNING ROADMAP</p><h2>5つの順番で、<br/>自分の運用を設計する。</h2></div><div className="roadmap-list"><article><b>01</b><div><span>目的と期間</span><h3>いつ、何のために使うお金か</h3><p>生活防衛資金と近い将来に使うお金を除き、10年以上使わない資金を運用候補にします。</p></div></article><article><b>02</b><div><span>制度</span><h3>NISAは商品ではなく「非課税の箱」</h3><p>制度を使っても値下がりリスクは消えません。まず中に入れる商品の特徴と費用を確認します。</p></div></article><article><b>03</b><div><span>商品</span><h3>投資信託・ETFの中身を比べる</h3><p>連動する指数、投資地域、資産の種類、信託報酬、純資産総額を同じ基準で比べます。</p></div></article><article><b>04</b><div><span>配分</span><h3>上がりそうな資産ではなく、続けられる配分</h3><p>株式・債券・現金の割合は、年齢だけでなく使用時期と下落への耐性から決めます。</p></div></article><article><b>05</b><div><span>運用ルール</span><h3>積み立て、年に一度だけ点検する</h3><p>相場予想で頻繁に変えず、積立額・配分・見直す時期を先に決めます。</p></div></article></div></section>
