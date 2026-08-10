@@ -2001,18 +2001,23 @@ export default function Home() {
       <section className="quick-gateway" aria-label="主要コンテンツ">
         <p className="eyebrow">START HERE</p>
         <div>
-          <a className="gateway-primary" href="/courses">
+          <a className="gateway-primary" href="#curriculum">
             <span>01</span>
+            <b>基礎から学ぶ</b>
+            <small>お金・経済・投資の土台を身につける</small>
+          </a>
+          <a href="/courses">
+            <span>02</span>
             <b>2つのコースを選ぶ</b>
             <small>長期資産形成／アクティブ投資</small>
           </a>
           <a href="/strategies">
-            <span>02</span>
+            <span>03</span>
             <b>データ・戦略ラボ</b>
             <small>ローソク足と売買ルールを学ぶ</small>
           </a>
           <a href="/services">
-            <span>03</span>
+            <span>04</span>
             <b>サービス比較</b>
             <small>証券会社・デモ・参考書を比べる</small>
           </a>
