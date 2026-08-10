@@ -3,7 +3,7 @@ export default function CoursesPage() {
     <header className="topbar site-header">
       <a className="brand" href="/"><span className="brand-mark">18</span><span>投資の地図</span></a>
       <nav className="global-nav" aria-label="メインナビゲーション">
-        <a className="current" href="/courses">2つのコース</a><a href="/strategies">データ・戦略</a><a href="/services">サービス比較</a>
+        <a className="current" href="/courses">2つのコース</a><a href="/strategies">データ・戦略</a><a href="/glossary">用語集</a><a href="/services">サービス比較</a>
       </nav>
     </header>
     <section className="courses-hero">

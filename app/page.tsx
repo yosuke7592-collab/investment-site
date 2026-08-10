@@ -1951,6 +1951,7 @@ export default function Home() {
         <nav className="global-nav" aria-label="メインナビゲーション">
           <a href="/courses">2つのコース</a>
           <a href="/strategies">データ・戦略</a>
+          <a href="/glossary">用語集</a>
           <a href="/services">サービス比較</a>
         </nav>
         <div className="progress-mini">

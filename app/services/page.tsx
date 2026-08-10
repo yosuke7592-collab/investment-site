@@ -26,7 +26,7 @@ export default function ServicesPage() {
   const [category, setCategory] = useState("all");
   const visible = category === "all" ? services : services.filter((item) => item.category === category);
   return <main className="services-page">
-    <header className="topbar site-header"><a className="brand" href="/"><span className="brand-mark">18</span><span>投資の地図</span></a><nav className="global-nav" aria-label="メインナビゲーション"><a href="/courses">2つのコース</a><a href="/strategies">データ・戦略</a><a className="current" href="/services">サービス比較</a></nav></header>
+    <header className="topbar site-header"><a className="brand" href="/"><span className="brand-mark">18</span><span>投資の地図</span></a><nav className="global-nav" aria-label="メインナビゲーション"><a href="/courses">2つのコース</a><a href="/strategies">データ・戦略</a><a href="/glossary">用語集</a><a className="current" href="/services">サービス比較</a></nav></header>
     <section className="services-hero"><p className="eyebrow">LEARNING SERVICES GUIDE</p><h1>目的から選ぶ、<br/><em>学習サービス比較。</em></h1><p>口座数や特典ではなく、「何を学びたいか」を先に決めます。現在は広告リンクを使用せず、公式ページへ案内しています。</p><div className="ad-status"><b>広告・アフィリエイト</b><span>現在は未掲載</span><p>将来掲載する場合は、広告であることと比較基準を明示します。</p></div></section>
 
     <section className="comparison-rule"><div className="services-heading"><p className="eyebrow">BEFORE COMPARING</p><h2>比較する順番</h2></div><div className="compare-steps"><article><b>01</b><h3>目的</h3><p>積立、企業分析、チャート、注文練習のどれか。</p></article><article><b>02</b><h3>扱う商品</h3><p>現物、投資信託、株式、FXなど必要な範囲だけ。</p></article><article><b>03</b><h3>総コスト</h3><p>手数料だけでなく、スプレッド・為替・継続費用。</p></article><article><b>04</b><h3>操作と安全</h3><p>画面、注文確認、二段階認証、サポートを確認。</p></article></div></section>
