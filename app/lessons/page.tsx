@@ -2277,47 +2277,9 @@ export default function Home() {
             {String(lesson.week).padStart(2, "0")} · MODULE {lesson.module}
           </p>
           <h2>{lesson.title}</h2>
-          <div className="lesson-thesis">
-            <span>まず、この回の結論</span>
-            <p><AnnotatedText text={lesson.summary} onTerm={setOpenTerm} /></p>
-          </div>
-          <div className="reading-route">
-            <span>この順番で理解する</span>
-            <div><b>仕組み</b><i>→</i><b>身近な例</b><i>→</i><b>数字</b><i>→</i><b>誤解</b><i>→</i><b>確認</b></div>
-          </div>
-          <div className="flow-card">
-            <div>
-              <span>ここまで</span>
-              <p>
-                {active === 0
-                  ? "投資を学ぶ出発点です。まず、お金そのものの価値から考えます。"
-                  : `前回「${lessons[active - 1].title}」で、${lessons[active - 1].kicker}を学びました。`}
-              </p>
-            </div>
-            <div className="flow-now">
-              <span>今回</span>
-              <p>{lesson.summary}</p>
-            </div>
-            <div>
-              <span>この次</span>
-              <p>
-                {active === lessons.length - 1
-                  ? "次は投資スタイルを比較し、自分に合う道を選びます。"
-                  : `次回「${lessons[active + 1].title}」で、今回の知識を次の判断へつなげます。`}
-              </p>
-            </div>
-          </div>
           <p className="term-guide">
             点線の専門用語を押すと、その場で意味を確認できます。
           </p>
-          <div className="goals">
-            <span>読み終えたら説明できること</span>
-            {lesson.goals.map((g) => (
-              <p key={g}>
-                ✓ <AnnotatedText text={g} onTerm={setOpenTerm} />
-              </p>
-            ))}
-          </div>
           {lesson.sections.map((s) => (
             <section className="reading-section" key={s.heading}>
               <h3>{s.heading}</h3>
@@ -2347,30 +2309,15 @@ export default function Home() {
             )}
             {active < lessons.length - 1 && (
               <button className="next" onClick={() => selectLesson(active + 1)}>
-                次の回 →
+                次へ｜{lessons[active + 1].title} →
               </button>
+            )}
+            {active === lessons.length - 1 && (
+              <a className="next lesson-next-link" href="/mechanics">次へ｜取引の仕組み →</a>
             )}
           </div>
         </article>
       </section>
-      <section className="principle">
-        <p className="eyebrow">OUR PRINCIPLE</p>
-        <blockquote>
-          自分のルールを作り、
-          <br />
-          <em>そのルールを守る。</em>
-        </blockquote>
-        <p>
-          本サイトは金融教育を目的とし、個別の投資助言や特定商品の推奨を行うものではありません。投資には元本割れを含むリスクがあります。制度や数値は公式情報で最新内容をご確認ください。
-        </p>
-      </section>
-      <footer>
-        <div className="brand">
-          <span className="brand-mark">18</span>
-          <span>投資の地図</span>
-        </div>
-        <p>© 2026 Investment Map. Learn first, decide for yourself.</p>
-      </footer>
       {openTerm && (
         <div
           className="term-overlay"

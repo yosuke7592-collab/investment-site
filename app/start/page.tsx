@@ -77,7 +77,6 @@ export default function StartPage() {
           <h2>このサイトで身につける、7つの行動</h2>
           <ol><li>投資商品の種類と仕組みを知る</li><li>投資手法の特徴とリスクを理解する</li><li>自分の資金・時間・性格に合う方法を選ぶ</li><li>自分の取引ルールを作る</li><li>模擬取引や少額取引から始める</li><li>結果を記録して検証する</li><li>ルールを守りながら改善する</li></ol>
           <blockquote>投資で大切なのは、<br />一度だけ大きく勝つことではない。<br /><em>市場に残り、学び続けること。</em></blockquote>
-          <a className="new-primary" href="/strategies/products">次へ｜投資商品を知る <span>→</span></a>
         </section>
       </article>
     </main>

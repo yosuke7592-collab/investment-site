@@ -41,7 +41,6 @@ export default function MechanicsPage(){return <main className="mechanics-page">
     <h3>先物は、何のために生まれた？</h3><p>将来の価格変動を避けたい人同士が、今のうちに条件を固定するためです。小麦農家は収穫時の値下がりを避けたい。食品会社は仕入れ価格の値上がりを避けたい。将来売る人と買う人が価格を決めることで、それぞれの不確実性を減らせます。</p>
     <div className="futures-story"><div><b>小麦農家</b><p>将来の販売価格を固定したい</p></div><i>将来の価格を<br/>今決める</i><div><b>食品会社</b><p>将来の仕入価格を固定したい</p></div></div>
     <p>金融先物では、満期まで待たずに反対売買して差額を清算することも一般的です。商品の全額ではなく証拠金を預けるため、取引金額が証拠金を大きく上回ることがあります。</p>
-    <a className="new-primary" href="/mechanics/leverage">次へ｜レバレッジを詳しく学ぶ <span>→</span></a>
   </div></section>
   <section className="source-strip"><span>一次資料</span><a href="https://www.jpx.co.jp/learning/basics/equities/index.html" target="_blank" rel="noreferrer">JPX｜株式投資の基礎 ↗</a><a href="https://www.toushin.or.jp/investmenttrust/etf/index.html" target="_blank" rel="noreferrer">投資信託協会｜ETFの仕組み ↗</a><a href="https://www.jpx.co.jp/derivatives/products/domestic/225mini/index.html" target="_blank" rel="noreferrer">JPX｜先物取引の仕組み ↗</a></section>
  </main>}

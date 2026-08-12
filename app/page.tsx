@@ -31,9 +31,6 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="survival-rule concise-rule"><p className="eyebrow">ONE RULE TO REMEMBER</p><blockquote>一度で大きく取ろうとしない。<br/><em>ルールの範囲で取り、継続する。</em></blockquote><p>一度の勝ち負けではなく、市場に残りながら検証を続けられることを重視します。</p></section>
-
     <section className="resource-grid" aria-labelledby="tools-title"><div className="section-heading"><p className="eyebrow">WHEN YOU NEED IT</p><h2 id="tools-title">迷ったときに使う</h2></div><div><a href="/glossary"><b>用語集</b><span>分からない言葉を調べる　→</span></a><a href="/services"><b>サービス比較</b><span>口座・チャート・外部デモを比べる　→</span></a></div></section>
-    <footer className="new-footer"><b>18歳からの投資の地図</b><p>本サイトは金融教育を目的とした教材です。利益の保証や、特定商品の売買推奨は行いません。</p></footer>
   </main>;
 }

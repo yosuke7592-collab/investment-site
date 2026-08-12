@@ -33,6 +33,5 @@ export default function LongTermPage() {
 
     <section className="long-rules"><div className="long-heading"><p className="eyebrow">MY LONG-TERM RULES</p><h2>長期投資にも、<br/>守るルールがある。</h2></div><div className="rule-table"><div><b>投資するお金</b><p>10年以上使わない余裕資金だけ</p></div><div><b>買う商品</b><p>中身・費用・リスクを説明できる分散商品</p></div><div><b>積立</b><p>家計を圧迫しない金額を毎月自動化</p></div><div><b>見直し</b><p>相場が動くたびではなく、年1回または生活変化時</p></div><div><b>売却</b><p>暴落したからではなく、目的の時期が近づいたら段階的に</p></div></div></section>
 
-    <section className="course-next"><p className="eyebrow">NEXT STEP</p><h2>理解したら、次の行動へ</h2><div><span>01</span><p><a href="/lessons?week=7">NISA・課税口座を学ぶ →</a></p><span>02</span><p><a href="/strategies/products">投資信託・ETFを比較する →</a></p><span>03</span><p><a href="/services">証券会社・学習サービスを比較する →</a></p></div><a href="/courses">投資スタイルの選択へ戻る →</a></section>
   </main>;
 }

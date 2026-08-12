@@ -12,8 +12,8 @@ export default function SiteHeader({ current }: Props) {
   return (
     <header className="simple-header unified-header">
       <a className="brand" href="/">
-        <span className="brand-mark">18</span>
-        <span>18歳からの投資の地図</span>
+        <span className="brand-mark">原</span>
+        <span>投資の原則</span>
       </a>
       <nav aria-label="メインナビゲーション">
         {links.map((link) => (
