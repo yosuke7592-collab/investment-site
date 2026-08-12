@@ -2199,9 +2199,6 @@ export default function Home() {
           <h1>基礎から実行まで、<br/><em>順番に学ぶ。</em></h1>
           <p>第1〜12回はお金と投資の基礎、第13〜20回は商品・注文・指標・手法を学ぶ取引準備編です。</p>
         </div>
-        <div className="progress-mini">
-          <span>学習進捗 {progress}%</span><div><i style={{ width: `${progress}%` }} /></div>
-        </div>
       </section>
       <section className="map-section" id="curriculum">
         <div className="section-heading">
@@ -2335,58 +2332,6 @@ export default function Home() {
           <div className="warning">
             <span>よくある誤解</span>
             <ReadableText text={lesson.mistake} onTerm={setOpenTerm} />
-          </div>
-          <div className="practice">
-            <span>{lesson.week <= 12 ? "今週の実践課題" : "準備してみる"}</span>
-            <ReadableText text={lesson.task} onTerm={setOpenTerm} />
-          </div>
-          <div className="quiz">
-            <p className="eyebrow">UNDERSTANDING CHECK</p>
-            <h3>3問すべて、自分の言葉で考えてから選ぼう。</h3>
-            {lesson.quizzes.map((q, qi) => (
-              <div className="quiz-item" key={q.question}>
-                <h4>
-                  {qi + 1}. {q.question}
-                </h4>
-                <div className="choices">
-                  {q.choices.map((c, ci) => (
-                    <button
-                      key={c}
-                      onClick={() => {
-                        const next = [...answers];
-                        next[qi] = ci;
-                        setAnswers(next);
-                        setChecked(false);
-                      }}
-                      className={answers[qi] === ci ? "selected" : ""}
-                    >
-                      <span>{String.fromCharCode(65 + ci)}</span>
-                      {c}
-                    </button>
-                  ))}
-                </div>
-                {checked && (
-                  <p className={answers[qi] === q.answer ? "correct" : "wrong"}>
-                    {answers[qi] === q.answer ? "正解。" : "もう一度考えよう。"}{" "}
-                    {q.explanation}
-                  </p>
-                )}
-              </div>
-            ))}
-            <button
-              className="check"
-              onClick={checkAnswers}
-              disabled={answers.some((a) => a === null)}
-            >
-              採点する
-            </button>
-            {checked && allCorrect && (
-              <p className="completion">✓ 第{lesson.week}回を完了しました</p>
-            )}
-          </div>
-          <div className="talk-card">
-            <span>親子で話す問い</span>
-            <p>「{lesson.talk}」</p>
           </div>
           <div className="sources">
             <span>公式資料・さらに学ぶ</span>

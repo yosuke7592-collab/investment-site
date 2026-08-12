@@ -813,6 +813,7 @@ blockquote em {
   background: var(--green);
   color: white;
   padding: 35px;
+  display: block;
 }
 .number-example > span {
   color: var(--lime);
@@ -1687,6 +1688,29 @@ footer p {
   }
   .number-example {
     padding: 25px;
+    display: block;
+  }
+  .number-example > span {
+    width: auto;
+    height: auto;
+    display: block;
+    margin-bottom: 18px;
+    border-radius: 0;
+    background: transparent;
+    color: var(--lime);
+    line-height: 1.4;
+  }
+  .number-example h3 {
+    margin: 0 0 22px;
+    font-size: 24px;
+    line-height: 1.55;
+    word-break: normal;
+  }
+  .number-example .readable-copy,
+  .number-example p {
+    width: 100%;
+    font-size: 16px;
+    line-height: 2;
   }
   .future-monetization > div {
     grid-template-columns: 1fr;
