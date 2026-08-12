@@ -16,12 +16,13 @@ export default function SiteHeader({ current: _current }: Props) {
   return (
     <><header className="simple-header unified-header">
       <a className="brand" href="/">
-        <span>投資の原則</span>
+        <small>INVESTMENT PRINCIPLES</small>
+        <strong>投資の原則</strong>
       </a>
       <nav aria-label="メインナビゲーション">
-        {links.map((link) => (
+        {links.map((link, index) => (
           <a className={link.paths.includes(pathname) ? "current" : ""} href={link.href} key={link.id}>
-            {link.label}
+            <span>{String(index + 1).padStart(2, "0")}</span>{link.label}
           </a>
         ))}
       </nav>

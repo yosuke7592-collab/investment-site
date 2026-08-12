@@ -28,29 +28,36 @@ body {
   min-height: 100vh;
 }
 .simple-header {
-  min-height: 82px;
-  padding: 18px 6vw;
+  min-height: 104px;
+  padding: 20px 6vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  border-bottom: 1px solid rgba(24, 37, 29, 0.16);
+  background: var(--ink);
+  color: #fff;
+  border-bottom: 3px solid var(--lime);
 }
+.simple-header .brand { display: grid; gap: 3px; color: #fff; text-decoration: none; min-width: max-content; }
+.simple-header .brand small { color: var(--lime); font-size: 8px; letter-spacing: .22em; font-weight: 800; }
+.simple-header .brand strong { font: 600 25px var(--font-serif); letter-spacing: .04em; }
 .simple-header nav {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
 .simple-header nav a {
-  color: var(--ink);
+  color: #d9e0da;
   text-decoration: none;
   font-size: 13px;
   font-weight: 700;
-  padding: 10px 14px;
-  border-radius: 999px;
+  padding: 12px 16px;
+  border-left: 1px solid #4a574f;
+  border-radius: 0;
 }
-.simple-header nav a:hover { background: var(--ink); color: var(--lime); }
-.simple-header nav a.current { background: var(--ink); color: var(--lime); }
+.simple-header nav a span { display: block; margin-bottom: 3px; color: #7f8e83; font-size: 9px; letter-spacing: .15em; }
+.simple-header nav a:hover,.simple-header nav a.current { background: transparent; color: var(--lime); }
+.simple-header nav a.current span { color: var(--lime); }
 .new-hero {
   min-height: 720px;
   padding: 92px 8vw 110px;
@@ -226,6 +233,7 @@ body {
 .global-journey nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:55px;padding-top:28px;border-top:1px solid rgba(24,37,29,.22)}
 .global-journey nav a{padding:11px 15px;border:1px solid rgba(24,37,29,.22);color:var(--ink);text-decoration:none;font-size:12px;font-weight:700}.global-journey nav a:hover,.global-journey nav a.current{background:var(--ink);color:var(--lime)}
 .global-principle{padding:100px 8vw 45px!important;background:var(--ink)!important;color:#fff!important;display:block!important}
+.footer-site-name{display:inline-block;margin-bottom:70px;color:#fff;text-decoration:none;font:600 clamp(28px,4vw,44px) var(--font-serif);letter-spacing:.06em;border-bottom:3px solid var(--lime)}
 .global-principle .eyebrow{color:#aeb8b0}.global-principle blockquote{font-size:clamp(38px,6vw,75px);line-height:1.4;margin:28px 0 40px}.global-principle blockquote em{box-shadow:inset 0 -.2em rgba(200,240,75,.45)}
 .global-principle>p:not(.eyebrow){max-width:720px;line-height:1.9;color:#b9c4bc}.global-principle>div{margin-top:75px;padding-top:25px;border-top:1px solid #4e5b53;display:flex;justify-content:space-between;gap:30px;color:#aeb8b0}.global-principle>div b{color:#fff}.lesson-next-link{display:inline-flex;align-items:center;text-decoration:none}
 
@@ -268,10 +276,9 @@ body {
 .start-goal blockquote em { box-shadow: inset 0 -.24em #fff; }
 
 @media (max-width: 760px) {
-  .simple-header { align-items: flex-start; }
-  .simple-header .brand span:last-child { display: none; }
-  .simple-header nav { justify-content: flex-end; }
-  .simple-header nav a { padding: 8px; font-size: 11px; }
+  .simple-header { min-height:auto; padding:18px 6vw 0; align-items:stretch; flex-direction:column; gap:15px; }
+  .simple-header nav { width:calc(100% + 12vw); margin-left:-6vw; padding:0 6vw; justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; scrollbar-width:none; }
+  .simple-header nav a { flex:0 0 auto; padding:12px 16px 15px; font-size:12px; }
   .new-hero { min-height: 660px; padding: 70px 6vw 80px; }
   .new-hero::after { right: -22vw; top: 120px; width: 90vw; }
   .new-hero h1 { font-size: clamp(44px, 13vw, 66px); }

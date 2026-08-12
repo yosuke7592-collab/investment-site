@@ -13,7 +13,6 @@ const sections = [
 const nextByPath: Record<string, { label: string; href: string }> = {
   "/": { label: "最初に伝えたいこと", href: "/start" },
   "/start": { label: "基礎講座 第1回", href: "/lessons?week=1" },
-  "/lessons": { label: "取引の仕組み", href: "/mechanics" },
   "/mechanics": { label: "レバレッジ", href: "/mechanics/leverage" },
   "/mechanics/leverage": { label: "投資スタイルを選ぶ", href: "/courses" },
   "/courses": { label: "長期資産形成", href: "/long-term" },
@@ -31,15 +30,16 @@ export default function GlobalJourney() {
   return (
     <>
       <section className="global-journey">
-        <SmallNav position="bottom" />
         {next && <a className="global-next" href={next.href}><small>NEXT</small><b>次へ｜{next.label}</b><span>→</span></a>}
+        <SmallNav position="bottom" />
       </section>
       <footer className="global-principle">
+        <a className="footer-site-name" href="/">投資の原則</a>
         <p className="eyebrow">OUR PRINCIPLE</p>
         <blockquote>自分のルールを作り、<br/><em>そのルールを守る。</em></blockquote>
         <p>本サイトは金融教育を目的とした教材です。利益を保証したり、特定商品の売買を勧めたりするものではありません。</p>
         <nav aria-label="大項目一覧">{sections.map((section) => <a href={section.href} key={section.href}>{section.label}</a>)}</nav>
-        <div><b>投資の原則</b><span>© 2026 Learn first, decide for yourself.</span></div>
+        <div><span>© 2026 Learn first, decide for yourself.</span></div>
       </footer>
     </>
   );

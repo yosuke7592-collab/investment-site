@@ -2307,11 +2307,6 @@ export default function Home() {
             {active > 0 && (
               <button onClick={() => selectLesson(active - 1)}>← 前の回</button>
             )}
-            {active < lessons.length - 1 && (
-              <button className="next" onClick={() => selectLesson(active + 1)}>
-                次へ｜{lessons[active + 1].title} →
-              </button>
-            )}
             {active === lessons.length - 1 && (
               <a className="next lesson-next-link" href="/mechanics">次へ｜取引の仕組み →</a>
             )}
