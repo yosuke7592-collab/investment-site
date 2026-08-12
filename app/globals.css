@@ -1126,7 +1126,7 @@ blockquote em {
   padding: 14px 20px;
 }
 .lesson-actions .next {
-  margin: 0;
+  margin: 0 0 0 auto;
   background: var(--ink);
   color: white;
 }
