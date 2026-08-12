@@ -34,12 +34,11 @@ export default function GlobalJourney() {
         <SmallNav position="bottom" />
       </section>
       <footer className="global-principle">
-        <a className="footer-site-name" href="/">投資の原則</a>
-        <p className="eyebrow">OUR PRINCIPLE</p>
-        <blockquote>自分のルールを作り、<br/><em>そのルールを守る。</em></blockquote>
-        <p>本サイトは金融教育を目的とした教材です。利益を保証したり、特定商品の売買を勧めたりするものではありません。</p>
         <nav aria-label="大項目一覧">{sections.map((section) => <a href={section.href} key={section.href}>{section.label}</a>)}</nav>
-        <div><span>© 2026 Learn first, decide for yourself.</span></div>
+        <p className="eyebrow">OUR PRINCIPLE</p>
+        <blockquote><span>自分のルールを作り、</span><em>そのルールを守る。</em></blockquote>
+        <p className="footer-note">本サイトは金融教育を目的とした教材です。利益を保証したり、特定商品の売買を勧めたりするものではありません。</p>
+        <div><a className="footer-site-name" href="/">投資の原則</a><span>© 2026 Learn first, decide for yourself.</span></div>
       </footer>
     </>
   );
