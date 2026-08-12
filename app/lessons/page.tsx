@@ -1670,19 +1670,6 @@ const lessonRewrites: Record<number, Pick<Lesson, "summary" | "sections" | "exam
 
 const lessons: Lesson[] = originalLessons.map((lesson) => ({ ...lesson, ...lessonRewrites[lesson.week] }));
 
-const moduleNames = [
-  "お金と生活",
-  "資産とリスク",
-  "長期運用",
-  "制度とコスト",
-  "企業と経済",
-  "防御と方針",
-  "口座と注文",
-  "商品と企業",
-  "指標と値動き",
-  "手法と実行",
-];
-
 type ProductGuide = {
   id: string;
   name: string;
@@ -2199,52 +2186,6 @@ export default function Home() {
           <h1>基礎から実行まで、<br/><em>順番に学ぶ。</em></h1>
           <p>第1〜12回はお金と投資の基礎、第13〜20回は商品・注文・指標・手法を学ぶ取引準備編です。</p>
         </div>
-      </section>
-      <section className="map-section" id="curriculum">
-        <div className="section-heading">
-          <p className="eyebrow">YOUR LEARNING MAP</p>
-          <h2>全20回の地図</h2>
-          <p>
-            第1〜12回は基礎編。第13〜20回は、商品と注文を理解して実際の画面へ進むための取引準備編です。
-          </p>
-        </div>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((mod) => (
-          <div
-            className={`module-row ${mod === 7 ? "practice-start" : ""}`}
-            key={mod}
-          >
-            {mod === 7 && (
-              <p className="phase-label">
-                PREPARATION COURSE｜ここから取引準備編
-              </p>
-            )}
-            <div className="module-title">
-              <span>MODULE {String(mod).padStart(2, "0")}</span>
-              <strong>{moduleNames[mod - 1]}</strong>
-            </div>
-            <div className="module-lessons">
-              {lessons.map(
-                (item, index) =>
-                  item.module === mod && (
-                    <button
-                      key={item.week}
-                      className={`lesson-card ${active === index ? "active" : ""}`}
-                      onClick={() => selectLesson(index)}
-                    >
-                      <span className="week">
-                        LESSON {String(item.week).padStart(2, "0")}
-                      </span>
-                      <strong>{item.title}</strong>
-                      <span className="card-bottom">
-                        {item.time}
-                        <b>{completed.includes(item.week) ? "✓ 完了" : "→"}</b>
-                      </span>
-                    </button>
-                  ),
-              )}
-            </div>
-          </div>
-        ))}
       </section>
       <section className="lesson-shell" id="lesson">
         <aside>
