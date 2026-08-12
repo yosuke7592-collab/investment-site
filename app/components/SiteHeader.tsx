@@ -1,9 +1,10 @@
-type Props = { current?: "start" | "lessons" | "courses" | "glossary" | "services" };
+type Props = { current?: "start" | "lessons" | "mechanics" | "courses" | "glossary" | "services" };
 
 export default function SiteHeader({ current }: Props) {
   const links = [
     { id: "start", label: "はじめに", href: "/start" },
     { id: "lessons", label: "基礎講座", href: "/lessons?week=1" },
+    { id: "mechanics", label: "取引の仕組み", href: "/mechanics" },
     { id: "courses", label: "投資スタイル", href: "/courses" },
     { id: "glossary", label: "用語集", href: "/glossary" },
     { id: "services", label: "サービス比較", href: "/services" },

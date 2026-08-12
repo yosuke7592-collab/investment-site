@@ -3,9 +3,9 @@ import SiteHeader from "./components/SiteHeader";
 const route = [
   { no: "01", title: "前提を知る", text: "投資の本質と、ルールが必要な理由を理解する。", href: "/start", cta: "最初に読む" },
   { no: "02", title: "基礎を学ぶ", text: "お金、リスク、商品、注文の仕組みを順番に学ぶ。", href: "/lessons?week=1", cta: "第1回から学ぶ" },
-  { no: "03", title: "スタイルを選ぶ", text: "使える資金と時間から、長期かアクティブかを選ぶ。", href: "/courses", cta: "2つを比較する" },
-  { no: "04", title: "ルールを作る", text: "投資額、入口、損切り、出口、見直す時期を決める。", href: "/strategies/methods", cta: "ルールを学ぶ" },
-  { no: "05", title: "練習して検証する", text: "外部の模擬取引か少額から始め、結果を記録する。", href: "/lab", cta: "練習方法を見る" },
+  { no: "03", title: "取引の仕組みを知る", text: "現物、投資信託、ETF、先物、レバレッジが成立する理由を知る。", href: "/mechanics", cta: "仕組みから学ぶ" },
+  { no: "04", title: "スタイルを選ぶ", text: "使える資金と時間から、長期かアクティブかを選ぶ。", href: "/courses", cta: "2つを比較する" },
+  { no: "05", title: "ルールを作り検証する", text: "投資額、入口、損切り、出口を決め、模擬か少額で検証する。", href: "/strategies/methods", cta: "ルールを学ぶ" },
 ];
 
 export default function Home() {

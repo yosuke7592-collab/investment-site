@@ -189,6 +189,35 @@ body {
 .practice-next p { line-height: 1.8; }
 .practice-next .new-primary { flex: 0 0 auto; }
 
+/* Financial mechanics */
+.mechanics-page,.leverage-page{background:var(--paper);min-height:100vh}
+.mechanics-hero,.leverage-hero{padding:100px 8vw 110px;background:var(--ink);color:#fff}
+.mechanics-hero .eyebrow,.leverage-hero .eyebrow{color:#aeb8b0}
+.mechanics-hero h1,.leverage-hero h1{max-width:1000px}
+.mechanics-hero>p:last-child,.leverage-hero>p:last-child{max-width:790px;font-size:18px;line-height:2;color:#c4cec6}
+.mechanics-index{padding:50px 8vw;background:#d9f775}
+.mechanics-index a{display:grid;grid-template-columns:65px 1fr 90px;align-items:center;gap:20px;padding:25px 10px;border-bottom:1px solid rgba(24,37,29,.25);color:var(--ink);text-decoration:none}
+.mechanics-index a:hover{background:rgba(255,255,255,.4);padding-left:22px}
+.mechanics-index span{font:500 25px var(--font-serif)}.mechanics-index b{font:600 22px var(--font-serif)}.mechanics-index p{margin:6px 0 0;color:#536055}.mechanics-index i{font-style:normal;font-weight:800;text-align:right}
+.mechanics-section{padding:100px 8vw}.mechanics-section.alt{background:var(--cream)}
+.mechanics-section>header{display:grid;grid-template-columns:110px 1fr;gap:30px;max-width:1100px;margin:0 auto 60px}
+.mechanics-section>header>span{font:500 48px var(--font-serif);color:var(--green)}
+.mechanics-section h2,.leverage-core h2,.why-possible h2,.leverage-calculator h2,.leverage-table h2,.margin-system h2,.loss-chain h2,.risk-sizing h2,.mental-cost h2{font-size:clamp(36px,5vw,62px);line-height:1.35;margin:15px 0}
+.mechanics-copy{max-width:900px;margin:0 auto}.mechanics-copy>p,.why-possible>p,.leverage-table>p{font-size:17px;line-height:2.1;margin:0 0 32px}.mechanics-copy h3{font:600 30px/1.5 var(--font-serif);margin:65px 0 20px}
+.order-match,.futures-story{display:grid;grid-template-columns:1fr 150px 1fr;align-items:center;margin:45px 0}.order-match>div,.futures-story>div{padding:30px;background:var(--ink);color:#fff;text-align:center}.order-match i,.futures-story i{text-align:center;font-style:normal;font-weight:800;color:var(--green);line-height:1.6}.order-match small{display:block;color:#aeb8b0}.order-match strong{display:block;font-size:22px;margin:12px 0}.order-match p,.futures-story p{margin:0;color:#c7d0c9}
+.roles-grid,.instrument-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:50px 0}.roles-grid article,.instrument-cards article{padding:28px;border:1px solid #b9c0ba}.roles-grid b,.instrument-cards h3{font:600 23px var(--font-serif);margin:8px 0}.roles-grid p,.instrument-cards p{line-height:1.8;color:var(--muted)}
+.mechanics-note{padding:30px;border-left:6px solid #e8a45b;background:#f9f3e8;margin:45px 0}.mechanics-note b{font-size:20px}.mechanics-note p{line-height:1.9;margin:12px 0 0}
+.money-flow,.fund-flow{display:flex;align-items:stretch;margin:45px 0;overflow-x:auto}.money-flow span,.fund-flow span{min-width:150px;padding:25px;background:var(--green);color:#fff;text-align:center;display:grid;place-items:center}.money-flow i,.fund-flow i{min-width:80px;display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:800}.money-flow b{font-size:22px}.two-market{display:grid;grid-template-columns:1fr 1fr;gap:8px}.two-market article{padding:30px;background:var(--ink);color:#fff}.two-market span{color:var(--lime);font-weight:800}.two-market h4{font:600 26px var(--font-serif)}.two-market p{color:#c2cbc4;line-height:1.8}.instrument-cards span{font-size:11px;letter-spacing:.15em;color:var(--green);font-weight:800}
+.mechanics-section .new-primary{margin-top:30px}.mechanics-page .source-strip,.leverage-page .source-strip{flex-wrap:wrap}
+
+.leverage-core,.why-possible,.leverage-calculator,.leverage-table,.margin-system,.loss-chain,.risk-sizing,.mental-cost{padding:100px 8vw}.leverage-core>div:nth-child(2){display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.leverage-core article{padding:30px;background:var(--cream);border:1px solid #bcc2bc}.leverage-core article span{font:500 25px var(--font-serif);color:var(--green)}.leverage-core article h3{font:600 25px var(--font-serif)}.leverage-core article p{line-height:1.8;color:var(--muted)}
+.leverage-formula,.formula-card,.risk-equation{display:flex;align-items:center;justify-content:center;gap:18px;margin:45px auto 0;padding:30px;background:var(--ink);color:#fff;flex-wrap:wrap}.leverage-formula span,.formula-card span,.risk-equation span{padding:12px 18px;border:1px solid #5b685f}.leverage-formula i,.formula-card i,.risk-equation i{font-style:normal;color:var(--lime)}.leverage-formula strong,.formula-card strong,.risk-equation strong{color:var(--lime);font-size:20px}
+.why-possible,.margin-system,.risk-sizing{background:var(--cream)}.why-possible>p{max-width:900px}.difference-flow{display:grid;grid-template-columns:1fr 130px 1fr 160px;align-items:stretch;margin:45px 0;max-width:1000px}.difference-flow span,.difference-flow strong{padding:30px;background:var(--green);color:#fff;display:grid;place-items:center;text-align:center}.difference-flow i{display:grid;place-items:center;font-style:normal}.difference-flow strong{background:var(--lime);color:var(--ink)}
+.leverage-calculator{background:var(--ink);color:#fff}.leverage-calculator .eyebrow{color:#aeb8b0}.leverage-calculator .deep-heading>p:last-child{color:#b9c3bb}.calc-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:10px}.calc-controls{padding:35px;border:1px solid #526057}.calc-controls label{display:grid;grid-template-columns:1fr 2fr 110px;align-items:center;gap:20px;padding:25px 0;border-bottom:1px solid #526057}.calc-controls label:last-child{border:0}.calc-controls input{width:100%;accent-color:var(--lime)}.calc-controls b{text-align:right;color:var(--lime);font-size:20px}.calc-result{padding:35px;background:#d9f775;color:var(--ink)}.calc-result.loss{background:#f0b39d}.calc-result>div{padding:20px 0;border-bottom:1px solid rgba(24,37,29,.25)}.calc-result span{display:block;font-size:12px}.calc-result strong{display:block;font-size:clamp(27px,4vw,45px);margin-top:8px}.calc-result p{font-weight:800;margin-top:30px}
+.leverage-table .compare-scroll{margin-top:35px}.leverage-table table{width:100%;border-collapse:collapse}.leverage-table th,.leverage-table td{padding:18px;border:1px solid #bbc1bb;text-align:right}.leverage-table th:first-child,.leverage-table td:first-child{text-align:left}.margin-system .mechanics-copy,.risk-sizing .mechanics-copy{max-width:900px}
+.loss-chain{background:#d9f775}.loss-chain ol{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.loss-chain li{padding:28px;background:var(--ink);color:#fff}.loss-chain li span{color:var(--lime);font:500 22px var(--font-serif)}.loss-chain li b{display:block;font:600 22px var(--font-serif);margin:30px 0 12px}.loss-chain li p{color:#bec8c0;line-height:1.7}.loss-chain .mechanics-note{color:var(--ink)}
+.mental-cost{background:var(--ink);color:#fff}.mental-cost .eyebrow{color:#aeb8b0}.mental-cost>div{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:45px 0}.mental-cost>div p{padding:25px;border:1px solid #536158;margin:0;color:#c5cec7}.mental-cost blockquote{font-size:clamp(30px,4.5vw,58px);line-height:1.5;margin:70px 0 0}.mental-cost blockquote em{box-shadow:inset 0 -.22em rgba(200,240,75,.45)}
+
 /* First principles article */
 .start-article { max-width: 1120px; margin: 0 auto; padding: 0 6vw 110px; }
 .start-title { padding: 110px 0 95px; border-bottom: 1px solid rgba(24,37,29,.25); }
@@ -266,6 +295,10 @@ body {
   .practice-record > div { grid-template-columns: 1fr; }
   .practice-next { align-items: stretch; flex-direction: column; }
   .practice-next .new-primary { width: 100%; }
+  .mechanics-hero,.leverage-hero,.mechanics-section,.leverage-core,.why-possible,.leverage-calculator,.leverage-table,.margin-system,.loss-chain,.risk-sizing,.mental-cost{padding:70px 6vw}
+  .mechanics-index{padding:35px 6vw}.mechanics-index a{grid-template-columns:45px 1fr}.mechanics-index i{grid-column:2;text-align:left}.mechanics-section>header{grid-template-columns:1fr;gap:10px}.mechanics-section>header>span{font-size:34px}
+  .order-match,.futures-story{grid-template-columns:1fr}.order-match i,.futures-story i{padding:18px}.roles-grid,.instrument-cards,.two-market{grid-template-columns:1fr}.money-flow,.fund-flow{flex-direction:column}.money-flow i,.fund-flow i{min-height:45px}.difference-flow{grid-template-columns:1fr}.difference-flow i{min-height:50px}
+  .leverage-core>div:nth-child(2),.calc-grid,.loss-chain ol,.mental-cost>div{grid-template-columns:1fr}.calc-controls label{grid-template-columns:1fr}.calc-controls b{text-align:left}.leverage-formula,.formula-card,.risk-equation{align-items:stretch;flex-direction:column;text-align:center}.leverage-formula i,.formula-card i,.risk-equation i{transform:rotate(90deg)}
 }
 button,
 a {
