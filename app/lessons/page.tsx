@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import SiteHeader from "../components/SiteHeader";
 
 type Section = { heading: string; body: string };
 type Quiz = {
@@ -2140,6 +2141,8 @@ export default function Home() {
   useEffect(() => {
     const saved = localStorage.getItem("investment-map-progress-v2");
     if (saved) setCompleted(JSON.parse(saved));
+    const week = Number(new URLSearchParams(window.location.search).get("week"));
+    if (week >= 1 && week <= lessons.length) setActive(week - 1);
   }, []);
   const lesson = lessons[active];
   const progress = useMemo(
@@ -2189,129 +2192,15 @@ export default function Home() {
 
   return (
     <main>
-      <header className="topbar site-header">
-        <a className="brand" href="#top">
-          <span className="brand-mark">18</span>
-          <span>投資の地図</span>
-        </a>
-        <nav className="global-nav" aria-label="メインナビゲーション">
-          <a href="/courses">2つのコース</a>
-          <a href="/strategies">データ・戦略</a>
-          <a href="/glossary">用語集</a>
-          <a href="/services">サービス比較</a>
-        </nav>
-        <div className="progress-mini">
-          <span>{progress}%</span>
-          <div>
-            <i style={{ width: `${progress}%` }} />
-          </div>
-        </div>
-      </header>
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <p className="eyebrow">20 LESSONS + TRADING LAB</p>
-          <h1>
-            未来のお金を、
-            <br />
-            <em>自分で考える力</em>を。
-          </h1>
-          <p className="lead">
-            基礎を知るだけで終わらない。商品を比べ、取引画面を読み、注文と損益を練習してから、自分のルールで最初の少額投資へ進みます。
-          </p>
-          <div className="hero-actions">
-            <button
-              className="primary"
-              onClick={() =>
-                document
-                  .getElementById("curriculum")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              基礎から学ぶ <span>→</span>
-            </button>
-            <a className="secondary" href="/courses">
-              2つのコースを選ぶ
-            </a>
-          </div>
-        </div>
-        <div className="hero-orbit" aria-hidden="true">
-          <div className="orbit" />
-          <div className="orbit orbit-two" />
-          <div className="coin">
-            <span>¥</span>
-          </div>
-          <span className="orbit-label label-a">THINK</span>
-          <span className="orbit-label label-b">LEARN</span>
-          <span className="orbit-label label-c">DECIDE</span>
-        </div>
-      </section>
-      <section className="quick-gateway" aria-label="主要コンテンツ">
-        <p className="eyebrow">START HERE</p>
+      <SiteHeader current="lessons" />
+      <section className="lesson-index-head" id="top">
         <div>
-          <a className="gateway-primary" href="#curriculum">
-            <span>01</span>
-            <b>基礎から学ぶ</b>
-            <small>お金・経済・投資の土台を身につける</small>
-          </a>
-          <a href="/courses">
-            <span>02</span>
-            <b>2つのコースを選ぶ</b>
-            <small>長期資産形成／アクティブ投資</small>
-          </a>
-          <a href="/strategies">
-            <span>03</span>
-            <b>データ・戦略ラボ</b>
-            <small>ローソク足と売買ルールを学ぶ</small>
-          </a>
-          <a href="/services">
-            <span>04</span>
-            <b>サービス比較</b>
-            <small>証券会社・デモ・参考書を比べる</small>
-          </a>
+          <p className="eyebrow">FOUNDATION COURSE · 20 LESSONS</p>
+          <h1>基礎から実行まで、<br/><em>順番に学ぶ。</em></h1>
+          <p>第1〜12回はお金と投資の基礎、第13〜20回は商品・注文・指標・手法を学ぶ取引準備編です。</p>
         </div>
-      </section>
-      <section className="course-intro">
-        <p className="eyebrow">HOW TO LEARN</p>
-        <h2>
-          一度で覚えなくていい。
-          <br />
-          使いながら身につける。
-        </h2>
-        <div className="intro-grid">
-          <div>
-            <b>01</b>
-            <strong>基礎編</strong>
-            <p>お金・リスク・経済の土台を作る。</p>
-          </div>
-          <div>
-            <b>02</b>
-            <strong>取引準備編</strong>
-            <p>口座・商品・指標・手法を学ぶ。</p>
-          </div>
-          <div>
-            <b>03</b>
-            <strong>自分の道を選ぶ</strong>
-            <p>長期資産形成か、個別株・アクティブ投資へ進む。</p>
-          </div>
-        </div>
-        <div className="journey">
-          <p className="eyebrow">FOUNDATION → PREPARATION → CHOOSE YOUR PATH</p>
-          <div>
-            <span>守る</span>
-            <i>→</i>
-            <span>基礎を知る</span>
-            <i>→</i>
-            <span>商品を比べる</span>
-            <i>→</i>
-            <span>道を選ぶ</span>
-            <i>→</i>
-            <span>ルールを作る</span>
-            <i>→</i>
-            <span>続ける</span>
-          </div>
-          <p>
-            共通の基礎を学んだ後、目的に合わせて2つのコースへ分かれます。どちらも最後は、自分のルールを作り守ることにつながります。
-          </p>
+        <div className="progress-mini">
+          <span>学習進捗 {progress}%</span><div><i style={{ width: `${progress}%` }} /></div>
         </div>
       </section>
       <section className="map-section" id="curriculum">
@@ -2416,7 +2305,7 @@ export default function Home() {
               <span>この次</span>
               <p>
                 {active === lessons.length - 1
-                  ? "次は2つのコースから、自分が学ぶ投資の道を選びます。"
+                  ? "次は投資スタイルを比較し、自分に合う道を選びます。"
                   : `次回「${lessons[active + 1].title}」で、今回の知識を次の判断へつなげます。`}
               </p>
             </div>
@@ -2518,21 +2407,6 @@ export default function Home() {
             )}
           </div>
         </article>
-      </section>
-      <section className="future-monetization">
-        <p className="eyebrow">INDEPENDENT FIRST</p>
-        <h2>教材と広告を、混ぜない。</h2>
-        <p>
-          将来、証券口座・書籍・学習サービスの比較記事を追加する場合も、広告であること、比較基準、費用、デメリット、更新日を明示します。報酬の高さではなく、学習者の目的との適合を優先します。
-        </p>
-        <div>
-          <span>学習教材</span>
-          <b>理解と判断力を育てる</b>
-          <span>比較ガイド</span>
-          <b>選択肢を公平に比べる</b>
-          <span>広告</span>
-          <b>明確に表示して分離する</b>
-        </div>
       </section>
       <section className="principle">
         <p className="eyebrow">OUR PRINCIPLE</p>

@@ -1,10 +1,9 @@
+import SiteHeader from "../components/SiteHeader";
+
 export default function StartPage() {
   return (
     <main className="start-page">
-      <header className="simple-header">
-        <a className="brand" href="/"><span className="brand-mark">18</span><span>18歳からの投資の地図</span></a>
-        <nav aria-label="ページナビゲーション"><a href="/">地図へ戻る</a><a href="/lessons?week=1">全20回講座</a><a href="/glossary">用語集</a></nav>
-      </header>
+      <SiteHeader current="start" />
 
       <article className="start-article">
         <header className="start-title">

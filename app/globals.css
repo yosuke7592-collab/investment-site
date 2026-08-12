@@ -50,6 +50,7 @@ body {
   border-radius: 999px;
 }
 .simple-header nav a:hover { background: var(--ink); color: var(--lime); }
+.simple-header nav a.current { background: var(--ink); color: var(--lime); }
 .new-hero {
   min-height: 720px;
   padding: 92px 8vw 110px;
@@ -145,6 +146,49 @@ body {
 .new-footer { padding: 54px 8vw; background: var(--ink); color: #fff; display: flex; justify-content: space-between; gap: 40px; }
 .new-footer p { max-width: 650px; color: #aab5ad; line-height: 1.7; margin: 0; font-size: 13px; }
 
+.compact-hero { min-height: 660px; }
+.style-branch { padding: 100px 8vw; background: var(--ink); color: #fff; }
+.style-branch .eyebrow { color: #aab5ad; }
+.style-branch .section-heading > p:last-child { color: #b8c2ba; }
+.style-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.style-cards a { min-height: 340px; padding: 40px; border: 1px solid #526057; color: #fff; text-decoration: none; display: flex; flex-direction: column; transition: .2s; }
+.style-cards a:hover { border-color: var(--lime); transform: translateY(-3px); }
+.style-cards > a:first-child { background: var(--lime); color: var(--ink); border-color: var(--lime); }
+.style-cards span { font-size: 11px; letter-spacing: .18em; font-weight: 800; }
+.style-cards h3 { font: 600 clamp(30px,4vw,48px) var(--font-serif); margin: auto 0 20px; }
+.style-cards p { max-width: 520px; line-height: 1.8; color: #bac4bd; }
+.style-cards > a:first-child p { color: #405046; }
+.style-cards b { margin-top: 20px; }
+.concise-rule { padding-top: 90px; padding-bottom: 90px; }
+.resource-grid > div:last-child { grid-template-columns: repeat(2,1fr); }
+
+.lesson-index-head { padding: 76px 8vw 60px; display: flex; align-items: flex-end; justify-content: space-between; gap: 50px; }
+.lesson-index-head h1 { font-size: clamp(42px,6vw,74px); margin: 16px 0 20px; }
+.lesson-index-head > div:first-child > p:last-child { max-width: 680px; line-height: 1.8; color: var(--muted); }
+.lesson-index-head .progress-mini { min-width: 190px; }
+
+.practice-page { background: var(--paper); min-height: 100vh; }
+.practice-hero { padding: 100px 8vw 110px; background: var(--ink); color: #fff; }
+.practice-hero .eyebrow { color: #aeb8b0; }
+.practice-hero h1 { max-width: 920px; }
+.practice-hero > p:last-child { max-width: 760px; color: #c5cec7; font-size: 17px; line-height: 2; }
+.practice-order { padding: 100px 8vw; }
+.practice-checklist { border-top: 1px solid rgba(24,37,29,.25); }
+.practice-checklist article { display: grid; grid-template-columns: 80px 1fr; gap: 25px; padding: 28px 10px; border-bottom: 1px solid rgba(24,37,29,.25); }
+.practice-checklist article > span { font: 500 28px var(--font-serif); color: var(--green); }
+.practice-checklist h3 { font: 600 25px var(--font-serif); margin: 0 0 8px; }
+.practice-checklist p { margin: 0; color: var(--muted); line-height: 1.7; }
+.practice-record { padding: 95px 8vw; background: #d9f775; }
+.practice-record h2 { font-size: clamp(38px,5vw,68px); }
+.practice-record > div { margin-top: 40px; display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+.practice-record > div p { margin: 0; padding: 26px; border: 1px solid rgba(24,37,29,.22); line-height: 1.7; }
+.practice-record b { display: block; margin-bottom: 12px; }
+.practice-next { padding: 90px 8vw; display: flex; align-items: flex-end; justify-content: space-between; gap: 50px; }
+.practice-next > div { max-width: 690px; }
+.practice-next h2 { font-size: clamp(36px,5vw,60px); }
+.practice-next p { line-height: 1.8; }
+.practice-next .new-primary { flex: 0 0 auto; }
+
 /* First principles article */
 .start-article { max-width: 1120px; margin: 0 auto; padding: 0 6vw 110px; }
 .start-title { padding: 110px 0 95px; border-bottom: 1px solid rgba(24,37,29,.25); }
@@ -214,6 +258,14 @@ body {
   .emotion-loop li { min-height: 125px; }
   .emotion-loop li::after { right: 48%; top: auto; bottom: -14px; transform: rotate(90deg); }
   .start-goal { padding: 55px 24px; }
+  .style-cards { grid-template-columns: 1fr; }
+  .style-cards a { min-height: 280px; padding: 28px; }
+  .lesson-index-head { align-items: flex-start; flex-direction: column; padding: 55px 6vw 35px; }
+  .practice-hero { padding: 70px 6vw; }
+  .practice-order, .practice-record, .practice-next { padding: 70px 6vw; }
+  .practice-record > div { grid-template-columns: 1fr; }
+  .practice-next { align-items: stretch; flex-direction: column; }
+  .practice-next .new-primary { width: 100%; }
 }
 button,
 a {

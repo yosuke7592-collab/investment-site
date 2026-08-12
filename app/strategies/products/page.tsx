@@ -1,3 +1,5 @@
+import SiteHeader from "../../components/SiteHeader";
+
 const assets = [
   { id:"stocks", no:"01", name:"個別株", catch:"会社の成長や価値に投資する", fit:"企業を調べ、自分で銘柄を選びたい人", source:"企業利益の成長、配当、市場評価の変化", move:"決算、業績予想、金利、景気、需給", risk:"倒産・業績悪化・一社集中・価格変動", data:["売上高・営業利益・1株利益（EPS）の推移","会社予想と市場の期待との差","営業キャッシュフロー・自己資本比率","PER・PBR・ROEを同業他社と比較","株価・出来高・決算発表日"], first:"まず決算短信の売上・利益・会社予想を前年と比べる。" },
   { id:"funds", no:"02", name:"投資信託・ETF", catch:"複数の資産をまとめて持つ", fit:"少額・分散・長期を仕組み化したい人", source:"中に入っている株式・債券等の値動き", move:"連動指数、組入資産、為替、金利", risk:"元本割れ・指数偏重・為替・商品の構造", data:["何の指数・資産に連動するか","国・業種・上位銘柄への集中度","信託報酬など継続費用","純資産総額・売買高・乖離率","為替ヘッジの有無"], first:"商品名より先に、目論見書の投資対象と費用を見る。" },
@@ -6,7 +8,7 @@ const assets = [
   { id:"crypto", no:"05", name:"暗号資産", catch:"ネットワーク上の希少性と利用価値を取引する", fit:"大きな変動と保管リスクを理解して少額で学べる人", source:"需要、供給、ネットワーク利用、期待", move:"規制、資金流入、技術更新、市場心理", risk:"極端な変動・取引所・秘密鍵・規制・流動性", data:["現物出来高と市場の流動性","供給量・発行ルール・保有集中","ネットワーク利用と手数料","規制・上場・技術更新","株式市場など全体のリスク選好"], first:"価格だけでなく、保管先と取引所のリスクを分けて考える。" },
 ];
 
-export default function ProductsPage(){return <main className="deep-page"><header className="topbar site-header"><a className="brand" href="/"><span className="brand-mark">18</span><span>投資の地図</span></a><nav className="global-nav"><a href="/strategies">学習マップ</a><a className="current" href="/strategies/products">商品</a><a href="/strategies/chart">チャート</a><a href="/strategies/methods">戦略</a><a href="/glossary">用語集</a></nav></header>
+export default function ProductsPage(){return <main className="deep-page"><SiteHeader current="courses" />
 <section className="deep-hero products-hero"><p className="eyebrow">01 · PRODUCTS &amp; DATA</p><h1>値上がりしそう、ではなく<br/><em>仕組みから選ぶ。</em></h1><p>商品によって、利益が生まれる理由も見るデータも違います。最初は「何にお金を出し、何が起きると損をするか」を説明できる商品だけを候補にします。</p><nav>{assets.map(a=><a href={`#${a.id}`} key={a.id}>{a.name}</a>)}</nav></section>
 <section className="product-compare"><div className="deep-heading"><p className="eyebrow">QUICK COMPARE</p><h2>最初の比較軸</h2></div><div className="compare-scroll"><table><thead><tr><th>商品</th><th>主な利益の源泉</th><th>主なリスク</th><th>初心者の基本</th></tr></thead><tbody>{assets.map(a=><tr key={a.id}><th>{a.name}</th><td>{a.source}</td><td>{a.risk}</td><td>{a.id==="funds"?"現物・分散・低コスト":a.id==="stocks"?"現物・少額・一社集中を避ける":"まず模擬取引。レバレッジを急がない"}</td></tr>)}</tbody></table></div></section>
 <section className="asset-lessons">{assets.map(a=><article id={a.id} className="asset-lesson" key={a.id}><header><span>{a.no}</span><div><p>{a.catch}</p><h2>{a.name}</h2></div></header><div className="asset-body"><div className="asset-basics"><dl><div><dt>向いている人</dt><dd>{a.fit}</dd></div><div><dt>利益が生まれる理由</dt><dd>{a.source}</dd></div><div><dt>価格が動く主因</dt><dd>{a.move}</dd></div><div><dt>主なリスク</dt><dd>{a.risk}</dd></div></dl></div><div className="asset-data"><span>最初に見る5つのデータ</span><ol>{a.data.map(x=><li key={x}>{x}</li>)}</ol><p><b>最初の一歩</b>{a.first}</p></div></div></article>)}</section>

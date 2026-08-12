@@ -1,3 +1,5 @@
+import SiteHeader from "../../components/SiteHeader";
+
 const indicators=[
  {no:"01",name:"出来高",role:"参加量を見る",what:"一定期間に成立した取引量。値動きにどれだけ参加が伴っているかを見る。",use:"抵抗線を抜ける時に平均より増えているか、上昇中に減っていないか。",weak:"出来高だけでは買いと売りのどちらが優勢か確定できない。FXの出来高は市場全体ではない場合がある。",pair:"価格・支持線／抵抗線"},
  {no:"02",name:"移動平均線（SMA・EMA）",role:"方向を見る",what:"過去の終値を平均し、価格の細かな揺れをならした線。EMAは直近価格をより重くする。",use:"線の傾き、価格との位置、短期線と長期線の並びを見る。",weak:"過去データなので遅れる。横ばいでは交差が増え、だましが多い。",pair:"高値・安値の方向、出来高"},
@@ -8,7 +10,7 @@ const indicators=[
 
 function CandleAnatomy(){return <div className="lesson-candle"><span className="lc-high">高値</span><i className="lc-wick top"/><b/><i className="lc-wick bottom"/><span className="lc-open">始値</span><span className="lc-close">終値</span><span className="lc-low">安値</span></div>}
 
-export default function ChartPage(){return <main className="deep-page chart-page"><header className="topbar site-header"><a className="brand" href="/"><span className="brand-mark">18</span><span>投資の地図</span></a><nav className="global-nav"><a href="/strategies">学習マップ</a><a href="/strategies/products">商品</a><a className="current" href="/strategies/chart">チャート</a><a href="/strategies/methods">戦略</a><a href="/glossary">用語集</a></nav></header>
+export default function ChartPage(){return <main className="deep-page chart-page"><SiteHeader current="courses" />
 <section className="deep-hero chart-hero"><p className="eyebrow">02 · CHART READING</p><h1>形を覚える前に、<br/><em>読む順番を覚える。</em></h1><p>チャートは過去の価格と取引の記録です。未来を予言する図ではなく、今どの状態かを同じ手順で判断する道具です。</p></section>
 <section className="chart-order"><div className="deep-heading"><p className="eyebrow">READING ORDER</p><h2>毎回この6段階で読む</h2><p>下からではなく、広い時間軸から狭い時間軸へ。指標は最後です。</p></div><div>{[["01","時間軸","週足・日足で大きな方向を確認"],["02","価格構造","高値と安値が上か下か横ばいか"],["03","重要価格","支持線・抵抗線・前回高安"],["04","ローソク足","買い手と売り手の押し戻し"],["05","出来高","その動きに参加が伴うか"],["06","補助指標","目的に合う1〜2個だけ"]].map(x=><article key={x[0]}><b>{x[0]}</b><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div></section>
 <section className="timeframes"><div className="deep-heading"><p className="eyebrow">TIMEFRAME</p><h2>時間足が変われば、<br/>見える相場も変わる。</h2></div><div className="timeframe-grid"><article><b>上位足</b><h3>環境を決める</h3><p>週足・日足で、大きなトレンドと重要価格を確認します。ここに逆らう取引は難度が上がります。</p></article><article><b>取引足</b><h3>入る形を待つ</h3><p>スイングなら日足・4時間足、デイトレなら1時間足・15分足など、自分の保有時間に合わせます。</p></article><article><b>下位足</b><h3>細かくしすぎない</h3><p>短い足ほどノイズと判断回数が増えます。初心者は1分足を避け、確認する時間足を固定します。</p></article></div></section>
