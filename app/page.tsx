@@ -15,7 +15,6 @@ export default function Home() {
       <p className="eyebrow">LEARN → CHOOSE → RULE → VERIFY</p>
       <h1>投資は、<br/><em>自分のルール</em>を<br/>作ることから始まる。</h1>
       <p className="new-lead">勝てる銘柄を探す前に、種類と仕組みを知る。自分の資金・時間・性格に合う方法を選ぶ。そして、決めたルールを守りながら検証する。そのための学習サイトです。</p>
-      <div className="new-actions"><a className="new-primary" href="/start">最初に伝えたいことを読む <span>→</span></a><a className="new-secondary" href="/lessons?week=1">第1回から学ぶ</a></div>
     </section>
 
     <section className="learning-road" aria-labelledby="route-title">

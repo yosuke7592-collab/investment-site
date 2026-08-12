@@ -1,20 +1,13 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { SmallNav } from "./PageSubnav";
 
 const sections = [
-  { label: "はじめに", href: "/start" },
-  { label: "基礎講座", href: "/lessons?week=1" },
-  { label: "取引の仕組み", href: "/mechanics" },
-  { label: "レバレッジ", href: "/mechanics/leverage" },
-  { label: "投資スタイル", href: "/courses" },
-  { label: "長期資産形成", href: "/long-term" },
-  { label: "アクティブ投資", href: "/strategies" },
-  { label: "商品", href: "/strategies/products" },
-  { label: "チャート", href: "/strategies/chart" },
-  { label: "手法・戦略", href: "/strategies/methods" },
-  { label: "練習・検証", href: "/lab" },
-  { label: "サービス比較", href: "/services" },
+  { label: "基礎を学ぶ", href: "/lessons?week=1" },
+  { label: "スタイルを選ぶ", href: "/courses" },
+  { label: "実践する", href: "/strategies/products" },
+  { label: "調べる・比較する", href: "/glossary" },
 ];
 
 const nextByPath: Record<string, { label: string; href: string }> = {
@@ -38,15 +31,14 @@ export default function GlobalJourney() {
   return (
     <>
       <section className="global-journey">
+        <SmallNav position="bottom" />
         {next && <a className="global-next" href={next.href}><small>NEXT</small><b>次へ｜{next.label}</b><span>→</span></a>}
-        <nav aria-label="大項目一覧">
-          {sections.map((section) => <a className={pathname === section.href.split("?")[0] ? "current" : ""} href={section.href} key={section.href}>{section.label}</a>)}
-        </nav>
       </section>
       <footer className="global-principle">
         <p className="eyebrow">OUR PRINCIPLE</p>
         <blockquote>自分のルールを作り、<br/><em>そのルールを守る。</em></blockquote>
         <p>本サイトは金融教育を目的とした教材です。利益を保証したり、特定商品の売買を勧めたりするものではありません。</p>
+        <nav aria-label="大項目一覧">{sections.map((section) => <a href={section.href} key={section.href}>{section.label}</a>)}</nav>
         <div><b>投資の原則</b><span>© 2026 Learn first, decide for yourself.</span></div>
       </footer>
     </>
