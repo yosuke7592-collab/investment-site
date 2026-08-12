@@ -42,9 +42,9 @@ export function SmallNav({ position }: { position: "top" | "bottom" }) {
   const pathname = usePathname();
   const group = groups.find((item) => item.paths.includes(pathname));
   if (!group) return null;
-  return <nav className={`page-subnav ${position}`} aria-label="この項目のページ">
+  return <div className={`page-subnav-shell ${position}`}><nav className={`page-subnav ${position}`} aria-label="この項目のページ">
     {group.links.map((link) => <a className={pathname === link.href.split("?")[0] ? "current" : ""} href={link.href} key={link.href}>{link.label}</a>)}
-  </nav>;
+  </nav></div>;
 }
 
 export default function PageSubnav() { return <SmallNav position="top" />; }

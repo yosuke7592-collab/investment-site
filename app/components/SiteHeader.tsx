@@ -15,17 +15,19 @@ export default function SiteHeader({ current: _current }: Props) {
   ];
   return (
     <><header className="simple-header unified-header">
-      <a className="brand" href="/">
-        <small>INVESTMENT PRINCIPLES</small>
-        <strong>投資の原則</strong>
-      </a>
-      <nav aria-label="メインナビゲーション">
-        {links.map((link, index) => (
-          <a className={link.paths.includes(pathname) ? "current" : ""} href={link.href} key={link.id}>
-            <span>{String(index + 1).padStart(2, "0")}</span>{link.label}
-          </a>
-        ))}
-      </nav>
+      <div className="header-inner">
+        <a className="brand" href="/">
+          <small>INVESTMENT PRINCIPLES</small>
+          <strong>投資の原則</strong>
+        </a>
+        <nav aria-label="メインナビゲーション">
+          {links.map((link, index) => (
+            <a className={link.paths.includes(pathname) ? "current" : ""} href={link.href} key={link.id}>
+              <span>{String(index + 1).padStart(2, "0")}</span>{link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
     </header><PageSubnav /></>
   );
 }

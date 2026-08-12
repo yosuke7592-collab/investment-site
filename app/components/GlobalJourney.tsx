@@ -30,15 +30,19 @@ export default function GlobalJourney() {
   return (
     <>
       <section className="global-journey">
-        {next && <a className="global-next" href={next.href}><small>NEXT</small><b>次へ｜{next.label}</b><span>→</span></a>}
-        <SmallNav position="bottom" />
+        <div className="global-journey-inner">
+          {next && <a className="global-next" href={next.href}><small>NEXT</small><b>次へ｜{next.label}</b><span>→</span></a>}
+          <SmallNav position="bottom" />
+        </div>
       </section>
       <footer className="global-principle">
-        <nav aria-label="大項目一覧">{sections.map((section) => <a href={section.href} key={section.href}>{section.label}</a>)}</nav>
-        <p className="eyebrow">OUR PRINCIPLE</p>
-        <blockquote><span>自分のルールを作り、</span><em>そのルールを守る。</em></blockquote>
-        <p className="footer-note">本サイトは金融教育を目的とした教材です。利益を保証したり、特定商品の売買を勧めたりするものではありません。</p>
-        <div><a className="footer-site-name" href="/">投資の原則</a><span>© 2026 Learn first, decide for yourself.</span></div>
+        <div className="footer-inner">
+          <nav aria-label="大項目一覧">{sections.map((section) => <a href={section.href} key={section.href}>{section.label}</a>)}</nav>
+          <p className="eyebrow">OUR PRINCIPLE</p>
+          <blockquote><span>自分のルールを作り、</span><em>そのルールを守る。</em></blockquote>
+          <p className="footer-note">本サイトは金融教育を目的とした教材です。利益を保証したり、特定商品の売買を勧めたりするものではありません。</p>
+          <div className="footer-bottom"><a className="footer-site-name" href="/">投資の原則</a><span>© 2026 Learn first, decide for yourself.</span></div>
+        </div>
       </footer>
     </>
   );
