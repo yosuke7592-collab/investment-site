@@ -3743,3 +3743,31 @@ footer p {
 @media(max-width:560px){.analysis-hero,.deep-hero,.glossary-hero{padding-top:75px}.analysis-chapters,.product-compare,.chart-order,.timeframes,.candle-deep,.indicator-lessons,.method-premise,.style-finder,.strategy-library,.glossary-body,.asset-lesson,.decision-gate,.minimum-chart,.rule-builder{padding-left:20px;padding-right:20px}.chapter-grid,.chart-order>div:last-child,.timeframe-grid,.indicator-grid,.method-premise>div:nth-child(2),.style-tabs,.plan-tabs,.term-grid{grid-template-columns:1fr}.chapter-grid a{min-height:290px;padding:26px}.asset-lesson>header{grid-template-columns:70px 1fr}.asset-lesson>header>span{font-size:45px}.asset-basics,.asset-data{padding:24px}.style-sheet dl{grid-template-columns:1fr}.plan-rules,.plan-visual{padding:24px}.plan-rules dl div{grid-template-columns:1fr;gap:5px}.pattern-visual{height:230px}.global-nav{scrollbar-width:none}}
 @media(max-width:560px){.global-journey{padding:60px 6vw}.global-next{padding:28px 24px}.global-journey nav{display:grid;grid-template-columns:1fr 1fr}.global-journey nav a{padding:12px 10px}.global-principle{padding:55px 6vw 35px!important}.global-principle nav{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;padding-bottom:28px}.global-principle .eyebrow{margin-top:48px}.global-principle blockquote{font-size:clamp(27px,8vw,38px);line-height:1.55;margin:22px 0 34px;letter-spacing:-.035em}.global-principle blockquote span,.global-principle blockquote em{white-space:nowrap}.global-principle>div{margin-top:48px;flex-direction:column;gap:18px}.footer-site-name{font-size:28px;order:0}.global-principle>div>span{order:1}.unified-header{overflow-x:auto}.unified-header nav{min-width:max-content;flex-wrap:nowrap}}
 @media(max-width:560px){.simple-header{padding:16px 6vw 0}.header-inner{min-height:0;align-items:stretch;flex-direction:column;gap:14px}.header-inner nav{width:calc(100% + 12vw);margin-left:-6vw;padding:0 6vw}.page-subnav-shell{padding:0 6vw}.global-principle{padding:0 6vw!important}.footer-inner{margin:0 auto!important;padding:50px 0 32px}.footer-bottom{margin-top:44px;align-items:flex-start;flex-direction:column;gap:18px}.footer-bottom>span{order:1}}
+
+/* Applied learning examples */
+.chart-case,.expectancy-lab,.journal-template,.journal-review{padding:100px max(7vw,24px)}
+.chart-case,.journal-template{background:var(--cream)}
+.case-timeline{max-width:900px;margin:0 auto;border-top:1px solid #b9c0b8}
+.case-timeline article{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid #b9c0b8}
+.case-timeline article>b{font:600 28px var(--font-serif);color:var(--green)}
+.case-timeline h3{margin:0 0 7px;font:600 23px var(--font-serif)}
+.case-timeline p{margin:0;color:var(--muted);line-height:1.8}
+.worked-story{max-width:900px;margin:24px auto 0;padding:28px;background:var(--green);color:#fff}
+.worked-story h3{margin-top:0;font:600 27px var(--font-serif);color:var(--lime)}
+.worked-story p{margin-bottom:0;line-height:1.9}
+.expectancy-lab{background:#e9e5da}
+.expectancy-formula{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;padding:32px;background:var(--cream);border:1px solid #b9c0b8}
+.expectancy-formula p{margin:0}.expectancy-formula span{font-size:28px;color:var(--green)}
+.expectancy-formula strong{padding:14px 18px;background:var(--green);color:var(--lime);font-size:20px}
+.expectancy-lab>p{max-width:850px;margin:25px auto;color:var(--muted);line-height:1.9}
+.loss-streak{max-width:850px;margin:0 auto;padding:25px;border-left:6px solid var(--lime);background:var(--ink);color:#fff}
+.loss-streak h3{margin-top:0;font:600 25px var(--font-serif)}.loss-streak p{margin-bottom:0;line-height:1.8;color:#c7d0c9}
+.journal-fields{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#b9c0b8;border:1px solid #b9c0b8}
+.journal-fields p{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:center;margin:0;padding:18px;background:var(--cream)}
+.journal-fields b{color:var(--green);font:600 20px var(--font-serif)}
+.journal-review{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;background:var(--ink);color:#fff}
+.journal-review h2{font:600 clamp(40px,5vw,64px)/1.35 var(--font-serif)}.journal-review>div>p:last-child{color:#bdc8bf;line-height:1.9}
+.journal-review dl{margin:0}.journal-review dl div{display:grid;grid-template-columns:160px 1fr;gap:18px;padding:17px 0;border-top:1px solid #4c5b52}
+.journal-review dt{color:var(--lime);font-weight:700}.journal-review dd{margin:0;color:#d6ddd7;line-height:1.7}
+.review-rule{grid-column:1/-1;margin:0;padding:22px;background:var(--green);line-height:1.8}
+@media(max-width:700px){.chart-case,.expectancy-lab,.journal-template,.journal-review{padding:70px 20px}.journal-fields,.journal-review{grid-template-columns:1fr}.journal-review{gap:25px}.case-timeline article{grid-template-columns:45px 1fr}.expectancy-formula{align-items:stretch;flex-direction:column}.expectancy-formula span{text-align:center}.journal-review dl div{grid-template-columns:1fr;gap:6px}.review-rule{grid-column:auto}}
