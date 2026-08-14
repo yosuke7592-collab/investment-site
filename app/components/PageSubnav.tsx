@@ -13,9 +13,10 @@ const groups = [
     ],
   },
   {
-    paths: ["/courses", "/long-term", "/strategies"],
+    paths: ["/courses", "/plan", "/long-term", "/strategies"],
     links: [
       { label: "スタイル比較", href: "/courses" },
+      { label: "投資設計", href: "/plan" },
       { label: "長期資産形成", href: "/long-term" },
       { label: "アクティブ投資", href: "/strategies" },
     ],
@@ -30,10 +31,11 @@ const groups = [
     ],
   },
   {
-    paths: ["/glossary", "/services"],
+    paths: ["/glossary", "/services", "/about"],
     links: [
       { label: "用語集", href: "/glossary" },
       { label: "サービス比較", href: "/services" },
+      { label: "編集方針", href: "/about" },
     ],
   },
 ];

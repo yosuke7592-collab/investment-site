@@ -9,9 +9,9 @@ export default function SiteHeader({ current: _current }: Props) {
   const pathname = usePathname();
   const links = [
     { id: "learn", label: "基礎を学ぶ", href: "/lessons?week=1", paths: ["/start", "/lessons", "/mechanics", "/mechanics/leverage"] },
-    { id: "style", label: "スタイルを選ぶ", href: "/courses", paths: ["/courses", "/long-term", "/strategies"] },
+    { id: "style", label: "スタイルを選ぶ", href: "/courses", paths: ["/courses", "/plan", "/long-term", "/strategies"] },
     { id: "practice", label: "実践する", href: "/strategies/products", paths: ["/strategies/products", "/strategies/chart", "/strategies/methods", "/lab"] },
-    { id: "tools", label: "調べる・比較する", href: "/glossary", paths: ["/glossary", "/services"] },
+    { id: "tools", label: "調べる・比較する", href: "/glossary", paths: ["/glossary", "/services", "/about"] },
   ];
   return (
     <><header className="simple-header unified-header">

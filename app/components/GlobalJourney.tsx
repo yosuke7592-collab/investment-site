@@ -15,13 +15,15 @@ const nextByPath: Record<string, { label: string; href: string }> = {
   "/start": { label: "基礎講座 第1回", href: "/lessons?week=1" },
   "/mechanics": { label: "レバレッジ", href: "/mechanics/leverage" },
   "/mechanics/leverage": { label: "投資スタイルを選ぶ", href: "/courses" },
-  "/courses": { label: "長期資産形成", href: "/long-term" },
+  "/courses": { label: "自分の投資設計", href: "/plan" },
+  "/plan": { label: "長期資産形成", href: "/long-term" },
   "/long-term": { label: "アクティブ投資", href: "/strategies" },
   "/strategies": { label: "投資商品を知る", href: "/strategies/products" },
   "/strategies/products": { label: "チャートを読む", href: "/strategies/chart" },
   "/strategies/chart": { label: "手法と戦略を作る", href: "/strategies/methods" },
   "/strategies/methods": { label: "練習と検証", href: "/lab" },
   "/lab": { label: "サービスを比較する", href: "/services" },
+  "/services": { label: "編集方針と情報源", href: "/about" },
 };
 
 export default function GlobalJourney() {
