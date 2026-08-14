@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import SiteHeader from "../components/SiteHeader";
+import { lessonDepth } from "./depth";
 
 type Section = { heading: string; body: string };
 type Quiz = {
@@ -2183,8 +2184,8 @@ export default function Home() {
       <section className="lesson-index-head" id="top">
         <div>
           <p className="eyebrow">FOUNDATION COURSE · 20 LESSONS</p>
-          <h1>基礎から実行まで、<br/><em>順番に学ぶ。</em></h1>
-          <p>第1〜12回はお金と投資の基礎、第13〜20回は商品・注文・指標・手法を学ぶ取引準備編です。</p>
+          <h1>覚えるのではなく、<br/><em>仕組みから理解する。</em></h1>
+          <p>第1〜12回はお金と投資の土台、第13〜20回は商品・注文・分析・手法を学びます。各回は20〜30分を目安に、背景から実際の判断までつなげます。</p>
         </div>
       </section>
       <section className="lesson-shell" id="lesson">
@@ -2193,11 +2194,11 @@ export default function Home() {
           <p className="kicker">{lesson.kicker}</p>
           <div className="side-line" />
           <p className="side-note">
-            {lesson.week <= 12 ? "基礎編" : "取引準備編"}
+            {lesson.week <= 12 ? "初心者｜基礎編" : "初級〜中級｜取引準備編"}
             <br />
-            学習時間
+            学習時間の目安
             <br />
-            <strong>{lesson.time}</strong>
+            <strong>20〜30分</strong>
           </p>
           <nav className="lesson-nav">
             {lessons.map((l, i) => (
@@ -2218,9 +2219,18 @@ export default function Home() {
             {String(lesson.week).padStart(2, "0")} · MODULE {lesson.module}
           </p>
           <h2>{lesson.title}</h2>
+          <p className="lesson-summary">{lesson.summary}</p>
           <p className="term-guide">
             点線の専門用語を押すと、その場で意味を確認できます。
           </p>
+          {lessonDepth[lesson.week] && <section className="lesson-depth">
+            <p className="eyebrow">UNDERSTAND THE MECHANISM</p>
+            {lessonDepth[lesson.week].chapters.map((chapter) => <div key={chapter.heading}>
+              <h3>{chapter.heading}</h3>
+              {chapter.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            </div>)}
+            <aside><b>判断するときの確認</b>{lessonDepth[lesson.week].checks.map((check) => <p key={check}>□ {check}</p>)}</aside>
+          </section>}
           {lesson.sections.map((s) => (
             <section className="reading-section" key={s.heading}>
               <h3>{s.heading}</h3>
@@ -2243,6 +2253,7 @@ export default function Home() {
                 {s.label} ↗
               </a>
             ))}
+            <small>内容確認日：2026年8月14日　制度・税制・サービス条件は、利用前に必ず最新の公式情報を確認してください。</small>
           </div>
           <div className="lesson-actions">
             {active > 0 && (

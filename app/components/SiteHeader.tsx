@@ -8,10 +8,10 @@ type Props = { current?: "start" | "lessons" | "mechanics" | "courses" | "glossa
 export default function SiteHeader({ current: _current }: Props) {
   const pathname = usePathname();
   const links = [
-    { id: "learn", label: "基礎を学ぶ", href: "/lessons?week=1", paths: ["/start", "/lessons", "/mechanics", "/mechanics/leverage"] },
-    { id: "style", label: "スタイルを選ぶ", href: "/courses", paths: ["/courses", "/plan", "/long-term", "/strategies"] },
-    { id: "practice", label: "実践する", href: "/strategies/products", paths: ["/strategies/products", "/strategies/chart", "/strategies/methods", "/lab"] },
-    { id: "tools", label: "調べる・比較する", href: "/glossary", paths: ["/glossary", "/services", "/about"] },
+    { id: "learn", label: "はじめから学ぶ", href: "/lessons?week=1", paths: ["/start", "/lessons", "/mechanics", "/mechanics/leverage"] },
+    { id: "style", label: "投資方法を選ぶ", href: "/courses", paths: ["/courses", "/plan", "/long-term", "/strategies"] },
+    { id: "practice", label: "分析・取引を学ぶ", href: "/strategies/products", paths: ["/strategies/products", "/strategies/chart", "/strategies/methods", "/lab"] },
+    { id: "tools", label: "用語・サービス", href: "/glossary", paths: ["/glossary", "/services", "/about"] },
   ];
   return (
     <><header className="simple-header unified-header">

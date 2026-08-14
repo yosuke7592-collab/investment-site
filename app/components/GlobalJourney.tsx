@@ -4,10 +4,10 @@ import { usePathname } from "next/navigation";
 import { SmallNav } from "./PageSubnav";
 
 const sections = [
-  { label: "基礎を学ぶ", href: "/lessons?week=1" },
-  { label: "スタイルを選ぶ", href: "/courses" },
-  { label: "実践する", href: "/strategies/products" },
-  { label: "調べる・比較する", href: "/glossary" },
+  { label: "はじめから学ぶ", href: "/lessons?week=1" },
+  { label: "投資方法を選ぶ", href: "/courses" },
+  { label: "分析・取引を学ぶ", href: "/strategies/products" },
+  { label: "用語・サービス", href: "/glossary" },
 ];
 
 const nextByPath: Record<string, { label: string; href: string }> = {
