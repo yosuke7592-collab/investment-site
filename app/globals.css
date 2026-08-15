@@ -3745,7 +3745,18 @@ footer p {
 @media(max-width:560px){.simple-header{padding:16px 6vw 0}.header-inner{min-height:0;align-items:stretch;flex-direction:column;gap:14px}.header-inner nav{width:calc(100% + 12vw);margin-left:-6vw;padding:0 6vw}.page-subnav-shell{padding:0 6vw}.global-principle{padding:0 6vw!important}.footer-inner{margin:0 auto!important;padding:50px 0 32px}.footer-bottom{margin-top:44px;align-items:flex-start;flex-direction:column;gap:18px}.footer-bottom>span{order:1}}
 
 /* Applied learning examples */
-.chart-case,.expectancy-lab,.journal-template,.journal-review{padding:100px max(7vw,24px)}
+.course-deepening,.leverage-costs,.long-exit,.ownership-map,.chart-case,.expectancy-lab,.journal-template,.journal-review{box-sizing:border-box;padding:100px max(7vw,24px)}
+.course-deepening,.long-exit{background:var(--cream)}
+.leverage-costs,.ownership-map{background:#e9e5da}
+.mechanism-steps,.leverage-costs>.deep-heading+div,.ownership-map>.deep-heading+div,.exit-grid{display:grid;gap:10px}
+.mechanism-steps{grid-template-columns:repeat(4,1fr)}
+.leverage-costs>.deep-heading+div,.exit-grid{grid-template-columns:repeat(3,1fr)}
+.ownership-map>.deep-heading+div{grid-template-columns:repeat(4,1fr)}
+.mechanism-steps article,.leverage-costs>.deep-heading+div article,.ownership-map>.deep-heading+div article,.exit-grid article{padding:27px;background:var(--paper);border:1px solid #b9c0b8}
+.mechanism-steps article>b{font:600 28px var(--font-serif);color:var(--green)}
+.mechanism-steps h3,.leverage-costs h3,.ownership-map h3,.exit-grid h3{font:600 24px/1.45 var(--font-serif);margin:15px 0 9px}
+.mechanism-steps p,.leverage-costs>.deep-heading+div p,.ownership-map>.deep-heading+div p,.exit-grid p{margin-bottom:0;color:var(--muted);line-height:1.8}
+.ownership-map>.deep-heading+div span,.exit-grid article>b{color:var(--green);font-size:11px;font-weight:800;letter-spacing:.05em}
 .chart-case,.journal-template{background:var(--cream)}
 .case-timeline{max-width:900px;margin:0 auto;border-top:1px solid #b9c0b8}
 .case-timeline article{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid #b9c0b8}
@@ -3770,7 +3781,8 @@ footer p {
 .journal-review dl{margin:0}.journal-review dl div{display:grid;grid-template-columns:160px 1fr;gap:18px;padding:17px 0;border-top:1px solid #4c5b52}
 .journal-review dt{color:var(--lime);font-weight:700}.journal-review dd{margin:0;color:#d6ddd7;line-height:1.7}
 .review-rule{grid-column:1/-1;margin:0;padding:22px;background:var(--green);line-height:1.8}
-@media(max-width:700px){.chart-case,.expectancy-lab,.journal-template,.journal-review{padding:70px 20px}.journal-fields,.journal-review{grid-template-columns:1fr}.journal-review{gap:25px}.case-timeline article{grid-template-columns:45px 1fr}.expectancy-formula{align-items:stretch;flex-direction:column}.expectancy-formula span{text-align:center}.journal-review dl div{grid-template-columns:1fr;gap:6px}.review-rule{grid-column:auto}}
+@media(max-width:900px){.mechanism-steps,.ownership-map>.deep-heading+div{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.course-deepening,.leverage-costs,.long-exit,.ownership-map,.chart-case,.expectancy-lab,.journal-template,.journal-review{padding:70px 20px}.mechanism-steps,.leverage-costs>.deep-heading+div,.ownership-map>.deep-heading+div,.exit-grid{grid-template-columns:1fr}.long-exit .long-heading h2{font-size:clamp(36px,10vw,48px);line-height:1.45}.journal-fields,.journal-review{grid-template-columns:1fr}.journal-review{gap:25px}.case-timeline article{grid-template-columns:45px 1fr}.expectancy-formula{align-items:stretch;flex-direction:column}.expectancy-formula span{text-align:center}.journal-review dl div{grid-template-columns:1fr;gap:6px}.review-rule{grid-column:auto}}
 
 /* Chart school and pattern atlas */
 .line-school,.ma-school,.position-school,.atlas-group{padding:100px max(7vw,24px)}
