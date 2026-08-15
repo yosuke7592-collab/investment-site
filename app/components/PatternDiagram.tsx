@@ -1,31 +1,19 @@
-type Props = { type: string; label: string };
+type Props = { type: string; label: string; compact?: boolean };
+type Candle = { o:number; h:number; l:number; c:number };
 
-const paths: Record<string, string> = {
-  doubleTop: "M8 84 L24 55 L40 27 L54 58 L69 29 L83 57 L96 91",
-  doubleBottom: "M8 18 L24 49 L40 81 L54 50 L69 79 L83 48 L96 16",
-  headShoulders: "M7 85 L22 57 L35 37 L47 61 L59 16 L70 62 L82 38 L94 64",
-  inverseHeadShoulders: "M7 18 L22 47 L35 67 L47 42 L59 88 L70 41 L82 66 L94 37",
-  tripleTop: "M7 84 L21 35 L34 68 L49 34 L62 68 L77 36 L94 83",
-  rounding: "M7 22 C20 35 25 76 50 82 C75 76 80 34 96 18",
-  vBottom: "M8 18 L50 88 L96 17",
-  flag: "M7 85 L38 18 L43 35 L83 43 L55 66 L95 9",
-  pennant: "M7 86 L36 16 M39 31 L86 47 L43 64 M63 48 L96 12",
-  ascendingTriangle: "M8 83 L25 56 L40 77 L58 45 L72 69 L93 25 M16 24 L95 24",
-  descendingTriangle: "M8 18 L25 46 L40 23 L58 58 L72 31 L93 74 M14 76 L95 76",
-  symmetricTriangle: "M8 17 L24 80 L40 30 L56 69 L72 42 L89 58 M8 17 L94 56 M8 82 L94 56",
-  rectangle: "M7 48 L18 22 L31 77 L44 23 L58 76 L72 24 L86 76 L96 35",
-  cupHandle: "M7 22 C16 90 62 90 73 23 C80 33 86 44 94 30",
-  risingWedge: "M7 76 L24 31 L39 64 L56 22 L71 52 L92 12 M7 78 L94 42 M10 31 L94 10",
-  channel: "M7 77 L24 49 L39 63 L58 31 L73 45 L95 15 M8 58 L90 6 M12 94 L97 40",
-  breakout: "M7 72 L20 28 L34 70 L48 29 L62 69 L75 27 L83 70 L96 9",
-  retest: "M7 72 L23 30 L39 70 L55 29 L68 67 L78 16 L85 33 L96 8",
-  falseBreakout: "M7 72 L22 30 L38 70 L53 29 L68 69 L80 9 L88 40 L96 78",
-  gap: "M7 76 L20 62 L33 70 L43 54 M58 30 L70 18 L83 29 L96 12",
+const priceSeries:Record<string,number[]>={
+ doubleTop:[28,35,43,54,68,76,69,60,52,47,55,66,74,70,61,49,40,31],doubleBottom:[76,68,56,43,31,24,31,42,50,54,47,37,27,30,40,53,64,75],headShoulders:[30,39,52,65,56,47,57,72,86,69,52,61,71,62,49,40,31],inverseHeadShoulders:[74,65,52,38,46,55,44,29,15,33,50,41,30,39,52,62,72],tripleTop:[28,40,58,72,61,48,57,71,62,49,58,70,60,46,35,27],rounding:[76,67,58,49,42,36,32,30,31,34,39,47,57,68,78],vBottom:[76,66,55,43,29,15,28,43,58,71,82],flag:[20,33,48,64,80,75,69,72,65,68,61,64,58,70,83],pennant:[18,32,49,68,84,71,78,68,75,66,72,68,79,88],ascendingTriangle:[35,66,44,66,49,67,54,67,59,68,65,78,86],descendingTriangle:[69,42,64,42,58,41,53,41,48,40,43,29,19],symmetricTriangle:[27,74,36,66,43,60,48,57,51,55,53,64,76],rectangle:[35,68,42,66,39,69,43,65,40,68,44,64,41,73],cupHandle:[72,58,45,34,29,27,30,37,48,62,72,67,61,65,76,84],risingWedge:[28,50,38,58,46,65,53,70,60,74,66,78,69,60,48],channel:[28,43,36,51,44,59,51,67,58,74,65,82],breakout:[38,65,43,64,41,66,44,65,48,67,50,78,86,82],retest:[37,65,42,64,44,66,49,67,53,80,86,71,68,78,88],falseBreakout:[38,66,42,65,44,67,47,66,51,80,62,49,39],gap:[35,41,38,46,43,49,70,76,73,82,78,87],lineHorizontal:[34,52,42,64,48,65,44,62,49,66,53,63,46,58],lineTrend:[28,39,34,48,41,55,47,63,54,70,62,78,69,84],lineChannel:[30,45,38,53,45,61,52,68,59,76,66,83],maCross:[68,62,57,53,49,46,48,52,58,65,72,78,84,88]
 };
-
-const candleTypes = new Set(["pinbar", "engulfing", "inside", "doji", "stars"]);
-
-export default function PatternDiagram({type,label}:Props){
-  if(candleTypes.has(type)) return <svg className={`atlas-diagram candle-${type}`} viewBox="0 0 104 104" role="img" aria-label={`${label}の概念図`}><line x1="5" y1="88" x2="99" y2="88" className="guide"/>{[0,1,2,3,4].map(i=><g key={i} className={`candle candle-${i}`} transform={`translate(${12+i*19} 0)`}><line x1="5" y1="25" x2="5" y2="83"/><rect x="1" y="42" width="8" height="25"/></g>)}</svg>;
-  return <svg className="atlas-diagram" viewBox="0 0 104 104" role="img" aria-label={`${label}の概念図`}><line x1="5" y1="88" x2="99" y2="88" className="guide"/><path d={paths[type]||paths.rectangle}/></svg>;
-}
+const candleSets:Record<string,Candle[]>={
+ pinbar:[{o:66,h:70,l:58,c:61},{o:61,h:64,l:50,c:54},{o:54,h:58,l:22,c:52},{o:52,h:66,l:48,c:63},{o:63,h:72,l:59,c:69}],
+ engulfing:[{o:68,h:72,l:58,c:61},{o:61,h:65,l:51,c:54},{o:55,h:59,l:45,c:48},{o:46,h:64,l:43,c:62},{o:62,h:70,l:58,c:68}],
+ inside:[{o:62,h:67,l:53,c:56},{o:56,h:61,l:47,c:50},{o:49,h:66,l:45,c:63},{o:58,h:61,l:53,c:56},{o:56,h:72,l:54,c:69}],
+ doji:[{o:62,h:68,l:54,c:57},{o:57,h:61,l:49,c:52},{o:53,h:69,l:40,c:52},{o:52,h:63,l:48,c:60},{o:60,h:70,l:56,c:67}],
+ stars:[{o:70,h:74,l:56,c:59},{o:59,h:62,l:46,c:49},{o:48,h:51,l:42,c:47},{o:46,h:64,l:44,c:61},{o:61,h:70,l:58,c:67}]
+};
+function makeCandles(values:number[]):Candle[]{return values.map((c,i)=>{const prev=i?values[i-1]:c-4;const o=Math.max(8,Math.min(92,prev+(i%3-1)*2));return{o,h:Math.min(96,Math.max(o,c)+4+(i%2)*2),l:Math.max(4,Math.min(o,c)-4-((i+1)%2)*2),c}})}
+const y=(v:number)=>98-v*.78;
+function Overlay({type}:{type:string}){const line=(x1:number,y1:number,x2:number,y2:number,text?:string)=><g className="chart-overlay"><line x1={x1} y1={y(y1)} x2={x2} y2={y(y2)}/>{text&&<text x={x2-2} y={y(y2)-3} textAnchor="end">{text}</text>}</g>;
+ if(["doubleTop","headShoulders","tripleTop"].includes(type))return line(8,47,96,47,"ネックライン");if(["doubleBottom","inverseHeadShoulders"].includes(type))return line(8,54,96,54,"ネックライン");if(["rectangle","breakout","retest","falseBreakout","lineHorizontal"].includes(type))return <>{line(5,68,98,68,"抵抗帯")}{line(5,40,98,40,"支持帯")}</>;if(type==="ascendingTriangle")return <>{line(5,68,98,68,"抵抗線")}{line(7,32,92,66)}</>;if(type==="descendingTriangle")return <>{line(5,41,98,41,"支持線")}{line(7,72,92,43)}</>;if(type==="symmetricTriangle"||type==="pennant")return <>{line(8,78,94,55)}{line(8,28,94,55)}</>;if(type==="flag")return <>{line(37,79,84,62)}{line(37,68,84,51)}</>;if(type==="risingWedge")return <>{line(6,30,91,72)}{line(6,50,91,79)}</>;if(type==="channel"||type==="lineTrend"||type==="lineChannel")return <>{line(5,24,98,78,"チャネル上限")}{line(5,11,98,65,"トレンドライン")}</>;if(type==="gap")return <rect className="gap-zone" x="45" y={y(64)} width="17" height="10"/>;return null}
+function MovingAverages({values}:{values:number[]}){const avg=(n:number)=>values.map((_,i)=>{const a=values.slice(Math.max(0,i-n+1),i+1);return a.reduce((s,v)=>s+v,0)/a.length});const points=(a:number[])=>a.map((v,i)=>`${8+i*(88/(a.length-1))},${y(v)}`).join(" ");return <><polyline className="moving-average fast" points={points(avg(3))}/><polyline className="moving-average slow" points={points(avg(6))}/></>}
+export default function PatternDiagram({type,label,compact=false}:Props){const values=priceSeries[type]||priceSeries.rectangle;const candles=candleSets[type]||makeCandles(values);const step=88/Math.max(candles.length,6);const body=Math.max(2.8,Math.min(6,step*.58));return <svg className={`atlas-diagram real-chart ${compact?"compact":""}`} viewBox="0 0 104 118" role="img" aria-label={`${label}をローソク足で表した解説図`}><rect className="chart-bg" width="104" height="118"/><g className="chart-grid">{[22,42,62,82].map(v=><line key={v} x1="4" y1={v} x2="100" y2={v}/>)}</g><Overlay type={type}/>{candles.map((c,i)=>{const x=8+i*step;const up=c.c>=c.o;return <g className={up?"bull candle-stick":"bear candle-stick"} key={i}><line x1={x} y1={y(c.h)} x2={x} y2={y(c.l)}/><rect x={x-body/2} y={Math.min(y(c.o),y(c.c))} width={body} height={Math.max(2,Math.abs(y(c.o)-y(c.c)))}/></g>})}{type==="maCross"&&<MovingAverages values={values}/>}<g className="volume-bars">{candles.map((c,i)=><rect key={i} className={c.c>=c.o?"bull":"bear"} x={8+i*step-body/2} y={108-(4+(i%4)*2)} width={body} height={4+(i%4)*2}/>)}</g></svg>}

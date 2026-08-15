@@ -1,6 +1,7 @@
 "use client";
 import {useState} from "react";
 import SiteHeader from "../../components/SiteHeader";
+import PatternDiagram from "../../components/PatternDiagram";
 
 const styles=[
  {id:"position",name:"ポジション",hold:"数週間〜数か月",screen:"週1〜数回",noise:"小さい",cost:"少ない",fit:"学業や仕事と両立し、企業・経済をじっくり見たい",risk:"決算や週末をまたぐ急変"},
@@ -14,8 +15,7 @@ const plans=[
  {id:"range",name:"レンジ下限の反発",scene:"水平な支持線と抵抗線の間を往復している",pattern:"engulf",patternName:"包み足",confirm:"支持線＋RSIの行き過ぎ解消＋反転足",entry:"支持線で陽の包み足が確定した後",stop:"支持線と包み足の安値の下",exit:"レンジ中央または上限",trap:"強い下落トレンドに逆らって買い続ける"},
  {id:"ma",name:"移動平均線クロス",scene:"長い横ばい後に価格と短期線が長期線を上回る",pattern:"cross",patternName:"小さな足から拡大",confirm:"線の交差＋高値更新＋出来高増加",entry:"交差だけでなく価格構造の上向きを確認した後",stop:"直近安値または長期線の下",exit:"逆クロスでは遅い場合があるため、安値切り下げも使う",trap:"レンジで交差を繰り返し損切りが続く"},
 ];
-function Pattern({type}:{type:string}){return <div className={`pattern-visual ${type}`} aria-label="ローソク足パターン図"><div className="level"/><div className="pv-candles"><i/><i/><i/><i/><i/></div><span>価格の流れ →</span></div>}
-
+function Pattern({type}:{type:string}){const diagram=({hammer:"pinbar",breakout:"breakout",engulf:"engulfing",cross:"maCross"} as Record<string,string>)[type];return <PatternDiagram type={diagram} label="ローソク足と確認線を重ねた戦略図"/>}
 export default function MethodsPage(){const[style,setStyle]=useState("swing");const[plan,setPlan]=useState("pullback");const s=styles.find(x=>x.id===style)!;const p=plans.find(x=>x.id===plan)!;return <main className="deep-page methods-page"><SiteHeader current="courses" />
 <section className="deep-hero methods-hero"><p className="eyebrow">03 · METHOD &amp; STRATEGY</p><h1>勝てそうな手法より、<br/><em>続けられる手法。</em></h1><p>トレード手法は生活時間、判断回数、コスト、耐えられる損失から選びます。短い時間足ほど簡単になるわけではありません。</p></section>
 <section className="method-premise"><div className="deep-heading"><p className="eyebrow">BEFORE STRATEGY</p><h2>戦略の前提は、<br/>6つを一組にすること。</h2></div><div>{["対象商品","時間軸","相場の状態","エントリー条件","損切り条件","利益確定・記録"].map((x,i)=><span key={x}><b>{i+1}</b>{x}</span>)}</div><p>「移動平均線が交差したら買う」だけでは戦略ではありません。損切りと使わない相場まで決めて、初めて検証できます。</p></section>
