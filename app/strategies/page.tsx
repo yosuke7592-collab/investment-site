@@ -2,7 +2,7 @@ import SiteHeader from "../components/SiteHeader";
 
 const chapters = [
   { no: "01", title: "選ぶ商品と見るデータ", text: "株・投資信託・ETF・FX・金銀・暗号資産を、利益の源泉、値動き、費用、レバレッジ、見るデータで比較します。", href: "/strategies/products", tag: "まず選ぶ" },
-  { no: "02", title: "チャートを読む", text: "時間軸、トレンド、支持線・抵抗線、ローソク足、出来高、主要指標の順に読みます。", href: "/strategies/chart", tag: "最も使う" },
+  { no: "02", title: "チャートを読む", text: "時間軸、ライン、ローソク足、移動平均線、主要指標を学び、必要な人だけ図鑑でパターンを深掘りします。", href: "/strategies/chart", tag: "最も使う" },
   { no: "03", title: "手法と戦略を作る", text: "スキャルピングからポジションまでを比べ、自分の生活に合う時間軸と売買ルールを決めます。", href: "/strategies/methods", tag: "ルール化" },
   { no: "04", title: "投資用語集", text: "教材で出てくる専門用語をカテゴリとキーワードから探し、その場で意味を確認できます。", href: "/glossary", tag: "困ったら戻る" },
 ];

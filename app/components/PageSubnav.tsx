@@ -22,10 +22,11 @@ const groups = [
     ],
   },
   {
-    paths: ["/strategies/products", "/strategies/chart", "/strategies/methods", "/lab"],
+    paths: ["/strategies/products", "/strategies/chart", "/strategies/patterns", "/strategies/methods", "/lab"],
     links: [
       { label: "商品を選ぶ", href: "/strategies/products" },
       { label: "チャート", href: "/strategies/chart" },
+      { label: "パターン図鑑", href: "/strategies/patterns" },
       { label: "手法・戦略", href: "/strategies/methods" },
       { label: "練習・検証", href: "/lab" },
     ],
