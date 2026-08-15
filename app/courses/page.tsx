@@ -5,7 +5,7 @@ export default function CoursesPage() {
     <SiteHeader current="courses" />
     <section className="courses-hero">
       <p className="eyebrow">CHOOSE YOUR COURSE</p>
-      <h1>目的に合わせて、<br/><em>学ぶ道を選ぶ。</em></h1>
+      <h1>2つの投資コースと、<br/><em>それぞれの学習内容</em></h1>
       <p>20回の共通教材を終えたら、投資に使える時間と目的から選びます。迷ったら長期資産形成から始めてください。</p>
     </section>
     <section className="path-choice course-page-choice">

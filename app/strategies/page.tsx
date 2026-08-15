@@ -10,7 +10,7 @@ const chapters = [
 export default function StrategiesHub() {
   return <main className="analysis-hub">
     <SiteHeader current="courses" />
-    <section className="analysis-hero"><p className="eyebrow">ANALYSIS &amp; STRATEGY COURSE</p><h1>何を見るかを決め、<br/><em>自分のルールにする。</em></h1><p>チャートを眺めるだけでは判断できません。商品、時間軸、相場の状態、入口、損切り、出口を順番に決めます。</p><div className="analysis-flow"><span>商品</span><i>→</i><span>チャート</span><i>→</i><span>手法</span><i>→</i><span>戦略</span><i>→</i><span>記録</span></div></section>
-    <section className="analysis-chapters"><div className="analysis-heading"><p className="eyebrow">ACTIVE INVESTING ROUTE</p><h2>商品、チャート、手法、<br/>ルールの順に学ぶ。</h2><p>初めてなら01から。用語集は分からない言葉が出たときに使います。</p></div><div className="chapter-grid">{chapters.map((item) => <a href={item.href} key={item.no}><span>{item.no}</span><small>{item.tag}</small><h3>{item.title}</h3><p>{item.text}</p><b>このページを学ぶ →</b></a>)}</div></section>
+    <section className="analysis-hero"><p className="eyebrow">ANALYSIS &amp; STRATEGY COURSE</p><h1>アクティブ投資で<br/><em>学ぶ内容</em></h1><p>チャートを眺めるだけでは判断できません。商品、時間軸、相場の状態、入口、損切り、出口を順番に決めます。</p><div className="analysis-flow"><span>商品</span><i>→</i><span>チャート</span><i>→</i><span>手法</span><i>→</i><span>戦略</span><i>→</i><span>記録</span></div></section>
+    <section className="analysis-chapters"><div className="analysis-heading"><p className="eyebrow">ACTIVE INVESTING ROUTE</p><h2>商品・チャート・手法・ルール</h2><p>初めてなら01から。用語集は分からない言葉が出たときに使います。</p></div><div className="chapter-grid">{chapters.map((item) => <a href={item.href} key={item.no}><span>{item.no}</span><small>{item.tag}</small><h3>{item.title}</h3><p>{item.text}</p><b>このページを学ぶ →</b></a>)}</div></section>
   </main>;
 }

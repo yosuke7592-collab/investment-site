@@ -14,7 +14,7 @@ export default function PlanPage() {
     return { type: "分析と検証も学ぶ", title: "少額・現物・記録から始める。", body: "商品、チャート、注文、損切りを学び、模擬または生活へ影響しない少額でルールを検証します。短期ほど簡単になるわけではありません。", href: "/strategies", cta: "アクティブ投資へ" };
   }, [period, time, loss, reserve]);
   return <main className="plan-page"><SiteHeader current="courses" />
-    <section className="plan-hero"><p className="eyebrow">FIRST INVESTMENT PLAN</p><h1>商品を選ぶ前に、<br/><em>自分の条件</em>を決める。</h1><p>投資方法は、資金・使う時期・使える時間・耐えられる損失で変わります。4つの質問で、次に学ぶ道を整理します。</p></section>
+    <section className="plan-hero"><p className="eyebrow">FIRST INVESTMENT PLAN</p><h1>投資方法を考えるための<br/><em>条件整理</em></h1><p>投資方法は、資金・使う時期・使える時間・耐えられる損失で変わります。いくつかの質問に答えながら、学ぶ内容を整理します。</p></section>
     <section className="plan-questions">
       <div className="plan-question"><span>01</span><div><h2>生活費と近い将来に使うお金を、分けてある？</h2><div className="choice-row"><button className={reserve==="yes"?"active":""} onClick={()=>setReserve("yes")}>分けてある</button><button className={reserve==="no"?"active":""} onClick={()=>setReserve("no")}>まだ分けていない</button></div></div></div>
       <div className="plan-question"><span>02</span><div><h2>このお金を使うまでの期間は？</h2><div className="choice-row"><button className={period==="short"?"active":""} onClick={()=>setPeriod("short")}>5年以内</button><button className={period==="middle"?"active":""} onClick={()=>setPeriod("middle")}>5〜10年</button><button className={period==="long"?"active":""} onClick={()=>setPeriod("long")}>10年以上</button></div></div></div>
@@ -22,6 +22,6 @@ export default function PlanPage() {
       <div className="plan-question"><span>04</span><div><h2>一時的な下落をどこまで受け止められる？</h2><div className="choice-row"><button className={loss==="low"?"active":""} onClick={()=>setLoss("low")}>10％でも不安</button><button className={loss==="middle"?"active":""} onClick={()=>setLoss("middle")}>20％程度</button><button className={loss==="high"?"active":""} onClick={()=>setLoss("high")}>30％以上でも継続</button></div></div></div>
     </section>
     <section className="plan-result"><div><p className="eyebrow">YOUR LEARNING ROUTE</p><span>{result.type}</span><h2>{result.title}</h2><p>{result.body}</p><a href={result.href}>{result.cta} →</a></div><aside><b>これは診断ではありません</b><p>回答をもとに学ぶ順序を整理する教材です。特定の商品・配分・取引を推奨せず、将来の成果を保証しません。</p></aside></section>
-    <section className="plan-safety"><p className="eyebrow">NON-NEGOTIABLE</p><h2>どの道でも、変えない5つ。</h2><div>{["生活に必要なお金を使わない","理解できない商品を買わない","利益より先に最大損失を決める","借金や高いレバレッジを急がない","結果ではなくルールを守れたか記録する"].map((x,i)=><p key={x}><b>{String(i+1).padStart(2,"0")}</b>{x}</p>)}</div></section>
+    <section className="plan-safety"><p className="eyebrow">NON-NEGOTIABLE</p><h2>投資方法を考えるときの注意点</h2><div>{["生活に必要なお金を使わない","理解できない商品を買わない","利益より先に最大損失を決める","借金や高いレバレッジを急がない","結果ではなくルールを守れたか記録する"].map((x,i)=><p key={x}><b>{String(i+1).padStart(2,"0")}</b>{x}</p>)}</div></section>
   </main>;
 }

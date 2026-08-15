@@ -3829,3 +3829,14 @@ footer p {
 .full-chart-reference{max-width:900px;margin:0 auto 28px;padding:14px;background:var(--ink)}
 .full-chart-reference figcaption{padding:13px 8px 2px;color:#c7d0c9;line-height:1.7;font-size:13px}
 @media(max-width:700px){.candle-reference{padding:12px}.candle-reference>div,.candle-points{grid-template-columns:1fr}.atlas-grid{grid-template-columns:1fr}.atlas-diagram{min-height:230px}.full-chart-reference{padding:8px}.line-grid article{padding:18px}}
+
+/* Mobile reading hierarchy: section titles explain content without dominating it */
+@media(max-width:560px){
+  .analysis-heading h2,.deep-heading h2,.long-heading h2,.services-heading h2,.section-heading h2{
+    font-size:clamp(30px,8.5vw,38px);
+    line-height:1.45;
+    letter-spacing:-.025em;
+  }
+  .deep-heading,.analysis-heading{margin-bottom:30px}
+  .deep-heading>p:last-child,.analysis-heading>p:last-child{font-size:15px;line-height:1.9}
+}
