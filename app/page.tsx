@@ -26,6 +26,19 @@ export default function Home() {
       </div>
     </section>
 
+
+    <section className="intent-hub" aria-labelledby="intent-title">
+      <div className="section-heading"><p className="eyebrow">FIND BY QUESTION</p><h2 id="intent-title">知りたいことから探す</h2><p>順番に学ぶだけでなく、今の疑問から必要なページへ進めます。</p></div>
+      <div className="intent-grid">
+        <a href="/mechanics"><span>仕組み</span><h3>株や投資信託は、どうやって利益が出る？</h3><p>値上がり・配当・分配金など、投資商品の基本的な仕組みを確認します。</p><b>仕組みを知る →</b></a>
+        <a href="/courses"><span>選び方</span><h3>長期投資と短期売買、自分にはどちらが合う？</h3><p>資金だけでなく、使える時間や値動きとの付き合い方から考えます。</p><b>投資方法を比べる →</b></a>
+        <a href="/mechanics/leverage"><span>リスク</span><h3>レバレッジは、なぜ利益も損失も大きくなる？</h3><p>証拠金と損益の関係を、数字を使って理解します。</p><b>レバレッジを学ぶ →</b></a>
+        <a href="/strategies/chart"><span>チャート</span><h3>ローソク足や移動平均線は、何を見ている？</h3><p>形を暗記する前に、価格の動きから読み取れることを整理します。</p><b>チャートを学ぶ →</b></a>
+        <a href="/glossary"><span>用語</span><h3>知らない投資用語をすぐ確認したい</h3><p>講座の途中で分からない言葉が出たときに、必要な用語だけ確認できます。</p><b>用語集を見る →</b></a>
+        <a href="/services"><span>比較</span><h3>口座やツールは、何を基準に選べばいい？</h3><p>人気順ではなく、目的・商品・コスト・使いやすさから比較します。</p><b>選び方・比較を見る →</b></a>
+      </div>
+    </section>
+
     <section className="learning-road" aria-labelledby="route-title">
       <div className="section-heading"><p className="eyebrow">ONE LEARNING ROUTE</p><h2 id="route-title">投資を学ぶ流れ</h2><p>初めてなら上から順番に。知識がある場合は必要な段階から進めます。</p></div>
       <div className="step-list">{route.map((step) => <a href={step.href} className="learning-step" key={step.no}><span className="step-no">{step.no}</span><div><h3>{step.title}</h3><p>{step.text}</p></div><b>{step.cta} <span>→</span></b></a>)}</div>
@@ -39,7 +52,7 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="resource-grid" aria-labelledby="tools-title"><div className="section-heading"><p className="eyebrow">WHEN YOU NEED IT</p><h2 id="tools-title">学習を補助するページ</h2></div><div><a href="/glossary"><b>用語集</b><span>分からない言葉を調べる　→</span></a><a href="/services"><b>サービス比較</b><span>口座・チャート・外部デモを比べる　→</span></a></div></section>
+    <section className="decision-bridge" aria-labelledby="decision-title"><div className="section-heading"><p className="eyebrow">FROM LEARNING TO CHOOSING</p><h2 id="decision-title">理解したあとに、必要なものを選ぶ</h2><p>このサイトでは、教材とサービス比較を分けています。先に仕組みを理解し、必要になった段階で選択肢を比較します。</p></div><div className="decision-flow"><article><span>01</span><h3>学ぶ</h3><p>商品の仕組みやリスクを理解する。</p></article><i>→</i><article><span>02</span><h3>決める</h3><p>自分が何をしたいのかを整理する。</p></article><i>→</i><article><span>03</span><h3>比べる</h3><p>目的に必要な口座・ツールだけを比較する。</p></article></div><div className="decision-links"><a href="/glossary"><b>用語集</b><span>分からない言葉を確認する →</span></a><a href="/services"><b>サービスの選び方・比較</b><span>証券会社・デモ・チャート等を見る →</span></a></div></section>
 
     <section className="editorial-trust" aria-labelledby="trust-title">
       <div className="section-heading"><p className="eyebrow">OUR EDITORIAL STANDARD</p><h2 id="trust-title">このサイトの編集方針</h2><p>投資情報は、誰が何の目的で書いたかまで確認します。</p></div>
