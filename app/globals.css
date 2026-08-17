@@ -3822,7 +3822,7 @@ footer p {
 .real-chart .chart-bg{fill:#13231b}.real-chart .chart-grid line{stroke:#34483d;stroke-width:.35}
 .real-chart .candle-stick line{stroke-width:.8}.real-chart .bull line{stroke:#6fde98}.real-chart .bull rect,.real-chart .volume-bars .bull{fill:#6fde98}
 .real-chart .bear line{stroke:#e2775d}.real-chart .bear rect,.real-chart .volume-bars .bear{fill:#e2775d}
-.real-chart .chart-overlay line{stroke:#c8f04b;stroke-width:.75;stroke-dasharray:2 1}.real-chart .chart-overlay text{fill:#edf5ef;font-size:3.1px;font-weight:700}
+.real-chart .chart-overlay line{stroke:#c8f04b;stroke-width:.75;stroke-dasharray:2 1}.real-chart .chart-overlay text{fill:#edf5ef;font-size:3.1px;font-weight:700;paint-order:stroke;stroke:#10231a;stroke-width:1.2px;stroke-linejoin:round}
 .real-chart .gap-zone{fill:rgba(200,240,75,.12)}.real-chart .moving-average{fill:none;stroke-width:1.2}.real-chart .moving-average.fast{stroke:#c8f04b}.real-chart .moving-average.slow{stroke:#79b9ff}.real-chart .volume-bars rect{opacity:.55}
 .line-grid .atlas-diagram{margin-bottom:18px}.ma-visual .atlas-diagram{margin-bottom:12px}
 .atlas-grid{grid-template-columns:repeat(2,1fr)}.atlas-diagram{aspect-ratio:auto;min-height:260px}
