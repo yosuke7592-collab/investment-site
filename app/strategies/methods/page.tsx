@@ -10,12 +10,12 @@ const styles=[
  {id:"scalp",name:"スキャルピング",hold:"数秒〜数分",screen:"常時",noise:"非常に大きい",cost:"非常に多い",fit:"高い操作精度と検証経験がある",risk:"初心者には非推奨。コストとミスが結果を支配"},
 ];
 const plans=[
- {id:"pullback",name:"トレンドの押し目",scene:"高値・安値を切り上げ、上向き移動平均線の上にある",pattern:"hammer",patternName:"下ヒゲ反転",confirm:"支持線＋上向き移動平均線＋出来高回復",entry:"支持線付近で下ヒゲが出て、次の足が高値を超えた後",stop:"反転足または直近安値の下",exit:"前回高値、損益比、安値切り下げ",trap:"横ばい相場で押し目だと思い続ける"},
+ {id:"pullback",name:"トレンドの押し目",scene:"高値・安値を切り上げ、移動平均線も上向いている",pattern:"pullback",patternName:"上昇途中の押し安値と反発",confirm:"押し安値＋上向き移動平均線＋出来高回復",entry:"押し安値付近で反発し、次の足が反転足の高値を超えた後",stop:"反転足または直近の押し安値の下",exit:"前回高値、損益比、安値切り下げ",trap:"横ばい相場や安値を切り下げた後も押し目だと思い続ける"},
  {id:"breakout",name:"レンジ上抜け",scene:"何度も止められた抵抗線の下で値幅が縮む",pattern:"breakout",patternName:"大陽線＋出来高",confirm:"終値で抵抗線超え＋平均以上の出来高",entry:"抜けた足の確定後、または戻りが抵抗線で支えられた時",stop:"抜けた価格帯へ明確に戻った位置",exit:"レンジ幅の目標、勢い低下、損益比",trap:"ヒゲだけの上抜けや出来高のない『だまし』"},
- {id:"range",name:"レンジ下限の反発",scene:"水平な支持線と抵抗線の間を往復している",pattern:"engulf",patternName:"包み足",confirm:"支持線＋RSIの行き過ぎ解消＋反転足",entry:"支持線で陽の包み足が確定した後",stop:"支持線と包み足の安値の下",exit:"レンジ中央または上限",trap:"強い下落トレンドに逆らって買い続ける"},
+ {id:"range",name:"レンジ下限の反発",scene:"水平な上限と下限の間を、価格が複数回往復している",pattern:"range",patternName:"レンジ下限での陽の包み足",confirm:"レンジ下限＋RSIの行き過ぎ解消＋反転足",entry:"下限付近で陽の包み足が確定し、次の足でも下限を維持した後",stop:"レンジ下限と包み足の安値の下",exit:"レンジ中央または上限",trap:"レンジを下抜けた後や、強い下落トレンドに逆らって買い続ける"},
  {id:"ma",name:"移動平均線クロス",scene:"長い横ばい後に価格と短期線が長期線を上回る",pattern:"cross",patternName:"小さな足から拡大",confirm:"線の交差＋高値更新＋出来高増加",entry:"交差だけでなく価格構造の上向きを確認した後",stop:"直近安値または長期線の下",exit:"逆クロスでは遅い場合があるため、安値切り下げも使う",trap:"レンジで交差を繰り返し損切りが続く"},
 ];
-function Pattern({type}:{type:string}){const diagram=({hammer:"pinbar",breakout:"breakout",engulf:"engulfing",cross:"maCross"} as Record<string,string>)[type];return <PatternDiagram type={diagram} label="ローソク足と確認線を重ねた戦略図"/>}
+function Pattern({type}:{type:string}){const diagram=({pullback:"strategyPullback",breakout:"breakout",range:"strategyRange",cross:"maCross"} as Record<string,string>)[type];return <PatternDiagram type={diagram} label="ローソク足と確認線を重ねた戦略図"/>}
 export default function MethodsPage(){const[style,setStyle]=useState("swing");const[plan,setPlan]=useState("pullback");const s=styles.find(x=>x.id===style)!;const p=plans.find(x=>x.id===plan)!;return <main className="deep-page methods-page"><SiteHeader current="courses" />
 <section className="deep-hero methods-hero"><p className="eyebrow">03 · METHOD &amp; STRATEGY</p><h1>取引スタイルと<br/><em>代表的な戦略</em></h1><p>トレード手法は生活時間、判断回数、コスト、耐えられる損失から選びます。短い時間足ほど簡単になるわけではありません。</p></section>
 <section className="method-premise"><div className="deep-heading"><p className="eyebrow">BEFORE STRATEGY</p><h2>戦略を整理するための項目</h2></div><div>{["対象商品","時間軸","相場の状態","エントリー条件","損切り条件","利益確定・記録"].map((x,i)=><span key={x}><b>{i+1}</b>{x}</span>)}</div><p>表示する指標だけでは、取引方法の全体は決まりません。対象商品、時間軸、売買条件、損切り、利益確定などを組み合わせて記録します。必要な項目は手法によって変わります。</p></section>
