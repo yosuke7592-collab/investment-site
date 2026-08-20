@@ -44,6 +44,8 @@ export default function Home() {
       <div className="step-list">{route.map((step) => <a href={step.href} className="learning-step" key={step.no}><span className="step-no">{step.no}</span><div><h3>{step.title}</h3><p>{step.text}</p></div><b>{step.cta} <span>→</span></b></a>)}</div>
     </section>
 
+    <section className="home-articles" aria-labelledby="article-title"><div className="section-heading"><p className="eyebrow">QUICK ANSWERS</p><h2 id="article-title">今の疑問を、3分で解決する</h2><p>検索で見つけた疑問に短く答え、その先の教材へ案内します。</p></div><div><a href="/articles/etf-vs-investment-trust"><span>商品</span><h3>ETFと投資信託の違いは？</h3><p>売買方法と積立のしやすさから比べます。</p></a><a href="/articles/market-vs-limit-order"><span>注文</span><h3>成行と指値はどう違う？</h3><p>成立しやすさと価格の決め方を整理します。</p></a><a href="/articles/before-starting-investing"><span>始め方</span><h3>投資前に何を決めればいい？</h3><p>目的・期間・金額・やめる条件を確認します。</p></a></div><a className="text-link" href="/articles">初心者向けの記事をすべて見る →</a></section>
+
     <section className="style-branch" aria-labelledby="style-title">
       <div className="section-heading"><p className="eyebrow">CHOOSE YOUR STYLE</p><h2 id="style-title">目的に合わせた学習コース</h2><p>優劣ではなく、目的と使える時間で選びます。両方を組み合わせることもできます。</p></div>
       <div className="style-cards">

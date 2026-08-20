@@ -11,7 +11,7 @@ export default function SiteHeader({ current: _current }: Props) {
     { id: "learn", label: "はじめから学ぶ", href: "/lessons?week=1", paths: ["/start", "/lessons", "/mechanics", "/mechanics/leverage"] },
     { id: "style", label: "投資方法を選ぶ", href: "/courses", paths: ["/courses", "/plan", "/long-term", "/strategies"] },
     { id: "practice", label: "分析・取引を学ぶ", href: "/strategies/products", paths: ["/strategies/products", "/strategies/chart", "/strategies/patterns", "/strategies/methods", "/lab"] },
-    { id: "tools", label: "用語・サービス", href: "/glossary", paths: ["/glossary", "/services", "/about"] },
+    { id: "tools", label: "記事・用語・比較", href: "/articles", paths: ["/articles", "/glossary", "/services", "/about"] },
   ];
   return (
     <><header className="simple-header unified-header">
