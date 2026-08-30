@@ -29,5 +29,18 @@ test("renders production search metadata", async () => {
   const html = await response.text();
   assert.doesNotMatch(html, /name=["']codex-preview["']/i);
   assert.match(html, /<meta name="robots" content="index, follow"\/>/i);
-  assert.match(html, /<link rel="canonical" href="https:\/\/investment-map-18\.yskhksn\.chatgpt\.site\/"\/>/i);
+  assert.match(html, /<link rel="canonical" href="https:\/\/toushi-gensoku\.jp\/"\/>/i);
+});
+
+test("permanently redirects the legacy host while preserving path and query", async () => {
+  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
+  workerUrl.searchParams.set("redirect-test", `${process.pid}-${Date.now()}`);
+  const { default: worker } = await import(workerUrl.href);
+  const response = await worker.fetch(
+    new Request("https://investment-map-18.yskhksn.chatgpt.site/articles/etf-vs-investment-trust?ref=legacy"),
+    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
+    { waitUntil() {}, passThroughOnException() {} },
+  );
+  assert.equal(response.status, 301);
+  assert.equal(response.headers.get("location"), "https://toushi-gensoku.jp/articles/etf-vs-investment-trust?ref=legacy");
 });
