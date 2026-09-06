@@ -66,3 +66,45 @@ test("renders the DMM Stock disclosure, issued link code, and learning pathways"
     assert.match(await response.text(), /href="\/services"/);
   }
 });
+
+test("renders operator trust pages, comparison evidence, and footer links", async () => {
+  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
+  workerUrl.searchParams.set("trust-test", `${process.pid}-${Date.now()}`);
+  const { default: worker } = await import(workerUrl.href);
+  const env = { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } };
+  const ctx = { waitUntil() {}, passThroughOnException() {} };
+
+  const expected = [
+    ["/about", "株式会社SOG", "運営情報・編集方針"],
+    ["/contact", "書面によるお問い合わせ", "お問い合わせ"],
+    ["/privacy", "アクセス解析", "プライバシーポリシー"],
+    ["/disclaimer", "元本割れ", "免責事項"],
+    ["/affiliate-policy", "報酬額だけで", "広告・アフィリエイト方針"],
+  ];
+
+  for (const [path, content, title] of expected) {
+    const response = await worker.fetch(new Request(`http://localhost${path}`), env, ctx);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.match(html, new RegExp(content));
+    assert.match(html, new RegExp(`<title>${title}｜投資の原則</title>`));
+    assert.match(html, new RegExp(`<link rel="canonical" href="https://toushi-gensoku\\.jp${path}"/>`));
+    for (const footerPath of ["/about", "/contact", "/privacy", "/disclaimer", "/affiliate-policy"]) {
+      assert.match(html, new RegExp(`href="${footerPath}"`));
+    }
+  }
+
+  const services = await worker.fetch(new Request("http://localhost/services"), env, ctx);
+  const servicesHtml = await services.text();
+  assert.match(servicesHtml, /三菱UFJ eスマート証券/);
+  assert.match(servicesHtml, /向かない可能性がある人/);
+  assert.match(servicesHtml, /公式参照先/);
+  assert.match(servicesHtml, /情報確認日/);
+
+  const sitemap = await worker.fetch(new Request("http://localhost/sitemap.xml"), env, ctx);
+  assert.equal(sitemap.status, 200);
+  const sitemapXml = await sitemap.text();
+  for (const path of ["/contact", "/privacy", "/disclaimer", "/affiliate-policy"]) {
+    assert.match(sitemapXml, new RegExp(`https://toushi-gensoku\\.jp${path}`));
+  }
+});

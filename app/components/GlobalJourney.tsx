@@ -10,6 +10,14 @@ const sections = [
   { label: "用語・サービス", href: "/glossary" },
 ];
 
+const trustLinks = [
+  { label: "運営情報・編集方針", href: "/about" },
+  { label: "お問い合わせ", href: "/contact" },
+  { label: "プライバシーポリシー", href: "/privacy" },
+  { label: "免責事項", href: "/disclaimer" },
+  { label: "広告・アフィリエイト方針", href: "/affiliate-policy" },
+];
+
 const nextByPath: Record<string, { label: string; href: string }> = {
   "/": { label: "最初に伝えたいこと", href: "/start" },
   "/start": { label: "基礎講座 第1回", href: "/lessons?week=1" },
@@ -44,6 +52,7 @@ export default function GlobalJourney() {
           <p className="eyebrow">OUR PRINCIPLE</p>
           <blockquote><span>自分のルールを作り、</span><em>そのルールを守る。</em></blockquote>
           <p className="footer-note">本サイトは金融教育を目的とした教材です。利益を保証したり、特定商品の売買を勧めたりするものではありません。</p>
+          <nav className="footer-trust-nav" aria-label="運営・方針情報">{trustLinks.map((link) => <a href={link.href} key={link.href}>{link.label}</a>)}</nav>
           <div className="footer-bottom"><a className="footer-site-name" href="/">投資の原則</a><span>© 2026 Learn first, decide for yourself.</span></div>
         </div>
       </footer>
