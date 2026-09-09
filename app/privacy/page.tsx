@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const items = [
-  ["取得する可能性のある情報", "サイトへのアクセス時に、IPアドレス、ブラウザ・端末の種類、参照元、閲覧日時、閲覧ページ等がサーバーの運用ログとして記録される場合があります。書面でお問い合わせをいただいた場合は、氏名、住所、連絡先、お問い合わせ内容等を受領する場合があります。"],
+  ["取得する可能性のある情報", "サイトへのアクセス時に、IPアドレス、ブラウザ・端末の種類、参照元、閲覧日時、閲覧ページ等がサーバーの運用ログとして記録される場合があります。メールまたは書面でお問い合わせをいただいた場合は、氏名、メールアドレス、住所、連絡先、お問い合わせ内容等を受領する場合があります。"],
   ["利用目的", "サイトの安定運用、不正利用の防止、障害調査、内容改善、お問い合わせへの確認・回答のために利用します。"],
   ["Cookie等", "本サイトは、ページ表示や外部サービスとの接続に伴いCookie等が利用される場合があります。現時点で、本サイト独自の会員識別や行動履歴を用いた広告配信は行っていません。ブラウザの設定でCookieを制限できます。"],
   ["アクセス解析", "現時点で、Google Analytics等の外部アクセス解析サービスはサイトに導入していません。導入する場合は、利用するサービスと取得情報を本ポリシーに追記します。"],
@@ -22,6 +22,6 @@ const items = [
 export default function PrivacyPage() { return <main className="trust-page"><SiteHeader current="glossary" />
   <section className="trust-hero"><p className="eyebrow">PRIVACY POLICY</p><h1>プライバシーポリシー</h1><p>本サイトで扱う情報と、その利用範囲を説明します。</p></section>
   <section className="trust-page-section"><div className="legal-list">{items.map(([title, body], index)=><article key={title}><span>{String(index+1).padStart(2,"0")}</span><div><h2>{title}</h2><p>{body}</p></div></article>)}</div>
-    <div className="contact-method compact"><h2>運営者・お問い合わせ先</h2><p>株式会社SOG<br/>〒105-0013 東京都港区浜松町2丁目2番15号 浜松町ダイヤビル2F</p><a className="inline-trust-link" href="/contact">お問い合わせ方法を見る →</a></div><p className="policy-date">制定・最終更新：2026年9月6日</p>
+    <div className="contact-method compact"><h2>運営者・お問い合わせ先</h2><p>株式会社SOG<br/>メール：<a href="mailto:contact@toushi-gensoku.jp">contact@toushi-gensoku.jp</a><br/>〒105-0013 東京都港区浜松町2丁目2番15号 浜松町ダイヤビル2F</p><a className="inline-trust-link" href="/contact">お問い合わせ方法を見る →</a></div><p className="policy-date">制定：2026年9月6日／最終更新：2026年9月9日</p>
   </section>
   </main>; }

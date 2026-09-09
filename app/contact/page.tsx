@@ -16,8 +16,8 @@ export default function ContactPage() {
       <article><h3>広告・提携について</h3><p>広告掲載、提携、掲載内容の確認・修正に関する連絡。</p></article>
       <article><h3>その他</h3><p>本サイトの運営に関するご意見・お問い合わせ。</p></article>
     </div>
-      <div className="contact-method"><p className="eyebrow">CONTACT METHOD</p><h2>書面によるお問い合わせ</h2><address>〒105-0013<br/>東京都港区浜松町2丁目2番15号 浜松町ダイヤビル2F<br/>株式会社SOG　「投資の原則」運営窓口 宛</address><p>返信先、対象ページのURL、確認・訂正を希望する内容を具体的にご記載ください。内容を確認し、対応が必要なものについてご連絡します。</p></div>
-      <aside className="trust-note"><b>オンライン窓口について</b><p>現在、公開用のメールアドレスや外部の問い合わせサービスは使用していません。正確な連絡先を安全に公開できる状態になり次第、このページで案内します。</p></aside>
+      <div className="contact-method"><p className="eyebrow">CONTACT METHOD</p><h2>メールでのお問い合わせ</h2><p className="contact-email">メール：<a href="mailto:contact@toushi-gensoku.jp">contact@toushi-gensoku.jp</a></p><p>返信先、対象ページのURL、確認・訂正を希望する内容を具体的にご記載ください。内容を確認し、対応が必要なものについてご連絡します。</p></div>
+      <aside className="trust-note"><b>郵送でのお問い合わせ</b><address>〒105-0013<br/>東京都港区浜松町2丁目2番15号 浜松町ダイヤビル2F<br/>株式会社SOG　「投資の原則」運営窓口 宛</address></aside>
     </section>
   </main>;
 }

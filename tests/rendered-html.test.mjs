@@ -76,7 +76,7 @@ test("renders operator trust pages, comparison evidence, and footer links", asyn
 
   const expected = [
     ["/about", "株式会社SOG", "運営情報・編集方針"],
-    ["/contact", "書面によるお問い合わせ", "お問い合わせ"],
+    ["/contact", "contact@toushi-gensoku.jp", "お問い合わせ"],
     ["/privacy", "アクセス解析", "プライバシーポリシー"],
     ["/disclaimer", "元本割れ", "免責事項"],
     ["/affiliate-policy", "報酬額だけで", "広告・アフィリエイト方針"],
@@ -92,6 +92,11 @@ test("renders operator trust pages, comparison evidence, and footer links", asyn
     for (const footerPath of ["/about", "/contact", "/privacy", "/disclaimer", "/affiliate-policy"]) {
       assert.match(html, new RegExp(`href="${footerPath}"`));
     }
+  }
+
+  for (const path of ["/about", "/contact", "/privacy"]) {
+    const response = await worker.fetch(new Request(`http://localhost${path}`), env, ctx);
+    assert.match(await response.text(), /href="mailto:contact@toushi-gensoku\.jp"/);
   }
 
   const services = await worker.fetch(new Request("http://localhost/services"), env, ctx);

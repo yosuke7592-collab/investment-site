@@ -25,6 +25,7 @@ export default function AboutPage() {
         <div><dt>サイト名</dt><dd>投資の原則</dd></div>
         <div><dt>運営会社</dt><dd>株式会社SOG</dd></div>
         <div><dt>所在地</dt><dd>〒105-0013<br/>東京都港区浜松町2丁目2番15号 浜松町ダイヤビル2F</dd></div>
+        <div><dt>お問い合わせ</dt><dd><a href="mailto:contact@toushi-gensoku.jp">contact@toushi-gensoku.jp</a></dd></div>
         <div><dt>サイトの目的</dt><dd>金融投資の仕組みとリスクを学び、自分に合う方法と守れるルールを考えるための教育情報を提供します。</dd></div>
         <div><dt>編集責任</dt><dd>株式会社SOGが掲載内容の企画、確認、更新および訂正に責任を持ちます。</dd></div>
       </dl>
