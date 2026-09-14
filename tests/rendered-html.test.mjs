@@ -113,3 +113,37 @@ test("renders operator trust pages, comparison evidence, and footer links", asyn
     assert.match(sitemapXml, new RegExp(`https://toushi-gensoku\\.jp${path}`));
   }
 });
+
+test("renders approved Matsui pathways and the NISA/iDeCo education page", async () => {
+  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
+  workerUrl.searchParams.set("matsui-test", `${process.pid}-${Date.now()}`);
+  const { default: worker } = await import(workerUrl.href);
+  const env = { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } };
+  const ctx = { waitUntil() {}, passThroughOnException() {} };
+
+  const services = await worker.fetch(new Request("http://localhost/services"), env, ctx);
+  assert.equal(services.status, 200);
+  const servicesHtml = await services.text();
+  for (const rk of ["01000t2p00oy0o", "0100p7ck00oy0o"]) {
+    assert.match(servicesHtml, new RegExp(`href="https://h\\.accesstrade\\.net/sp/cc\\?rk=${rk}" rel="nofollow"`));
+    assert.match(servicesHtml, new RegExp(`src="https://h\\.accesstrade\\.net/sp/rr\\?rk=${rk}"`));
+  }
+  assert.match(servicesHtml, /id="ideco"/);
+  assert.match(servicesHtml, /松井証券 iDeCo/);
+  assert.match(servicesHtml, /<small>PR<\/small>/);
+  assert.match(servicesHtml, /0100mkk300oy0o/);
+
+  const longTerm = await worker.fetch(new Request("http://localhost/long-term"), env, ctx);
+  assert.equal(longTerm.status, 200);
+  assert.match(await longTerm.text(), /href="\/nisa-vs-ideco"/);
+
+  const education = await worker.fetch(new Request("http://localhost/nisa-vs-ideco"), env, ctx);
+  assert.equal(education.status, 200);
+  const educationHtml = await education.text();
+  assert.match(educationHtml, /原則60歳まで自由に引き出せません/);
+  assert.match(educationHtml, /href="\/services#ideco"/);
+  assert.match(educationHtml, /<link rel="canonical" href="https:\/\/toushi-gensoku\.jp\/nisa-vs-ideco"\/>/i);
+
+  const sitemap = await worker.fetch(new Request("http://localhost/sitemap.xml"), env, ctx);
+  assert.match(await sitemap.text(), /https:\/\/toushi-gensoku\.jp\/nisa-vs-ideco/);
+});
