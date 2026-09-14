@@ -34,5 +34,7 @@ export default function LongTermPage() {
     <section className="long-exit"><div className="long-heading"><p className="eyebrow">THE EXIT MATTERS</p><h2>運用した資金を使う時期の考え方</h2><p>運用の目的は残高を最大化することではなく、必要な時に必要なお金を使えることです。</p></div><div className="exit-grid"><article><b>10年以上前</b><h3>使用時期まで余裕がある段階</h3><p>目的と下落耐性に合う配分で積み立て、短期の価格変動だけで方針を変えません。</p></article><article><b>5年前から</b><h3>使用時期が近づいた段階</h3><p>使う時期が近づいた資金を、値動きの小さい資産や現金へ段階的に移すことを検討します。</p></article><article><b>使用期</b><h3>資金を使う段階</h3><p>学費や生活費など支出時期に合わせ、必要分を計画的に取り崩します。税金と相場環境も確認します。</p></article></div><div className="worked-story"><h3>月1万円を20年間積み立てる例</h3><p>積立額は1万円と決める前に、20年後の目的額、現在用意できる元本、途中で必要になるお金を分けます。運用利回りを高く置いて不足を埋めるのではなく、積立額・期間・目標額を現実的に調整します。</p><p>年率3％のシミュレーションは計画を比べる道具であり、実際の毎年の成果や将来額を保証するものではありません。</p></div></section>
     <section className="long-rules"><div className="long-heading"><p className="eyebrow">MY LONG-TERM RULES</p><h2>長期投資のルール例</h2></div><div className="rule-table"><div><b>投資するお金</b><p>10年以上使わない余裕資金だけ</p></div><div><b>買う商品</b><p>中身・費用・リスクを説明できる分散商品</p></div><div><b>積立</b><p>家計を圧迫しない金額を毎月自動化</p></div><div><b>見直し</b><p>相場が動くたびではなく、年1回または生活変化時</p></div><div><b>売却</b><p>暴落したからではなく、目的の時期が近づいたら段階的に</p></div></div><small>内容確認日：2026年8月14日。NISA等の制度条件は最新の金融庁・金融機関情報を確認してください。</small></section>
 
+    <section className="long-ideco-guide"><p className="eyebrow">NISA OR iDeCo?</p><h2>制度を選ぶ前に、使う時期を確認する</h2><p>NISAとiDeCoは、どちらも資産形成に使える制度ですが、税制とお金を引き出せる時期が異なります。老後前に使う可能性があるお金をiDeCoへ回す前に、違いを確認してください。</p><a href="/nisa-vs-ideco">NISAとiDeCoの違いを学ぶ →</a></section>
+
   </main>;
 }
