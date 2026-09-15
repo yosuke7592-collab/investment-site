@@ -147,3 +147,48 @@ test("renders approved Matsui pathways and the NISA/iDeCo education page", async
   const sitemap = await worker.fetch(new Request("http://localhost/sitemap.xml"), env, ctx);
   assert.match(await sitemap.text(), /https:\/\/toushi-gensoku\.jp\/nisa-vs-ideco/);
 });
+
+test("renders seven service detail pages with correct advertising boundaries", async () => {
+  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
+  workerUrl.searchParams.set("service-detail-test", `${process.pid}-${Date.now()}`);
+  const { default: worker } = await import(workerUrl.href);
+  const env = { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } };
+  const ctx = { waitUntil() {}, passThroughOnException() {} };
+  const approved = {
+    "dmm-kabu": "0100mkk300oy0o",
+    matsui: "01000t2p00oy0o",
+    "matsui-ideco": "0100p7ck00oy0o",
+  };
+  const unapproved = ["sbi-securities", "mufg-esmart", "monex", "monex-ideco"];
+
+  for (const [slug, rk] of Object.entries(approved)) {
+    const response = await worker.fetch(new Request(`http://localhost/services/${slug}`), env, ctx);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.match(html, /情報確認日：(?:<!-- -->)?2026年9月15日/);
+    assert.match(html, /<small>PR<\/small>/);
+    assert.match(html, new RegExp(`href="https://h\\.accesstrade\\.net/sp/cc\\?rk=${rk}" rel="nofollow"`));
+    assert.match(html, new RegExp(`<link rel="canonical" href="https://toushi-gensoku\\.jp/services/${slug}"/>`));
+  }
+
+  for (const slug of unapproved) {
+    const response = await worker.fetch(new Request(`http://localhost/services/${slug}`), env, ctx);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.doesNotMatch(html, /h\.accesstrade\.net/);
+    assert.doesNotMatch(html, /<small>PR<\/small>/);
+    assert.match(html, /アフィリエイト広告を掲載していません/);
+  }
+
+  const services = await worker.fetch(new Request("http://localhost/services"), env, ctx);
+  const servicesHtml = await services.text();
+  for (const slug of [...Object.keys(approved), ...unapproved]) {
+    assert.match(servicesHtml, new RegExp(`href="/services/${slug}"`));
+  }
+
+  const sitemap = await worker.fetch(new Request("http://localhost/sitemap.xml"), env, ctx);
+  const sitemapXml = await sitemap.text();
+  for (const slug of [...Object.keys(approved), ...unapproved]) {
+    assert.match(sitemapXml, new RegExp(`https://toushi-gensoku\\.jp/services/${slug}`));
+  }
+});
