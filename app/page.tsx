@@ -18,11 +18,11 @@ export default function Home() {
     </section>
 
     <section className="home-start" aria-labelledby="start-title">
-      <div className="section-heading"><p className="eyebrow">START FROM YOUR POSITION</p><h2 id="start-title">学習の入口を選ぶ</h2><p>最初から全部読む必要はありません。知識と目的に合う入口を選びます。</p></div>
+      <div className="section-heading"><p className="eyebrow">START FROM YOUR POSITION</p><h2 id="start-title">今の目的から始める</h2><p>最初から全部読む必要はありません。今の知識と目的に合う入口を選びます。</p></div>
       <div className="home-start-grid">
-        <a href="/start"><span>01</span><h3>投資をまだ説明できない</h3><p>投資の本質と、なぜ自分のルールが必要なのかから始める。</p><b>はじめに読む →</b></a>
-        <a href="/lessons?week=1"><span>02</span><h3>基礎を順番に学びたい</h3><p>お金、リスク、商品、注文を20回の講座でつなげて理解する。</p><b>基礎講座へ →</b></a>
-        <a href="/plan"><span>03</span><h3>自分に合う方法を考えたい</h3><p>使えるお金・期間・時間から、無理のない学習ルートを整理する。</p><b>投資設計を始める →</b></a>
+        <a href="/start"><span>01</span><h3>はじめての方</h3><p>投資の本質と、なぜ自分のルールが必要なのかから始める。</p><b>はじめに読む →</b></a>
+        <a href="/articles"><span>02</span><h3>知りたいことがある方</h3><p>商品・注文・リスクなど、今の疑問から必要な解説を探す。</p><b>疑問から探す →</b></a>
+        <a href="/courses"><span>03</span><h3>投資方法を考えたい方</h3><p>使えるお金・期間・時間から、長期とアクティブの違いを整理する。</p><b>投資方法を比べる →</b></a>
       </div>
     </section>
 
@@ -35,7 +35,6 @@ export default function Home() {
         <a href="/mechanics/leverage"><span>リスク</span><h3>レバレッジは、なぜ利益も損失も大きくなる？</h3><p>証拠金と損益の関係を、数字を使って理解します。</p><b>レバレッジを学ぶ →</b></a>
         <a href="/strategies/chart"><span>チャート</span><h3>ローソク足や移動平均線は、何を見ている？</h3><p>形を暗記する前に、価格の動きから読み取れることを整理します。</p><b>チャートを学ぶ →</b></a>
         <a href="/glossary"><span>用語</span><h3>知らない投資用語をすぐ確認したい</h3><p>講座の途中で分からない言葉が出たときに、必要な用語だけ確認できます。</p><b>用語集を見る →</b></a>
-        <a href="/services"><span>比較</span><h3>口座やツールは、何を基準に選べばいい？</h3><p>人気順ではなく、目的・商品・コスト・使いやすさから比較します。</p><b>選び方・比較を見る →</b></a>
       </div>
     </section>
 

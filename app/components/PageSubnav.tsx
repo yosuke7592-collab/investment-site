@@ -32,11 +32,18 @@ const groups = [
     ],
   },
   {
-    paths: ["/glossary", "/services", "/about"],
+    paths: ["/articles", "/glossary"],
     links: [
+      { label: "初心者向け記事", href: "/articles" },
       { label: "用語集", href: "/glossary" },
-      { label: "サービス比較", href: "/services" },
-      { label: "編集方針", href: "/about" },
+    ],
+  },
+  {
+    paths: ["/services"],
+    links: [
+      { label: "証券会社", href: "/services#broker" },
+      { label: "iDeCo", href: "/services#ideco" },
+      { label: "練習・分析・参考書", href: "/services#resources" },
     ],
   },
 ];

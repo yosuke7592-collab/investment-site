@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import PageSubnav from "./PageSubnav";
 
@@ -7,12 +8,16 @@ type Props = { current?: "start" | "lessons" | "mechanics" | "courses" | "glossa
 
 export default function SiteHeader({ current: _current }: Props) {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
   const links = [
-    { id: "learn", label: "はじめから学ぶ", href: "/lessons?week=1", paths: ["/start", "/lessons", "/mechanics", "/mechanics/leverage"] },
-    { id: "style", label: "投資方法を選ぶ", href: "/courses", paths: ["/courses", "/plan", "/long-term", "/strategies"] },
-    { id: "practice", label: "分析・取引を学ぶ", href: "/strategies/products", paths: ["/strategies/products", "/strategies/chart", "/strategies/patterns", "/strategies/methods", "/lab"] },
-    { id: "tools", label: "記事・用語・比較", href: "/articles", paths: ["/articles", "/glossary", "/services", "/about", "/contact", "/privacy", "/disclaimer", "/affiliate-policy"] },
+    { id: "start", label: "はじめての方", href: "/start", paths: ["/start"] },
+    { id: "learn", label: "基礎を学ぶ", href: "/lessons?week=1", paths: ["/lessons", "/mechanics"] },
+    { id: "style", label: "投資方法を考える", href: "/courses", paths: ["/courses", "/plan", "/long-term", "/nisa-vs-ideco", "/strategies", "/lab"] },
+    { id: "find", label: "疑問を調べる", href: "/articles", paths: ["/articles", "/glossary"] },
+    { id: "compare", label: "サービス比較", href: "/services", paths: ["/services"] },
   ];
+  const isCurrent = (paths: string[]) => paths.some((path) => pathname === path || pathname.startsWith(`${path}/`));
+  useEffect(() => setOpen(false), [pathname]);
   return (
     <><header className="simple-header unified-header">
       <div className="header-inner">
@@ -20,14 +25,16 @@ export default function SiteHeader({ current: _current }: Props) {
           <small>INVESTMENT PRINCIPLES</small>
           <strong>投資の原則</strong>
         </a>
-        <nav aria-label="メインナビゲーション">
+        <button className="mobile-menu-button" type="button" aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen((value) => !value)}><span aria-hidden="true">☰</span> メニュー</button>
+        <nav className="desktop-navigation" aria-label="メインナビゲーション">
           {links.map((link, index) => (
-            <a className={link.paths.includes(pathname) ? "current" : ""} href={link.href} key={link.id}>
+            <a className={isCurrent(link.paths) ? "current" : ""} href={link.href} key={link.id}>
               <span>{String(index + 1).padStart(2, "0")}</span>{link.label}
             </a>
           ))}
         </nav>
       </div>
+      <nav id="mobile-navigation" className={`mobile-navigation${open ? " open" : ""}`} aria-label="スマートフォン用メインナビゲーション">{links.map((link) => <a className={isCurrent(link.paths) ? "current" : ""} href={link.href} key={link.id}>{link.label}<span>→</span></a>)}</nav>
     </header><PageSubnav /></>
   );
 }

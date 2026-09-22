@@ -3909,6 +3909,16 @@ footer p {
   .deep-heading>p:last-child,.analysis-heading>p:last-child{font-size:15px;line-height:1.9}
 }
 
+/* 2026 information architecture refresh */
+.mobile-menu-button,.simple-header .mobile-navigation{display:none}
+.service-entry-grid a{padding:28px;text-align:left;border:1px solid rgba(24,37,29,.25);background:rgba(255,255,255,.35);color:var(--ink);text-decoration:none}.service-entry-grid a:hover{background:#fff}.service-entry-grid a b,.service-entry-grid a span{display:block}.service-entry-grid a b{font:600 24px var(--font-serif);margin-bottom:10px}.service-entry-grid a span{color:#4c5b50;line-height:1.6}
+#broker,#ideco,#resources{scroll-margin-top:24px}.broker-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.broker-summary-card{min-height:0}.broker-summary-card .service-caution{margin-top:auto}.resource-services{background:var(--cream)}.resource-summary-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.compact-service-card{min-height:0}.service-detail-related{margin:32px 0;padding:34px;background:#eef2ec;border:1px solid #d0d7cf}.service-detail-related a{display:block;margin-top:12px;color:var(--green);font-weight:700}
+@media(max-width:900px){.resource-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){
+  .header-inner{min-height:68px}.simple-header .brand strong{font-size:21px}.desktop-navigation{display:none!important}.mobile-menu-button{display:inline-flex;min-height:44px;align-items:center;gap:7px;padding:0 12px;border:1px solid #65736a;background:transparent;color:#fff;font-weight:700}.simple-header .mobile-navigation{display:none!important;padding:0 0 14px}.simple-header .mobile-navigation.open{display:grid!important}.mobile-navigation a{display:flex;min-height:48px;align-items:center;justify-content:space-between;padding:0 14px;border-top:1px solid #435148;color:#fff;text-decoration:none;font-weight:700}.mobile-navigation a.current{color:var(--lime)}
+  .page-subnav-shell.top{overflow-x:auto}.page-subnav.top{min-width:max-content}.broker-summary-grid,.resource-summary-grid{grid-template-columns:1fr}.service-entry-grid{grid-template-columns:1fr!important}.service-entry-grid a{padding:22px}.broker-summary-card,.compact-service-card{padding:24px}.service-detail-related{padding:25px 20px}
+}
+
 /* Marketing / discovery layer */
 .intent-hub,.decision-bridge{padding:100px 8vw}.intent-hub{background:var(--cream);border-top:1px solid rgba(24,37,29,.16);border-bottom:1px solid rgba(24,37,29,.16)}
 .intent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.intent-grid a{min-height:250px;padding:30px;background:var(--paper);border:1px solid rgba(24,37,29,.18);color:var(--ink);text-decoration:none;display:flex;flex-direction:column;transition:.2s}.intent-grid a:hover{transform:translateY(-3px);border-color:var(--green)}.intent-grid span{font-size:11px;letter-spacing:.16em;font-weight:800;color:var(--green)}.intent-grid h3{font:600 23px/1.55 var(--font-serif);margin:28px 0 12px}.intent-grid p{color:var(--muted);line-height:1.8;margin:0 0 24px}.intent-grid b{margin-top:auto;font-size:13px}

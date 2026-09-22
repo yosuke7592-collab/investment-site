@@ -4,10 +4,10 @@ import { usePathname } from "next/navigation";
 import { SmallNav } from "./PageSubnav";
 
 const sections = [
-  { label: "はじめから学ぶ", href: "/lessons?week=1" },
-  { label: "投資方法を選ぶ", href: "/courses" },
-  { label: "分析・取引を学ぶ", href: "/strategies/products" },
-  { label: "用語・サービス", href: "/glossary" },
+  { label: "基礎を学ぶ", href: "/lessons?week=1" },
+  { label: "投資方法を考える", href: "/courses" },
+  { label: "疑問を調べる", href: "/articles" },
+  { label: "サービスを比較する", href: "/services" },
 ];
 
 const trustLinks = [
@@ -25,7 +25,8 @@ const nextByPath: Record<string, { label: string; href: string }> = {
   "/mechanics/leverage": { label: "投資スタイルを選ぶ", href: "/courses" },
   "/courses": { label: "自分の投資設計", href: "/plan" },
   "/plan": { label: "長期資産形成", href: "/long-term" },
-  "/long-term": { label: "アクティブ投資", href: "/strategies" },
+  "/long-term": { label: "NISAとiDeCoの違い", href: "/nisa-vs-ideco" },
+  "/nisa-vs-ideco": { label: "iDeCoの金融機関を比較する", href: "/services#ideco" },
   "/strategies": { label: "投資商品を知る", href: "/strategies/products" },
   "/strategies/products": { label: "チャートを読む", href: "/strategies/chart" },
   "/strategies/chart": { label: "チャートパターン図鑑", href: "/strategies/patterns" },
