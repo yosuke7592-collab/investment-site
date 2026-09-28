@@ -17,7 +17,7 @@ export default function Home() {
       <h1>投資は、<br/><em>自分のルール</em>を<br/>作ることから始まる。</h1>
       <p className="new-lead">投資をこれから始める人にも、もう一度きちんと学び直したい人にも。商品・市場・リスク・戦略を体系的に理解し、自分で判断するための投資メディアです。</p>
       <div className="new-actions"><a className="new-primary" href="/start">はじめての方 <span>→</span></a><a className="new-secondary" href="/articles">疑問から探す</a></div></div>
-      <div className="hero-system" aria-hidden="true"><span className="system-label label-a">TIME</span><span className="system-label label-b">RISK</span><span className="system-label label-c">DIVERSIFY</span><span className="system-label label-d">RULE</span><div className="system-orbit orbit-one"/><div className="system-orbit orbit-two"/><div className="system-axis"><i/><i/><i/><i/><i/></div><div className="system-node node-a"/><div className="system-node node-b"/><div className="system-node node-c"/><div className="system-core">01</div></div>
+      <div className="hero-visual" aria-hidden="true"><div className="hero-visual-caption"><span>INVEST WITH CLARITY</span><b>01</b></div></div>
     </section>
 
     <section className="home-start" aria-labelledby="start-title">

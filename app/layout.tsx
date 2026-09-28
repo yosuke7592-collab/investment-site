@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: { default: "投資の原則", template: "%s｜投資の原則" },
   description: "金融投資の仕組みを理解し、自分に合う方法と守れるルールを作るための投資教材。",
   openGraph: { title: "投資の原則", description: "金融投資の仕組みを理解し、自分に合う方法と守れるルールを作るための投資教材。", type: "website", locale: "ja_JP" },
+  icons: { icon: "/icon.svg" },
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
 };
