@@ -1,29 +1,24 @@
 type InvestmentMapProps = { compact?: boolean };
 
 const topics = [
-  { label: "株式", detail: "企業の成長と所有", href: "/mechanics", x: 18, y: 22 },
-  { label: "投資信託", detail: "分散して積み立てる", href: "/articles/etf-vs-investment-trust", x: 8, y: 54 },
-  { label: "ETF", detail: "市場で売買する投信", href: "/articles/etf-vs-investment-trust", x: 76, y: 22 },
-  { label: "リスク", detail: "損失と向き合う", href: "/mechanics/leverage", x: 84, y: 54 },
-  { label: "投資方法", detail: "時間と目的で選ぶ", href: "/courses", x: 20, y: 82 },
-  { label: "検証", detail: "ルールを確かめる", href: "/lab", x: 74, y: 82 },
+  { label: "株式", detail: "企業の成長に投資", href: "/mechanics", position: "stock" },
+  { label: "投資信託・ETF", detail: "分散投資で安定運用", href: "/articles/etf-vs-investment-trust", position: "fund" },
+  { label: "債券", detail: "安定性を重視", position: "bond" },
+  { label: "REIT", detail: "不動産に投資", position: "reit" },
+  { label: "金・銀", detail: "インフレに備える", position: "metal" },
+  { label: "暗号資産", detail: "新しい資産クラス", position: "crypto" },
+  { label: "FX", detail: "為替で取引する", position: "fx" },
 ];
 
 export default function InvestmentMap({ compact = false }: InvestmentMapProps) {
-  return <section className={`investment-map${compact ? " compact" : ""}`} aria-labelledby="investment-map-title">
-    <div className="investment-map-copy">
-      <p className="eyebrow">INVESTMENT MAP</p>
-      <h2 id="investment-map-title">投資の世界を、<br />関係から理解する。</h2>
-      <p>商品名だけを覚えるのではなく、目的・仕組み・リスク・時間のつながりから考えます。整備済みのテーマだけを、学習ページへ案内しています。</p>
-    </div>
-    <div className="investment-map-visual" aria-label="投資、商品、リスク、投資方法、検証の関係図">
-      <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-        <path d="M50 50 C34 31 25 25 18 22 M50 50 C29 52 16 54 8 54 M50 50 C66 31 75 25 76 22 M50 50 C71 52 84 54 84 54 M50 50 C34 70 24 80 20 82 M50 50 C66 70 74 80 74 82" />
-        <circle cx="50" cy="50" r="17" />
-        <circle cx="50" cy="50" r="7" />
-      </svg>
-      <div className="map-core"><b>投資</b><span>INVESTMENT</span></div>
-      {topics.map((topic) => <a key={topic.label} className="map-topic" href={topic.href} style={{ left: `${topic.x}%`, top: `${topic.y}%` }}><b>{topic.label}</b><span>{topic.detail}</span><i>→</i></a>)}
+  return <section className={`v2-universe${compact ? " compact" : ""}`} aria-labelledby="investment-map-title">
+    <div className="v2-container v2-universe-inner">
+      <div className="v2-universe-copy"><p className="v2-kicker">INVESTMENT UNIVERSE</p><h2 id="investment-map-title">投資の世界を<br />体系的に理解する。</h2><p>さまざまな投資対象の特徴や関係性をわかりやすく整理。自分に合った投資の選択肢を見つけます。</p><a href="/courses">投資の世界を見る　→</a></div>
+      <div className="v2-universe-map" aria-label="投資対象の関係図">
+        <svg viewBox="0 0 1000 520" aria-hidden="true" focusable="false"><defs><radialGradient id="mapGlow"><stop stopColor="#d8ff37" stopOpacity=".5"/><stop offset="1" stopColor="#d8ff37" stopOpacity="0"/></radialGradient></defs><ellipse cx="520" cy="270" rx="200" ry="130" fill="none" stroke="#87b938" strokeOpacity=".55" strokeDasharray="4 12"/><ellipse cx="520" cy="270" rx="310" ry="205" fill="none" stroke="#78c2a5" strokeOpacity=".35" strokeDasharray="3 14"/><circle cx="520" cy="270" r="135" fill="url(#mapGlow)"/><path d="M520 270 L285 115 M520 270 L715 110 M520 270 L850 225 M520 270 L790 400 M520 270 L515 455 M520 270 L250 405 M520 270 L150 240" stroke="#9bdac2" strokeOpacity=".65" strokeWidth="1.5"/><g fill="#d8ff37">{["285,115","715,110","850,225","790,400","515,455","250,405","150,240"].map((point) => { const [cx, cy] = point.split(","); return <circle key={point} cx={cx} cy={cy} r="5" />; })}</g></svg>
+        <div className="universe-core"><strong>投資</strong><span>INVESTMENT</span></div>
+        {topics.map((topic) => topic.href ? <a className={`universe-topic ${topic.position}`} href={topic.href} key={topic.label}><i /><span><b>{topic.label}</b><small>{topic.detail}</small></span></a> : <span className={`universe-topic ${topic.position}`} key={topic.label}><i /><span><b>{topic.label}</b><small>{topic.detail}</small></span></span>)}
+      </div>
     </div>
   </section>;
 }

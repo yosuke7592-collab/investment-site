@@ -12,9 +12,10 @@ export default function SiteHeader({ current: _current }: Props) {
   const links = [
     { id: "start", label: "はじめての方", href: "/start", paths: ["/start"] },
     { id: "learn", label: "基礎を学ぶ", href: "/lessons?week=1", paths: ["/lessons", "/mechanics"] },
-    { id: "style", label: "投資方法を考える", href: "/courses", paths: ["/courses", "/plan", "/long-term", "/nisa-vs-ideco", "/strategies", "/lab"] },
-    { id: "find", label: "疑問を調べる", href: "/articles", paths: ["/articles", "/glossary"] },
-    { id: "compare", label: "サービス比較", href: "/services", paths: ["/services"] },
+    { id: "style", label: "投資を考える", href: "/courses", paths: ["/courses", "/plan", "/long-term", "/nisa-vs-ideco", "/strategies"] },
+    { id: "compare", label: "比較する", href: "/services", paths: ["/services"] },
+    { id: "find", label: "コラム", href: "/articles", paths: ["/articles", "/glossary"] },
+    { id: "lab", label: "LAB", href: "/lab", paths: ["/lab"] },
   ];
   const isCurrent = (paths: string[]) => paths.some((path) => pathname === path || pathname.startsWith(`${path}/`));
   useEffect(() => setOpen(false), [pathname]);
@@ -25,10 +26,10 @@ export default function SiteHeader({ current: _current }: Props) {
           <small>INVESTMENT PRINCIPLES</small>
           <strong>投資の原則</strong>
         </a>
-        <button className="mobile-menu-button" type="button" aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen((value) => !value)}><span aria-hidden="true">☰</span> メニュー</button>
+        <button className="mobile-menu-button" type="button" aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen((value) => !value)}><span aria-hidden="true">☰</span><span className="sr-only">メニュー</span></button>
         <nav className="desktop-navigation" aria-label="メインナビゲーション">
           {links.map((link, index) => (
-            <a className={isCurrent(link.paths) ? "current" : ""} href={link.href} key={link.id}>
+            <a className={`${isCurrent(link.paths) ? "current" : ""}${link.id === "compare" ? " nav-compare" : ""}`} href={link.href} key={link.id}>
               <span>{String(index + 1).padStart(2, "0")}</span>{link.label}
             </a>
           ))}
