@@ -41,11 +41,13 @@ export default function Home() {
           <div className="hero-art-label"><span>KNOWLEDGE</span><span>DISCIPLINE</span><span>PERSPECTIVE</span><span>FOR A BETTER FUTURE</span></div>
           <b>01</b>
         </div>
-        <div className="v2-hero-entries" aria-label="学習の入口">
+      </div>
+    </section>
+    <section className="v2-entry-band" aria-label="学習の入口">
+      <div className="v2-container v2-hero-entries">
           <a className="entry-first" href="/start"><i>▣</i><span><strong>はじめての方</strong><small>まず何から始めるか</small></span><b>→</b></a>
           <a href="/lessons?week=1"><i>◇</i><span><strong>基礎を整理したい</strong><small>知識をもう一度体系的に</small></span><b>→</b></a>
           <a className="entry-deep" href="/lab"><i>⌁</i><span><strong>もっと深く学びたい</strong><small>戦略・検証・応用まで</small></span><b>→</b></a>
-        </div>
       </div>
     </section>
 
