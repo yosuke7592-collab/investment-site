@@ -4178,6 +4178,9 @@ body{background:var(--cream);color:var(--ink);letter-spacing:.01em}
 /* Keep full-bleed colour and image treatments, while aligning their contents. */
 main:not(.home-v2)>section{
   box-sizing:border-box;
+  width:100%!important;
+  max-width:none!important;
+  margin-inline:0!important;
   padding-inline:var(--page-gutter)!important;
 }
 
