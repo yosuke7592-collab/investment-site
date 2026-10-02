@@ -4111,3 +4111,45 @@ body{background:var(--cream);color:var(--ink);letter-spacing:.01em}
   .v2-entry-band{padding:0 0 28px}
   .v2-hero-entries{width:100%;margin:0;grid-template-columns:1fr}
 }
+
+/* One desktop rail for the header and every home section. */
+:root{--site-gutter:64px}
+.simple-header{padding:0!important}
+.header-inner,
+.home-v2 .unified-header .header-inner,
+.v2-container,
+.v2-entry-band .v2-container{
+  box-sizing:border-box;
+  width:min(var(--site-rail),calc(100% - (var(--site-gutter) * 2)))!important;
+  max-width:var(--site-rail)!important;
+  margin-inline:auto!important;
+  padding-inline:0!important;
+}
+.v2-entry-band .v2-container{left:auto!important;right:auto!important;transform:none!important}
+
+/* Do not give only the home header a different navigation treatment. */
+.home-v2 .unified-header,
+.home-v2 .simple-header{
+  position:sticky!important;
+  background:rgba(8,29,21,.94)!important;
+  border-bottom:1px solid rgba(217,255,63,.72)!important;
+}
+.home-v2 .unified-header .header-inner{min-height:86px!important;height:auto!important}
+.home-v2 .unified-header .brand{display:grid!important;gap:3px!important;align-items:initial!important}
+.home-v2 .unified-header .brand small{display:block!important;font-size:9px!important}
+.home-v2 .unified-header .brand strong{font-size:27px!important}
+.home-v2 .desktop-navigation{gap:8px!important}
+.home-v2 .desktop-navigation a{font-size:12px!important;padding:14px 16px!important;background:transparent!important;color:#d9e0da!important;border-radius:0!important}
+.home-v2 .desktop-navigation a>span{display:block!important}
+.home-v2 .desktop-navigation .nav-compare{background:transparent!important;color:#d9e0da!important;padding:14px 16px!important}
+.home-v2 .desktop-navigation .nav-compare.current,
+.home-v2 .desktop-navigation .nav-compare:hover{color:var(--lime)!important}
+
+@media(max-width:820px){
+  :root{--site-gutter:20px}
+  .header-inner,
+  .home-v2 .unified-header .header-inner,
+  .v2-container,
+  .v2-entry-band .v2-container{width:calc(100% - (var(--site-gutter) * 2))!important}
+  .home-v2 .unified-header .header-inner{min-height:68px!important}
+}
