@@ -4153,3 +4153,45 @@ body{background:var(--cream);color:var(--ink);letter-spacing:.01em}
   .v2-entry-band .v2-container{width:calc(100% - (var(--site-gutter) * 2))!important}
   .home-v2 .unified-header .header-inner{min-height:68px!important}
 }
+
+/* A single outer rail for every lower-level page.
+   Individual sections can still use their own backgrounds and vertical rhythm;
+   only the inconsistent horizontal 7vw/8vw/24px rules are normalised here. */
+:root{
+  --page-rail:1280px;
+  --page-gutter:max(48px, calc((100vw - var(--page-rail)) / 2));
+}
+
+.simple-header,
+.page-subnav-shell{
+  padding-inline:0!important;
+}
+
+.header-inner,
+.page-subnav{
+  box-sizing:border-box;
+  width:calc(100% - (var(--page-gutter) * 2))!important;
+  max-width:var(--page-rail)!important;
+  margin-inline:auto!important;
+}
+
+/* Keep full-bleed colour and image treatments, while aligning their contents. */
+main:not(.home-v2)>section{
+  box-sizing:border-box;
+  padding-inline:var(--page-gutter)!important;
+}
+
+/* Reading pages intentionally stay narrow; their outer spacing now matches the rail. */
+.article-page>article,
+.service-detail-page>article{
+  box-sizing:border-box;
+  width:calc(100% - (var(--page-gutter) * 2));
+}
+
+@media(max-width:820px){
+  :root{--page-gutter:20px}
+  .header-inner,
+  .page-subnav,
+  .article-page>article,
+  .service-detail-page>article{width:calc(100% - (var(--page-gutter) * 2))!important}
+}
