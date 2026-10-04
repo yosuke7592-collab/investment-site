@@ -11,6 +11,7 @@ export default async function ArticlePage({params}:{params:Promise<{slug:string}
     <section className="quick-answer"><b>先に答え</b><p>{a.answer}</p></section>
     {a.points.map((p,i)=><section className="article-section" key={p.heading}><span>0{i+1}</span><div><h2>{p.heading}</h2><p>{p.body}</p></div></section>)}
     {a.slug==="stocks-from-10000-yen"&&<aside className="article-service-link"><b>実際に始める前に</b><p>投資の仕組みと損失の可能性を理解したら、証券会社を目的・取扱商品・コスト・使いやすさで比較します。</p><a href="/services">証券会社の違いを確認する →</a></aside>}
+    {a.slug==="etf-vs-investment-trust"&&<aside className="article-service-link"><b>次に考えること</b><p>ETFと投資信託のどちらを中心に使うかが見えたら、その商品を扱う証券会社で何を確認するかを整理します。</p><a href="/nisa-broker-selection">NISAで証券会社を選ぶ確認項目 →</a></aside>}
     <aside className="article-next"><p>次に読む</p><h2>疑問を、まとまった知識につなげる</h2><a href={a.next.href}>{a.next.label} →</a></aside>
     {a.source&&<footer><b>主な確認先</b><a href={a.source.href} target="_blank" rel="noreferrer">{a.source.label} ↗</a><p>制度やサービスの条件は変わることがあります。最終判断の前に最新の公式情報を確認してください。</p></footer>}
   </article></main>}

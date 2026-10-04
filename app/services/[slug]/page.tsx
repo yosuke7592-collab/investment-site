@@ -54,7 +54,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
       <section className="service-detail-action"><p className="eyebrow">NEXT STEP</p><h2>内容を理解したうえで判断する</h2>{service.affiliateCode ? <><p>このリンクはPR（アフィリエイト広告）です。広告の有無や報酬額は、掲載順や評価に使用していません。</p><div className="affiliate-link service-detail-affiliate"><small>PR</small><span dangerouslySetInnerHTML={{ __html: service.affiliateCode }} /></div></> : <><p>このサービスは現在、当サイトのアフィリエイト広告を掲載していません。必要な場合のみ、公式サイトで最新条件を確認してください。</p><a className="service-official-action" href={service.officialUrl} target="_blank" rel="noopener noreferrer">{service.name}の公式サイトを見る ↗</a></>}
       </section>
-      <section className="service-detail-related"><h2>関連する教材</h2>{service.kind === "iDeCo" ? <><a href="/nisa-vs-ideco">NISAとiDeCoの違いを学ぶ →</a><a href="/long-term">長期資産形成の基本へ →</a></> : <><a href="/articles/stocks-from-10000-yen">少額から株式投資を考える →</a><a href="/mechanics">取引が成立する仕組みを学ぶ →</a></>}</section>
+      <section className="service-detail-related"><h2>関連する教材</h2>{service.kind === "iDeCo" ? <><a href="/nisa-vs-ideco">NISAとiDeCoの違いを学ぶ →</a><a href="/long-term">長期資産形成の基本へ →</a></> : <><a href="/nisa-broker-selection">NISAで証券会社を選ぶ確認項目 →</a><a href="/articles/stocks-from-10000-yen">少額から株式投資を考える →</a><a href="/mechanics">取引が成立する仕組みを学ぶ →</a></>}</section>
       <footer className="service-detail-back"><a href={service.kind === "iDeCo" ? "/services#ideco" : "/services#broker"}>← 比較一覧へ戻る</a><a href="/affiliate-policy">広告・比較方針を確認する →</a></footer>
     </article>
   </main>;
