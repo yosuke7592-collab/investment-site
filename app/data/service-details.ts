@@ -23,6 +23,7 @@ export type ServiceDetail = {
 const dmmAffiliate = '<a href="https://h.accesstrade.net/sp/cc?rk=0100mkk300oy0o" rel="nofollow" referrerpolicy="no-referrer-when-downgrade">DMM 株<img src="https://h.accesstrade.net/sp/rr?rk=0100mkk300oy0o" width="1" height="1" border="0" alt=""></a>';
 const matsuiAffiliate = '<a href="https://h.accesstrade.net/sp/cc?rk=01000t2p00oy0o" rel="nofollow" referrerpolicy="no-referrer-when-downgrade">松井証券の日本株取引～手数料0円から～<img src="https://h.accesstrade.net/sp/rr?rk=01000t2p00oy0o" width="1" height="1" border="0" alt=""></a>';
 const matsuiIdecoAffiliate = '<a href="https://h.accesstrade.net/sp/cc?rk=0100p7ck00oy0o" rel="nofollow" referrerpolicy="no-referrer-when-downgrade">松井証券のiDeCo\n<img src="https://h.accesstrade.net/sp/rr?rk=0100p7ck00oy0o" width="1" height="1" border="0" alt=""></a>';
+const sbiAffiliate = '<a href="https://h.accesstrade.net/sp/cc?rk=0100pesr00oy0o" rel="nofollow" referrerpolicy="no-referrer-when-downgrade">SBI証券<img src="https://h.accesstrade.net/sp/rr?rk=0100pesr00oy0o" width="1" height="1" border="0" alt=""></a>';
 
 export const serviceDetails: ServiceDetail[] = [
   {
@@ -99,7 +100,7 @@ export const serviceDetails: ServiceDetail[] = [
       { label: "SBI証券｜商品別の手数料・諸費用", url: "https://www.sbisec.co.jp/ETGate/?_ControlID=WPLETmgR001Control&_DataStoreID=DSWPLETmgR001Control&burl=search_home&cat1=home&cat2=price&dir=price&file=home_price.html" },
       { label: "SBI証券｜NISA", url: "https://www.sbisec.co.jp/visitor/nisa" },
       { label: "SBI証券｜NISAの注意事項", url: "https://search.sbisec.co.jp/v2/popwin/attention/trading/nisa_01.html" },
-    ], officialUrl: "https://www.sbisec.co.jp/ETGate/",
+    ], officialUrl: "https://www.sbisec.co.jp/ETGate/", affiliateCode: sbiAffiliate,
   },
   {
     slug: "mufg-esmart", name: "三菱UFJ eスマート証券", kind: "証券会社",

@@ -158,14 +158,15 @@ test("renders seven service detail pages with correct advertising boundaries", a
     "dmm-kabu": "0100mkk300oy0o",
     matsui: "01000t2p00oy0o",
     "matsui-ideco": "0100p7ck00oy0o",
+    "sbi-securities": "0100pesr00oy0o",
   };
-  const unapproved = ["sbi-securities", "mufg-esmart", "monex", "monex-ideco"];
+  const unapproved = ["mufg-esmart", "monex", "monex-ideco"];
 
   for (const [slug, rk] of Object.entries(approved)) {
     const response = await worker.fetch(new Request(`http://localhost/services/${slug}`), env, ctx);
     assert.equal(response.status, 200);
     const html = await response.text();
-    assert.match(html, /情報確認日：(?:<!-- -->)?2026年9月15日/);
+    assert.match(html, new RegExp(`情報確認日：(?:<!-- -->)?${slug === "sbi-securities" ? "2026年10月4日" : "2026年9月15日"}`));
     assert.match(html, /<small>PR<\/small>/);
     assert.match(html, new RegExp(`href="https://h\\.accesstrade\\.net/sp/cc\\?rk=${rk}" rel="nofollow"`));
     assert.match(html, new RegExp(`<link rel="canonical" href="https://toushi-gensoku\\.jp/services/${slug}"/>`));
