@@ -23,7 +23,7 @@ export default function NisaBrokerSelectionPage() {
   return <main className="nisa-broker-page"><SiteHeader current="services" />
     <article>
       <nav aria-label="パンくず"><a href="/">トップ</a><span>›</span><a href="/long-term">長期資産形成</a><span>›</span>NISAで証券会社を選ぶ</nav>
-      <header className="nisa-broker-hero"><p className="eyebrow">NISA · BROKER SELECTION</p><h1>NISAで証券会社を選ぶときの確認項目<br/><em>投資信託・ETF・費用から考える</em></h1><p>「一番よい証券会社」を先に決める必要はありません。何に投資したいか、どう買いたいか、どの機能が必要かを整理すると、自分に必要な条件を比べやすくなります。</p><small>制度・情報確認日：2026年10月4日</small></header>
+      <header className="nisa-broker-hero"><p className="eyebrow">NISA · BROKER SELECTION</p><h1>NISAで証券会社を選ぶときの確認項目<br/><em>投資信託・ETF・<br className="mobile-title-break"/>費用から考える</em></h1><p>「一番よい証券会社」を先に決める必要はありません。何に投資したいか、どう買いたいか、どの機能が必要かを整理すると、自分に必要な条件を比べやすくなります。</p><small>制度・情報確認日：2026年10月4日</small></header>
 
       <section className="nisa-broker-answer"><b>先に確認したいこと</b><p>NISAは、対象となる株式や投資信託などから得た利益・配当等を非課税にする制度です。利用できる金融機関は1人1つなので、口座を開く前に「自分が使いたい商品」と「買い方」を確認します。投資による損失や元本割れの可能性は、NISAを利用してもなくなりません。</p></section>
 

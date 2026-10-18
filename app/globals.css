@@ -4233,3 +4233,5 @@ main:not(.home-v2)>section{
   }
   .nisa-broker-hero h1{font-size:31px;line-height:1.32}
 }
+.mobile-title-break{display:none}
+@media(max-width:700px){.mobile-title-break{display:block}}
